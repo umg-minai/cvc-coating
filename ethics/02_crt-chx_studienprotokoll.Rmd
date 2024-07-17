@@ -1,0 +1,209 @@
+---
+title: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
+titleengl: Catheter-related thrombosis in central venous catheter coated with or without chlorhexidin - a randomised controlled trial.
+date: "`r format(Sys.Date(), '%d.%m.%Y')`"
+author:
+    name: "Dr. med. Sebastian Gibb"
+    phone: "03834 865801"
+    email: "sebastian.gibb@med.uni-greifswald.de"
+    department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
+    address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
+dkrsnumber: TODO
+cfg-acronym: CRT-CHX
+cfg-version: '0.1'
+cfg-githash: "`r system('git rev-parse --short HEAD', intern = TRUE)`"
+bibliography: bibliography.bib
+output:
+    bookdown::odt_document2:
+        reference_odt: pandoc/reference/reference-protocol.odt
+        pandoc_args:
+            - --lua-filter=pandoc/lua-filters/strip-meta.lua
+
+---
+
+```{r helper_functions, include = FALSE}
+.eval_meta <- function(x)eval(parse(text = gsub("(^`r\\s+)|(`$)", "", x)))
+frf <- function(...)
+    rprojroot::find_root_file(..., criterion = rprojroot::is_git_root)
+```
+
+# Prüfplan-Synopsis
+
+------------------------        --------------------------------------------------
+**Bezeichnung der Studie**      `r rmarkdown::metadata[["title"]]`
+
+**Englische Bezeichnung**       `r rmarkdown::metadata[["titleengl"]]`
+**der Studie**
+
+**Registrierungsnummer**        `r rmarkdown::metadata[["dkrsnumber"]]`
+
+**Studienleiter**               `r rmarkdown::metadata$author$name`
+
+                                E-Mail: `r rmarkdown::metadata$author$email`
+                                `r rmarkdown::metadata$author$department`
+
+**Fragestellung**
+
+**Studiendesign**               Monozentrische, randomisierte, kontrollierte, 2-armige Beobachtungsstudie
+
+**Primäres Zielkriterium**
+
+**Sekundäre Zielkriterien**
+
+**Patient\*innenpopulation**
+
+**Einschlusskriterien**
+
+**Ausschlusskriterien**
+
+**Version**                     `r paste(rmarkdown::metadata[["cfg-version"]], .eval_meta(rmarkdown::metadata[["cfg-githash"]]), sep = "_")`
+
+**Datum**                       `r .eval_meta(rmarkdown::metadata$date)`
+----------------------------------------------------------------------------------
+
+# Verantwortlichkeiten und Kooperationen
+
+## Studienleitung
+
+`r rmarkdown::metadata$author$name`
+
+E-Mail: `r rmarkdown::metadata$author$email`
+Telefon: `r rmarkdown::metadata$author$phone`
+\
+`r rmarkdown::metadata$author$department`
+`r rmarkdown::metadata$author$address`
+
+## Beteiligte Ärzte
+
+- Philipp Sprenger, `r rmarkdown::metadata$author$department`
+- Dr. med. Christian Emde, `r rmarkdown::metadata$author$department`
+- Dr. med. Sven-Olaf Kuhn, `r rmarkdown::metadata$author$department`
+- Prof. Dr. med. Falk von Dincklage, `r rmarkdown::metadata$author$department`
+
+# Wissenschaftlicher Hintergrund
+
+Zentrale Venenkatheter (ZVK) werden bei chirurgischen Eingriffen zur
+differenzierten Katecholamin- und folgenden Intensivtherapie implantiert [@Geerts2014].
+Katheter-assoziierte Thrombosen (catheter-related thrombosis; CRT)
+sind eine der Hauptkomplikationen des zentralvenösen Zugangs und
+ein wichtiger Risikofaktor für Lungenarterienembolien und katheter-assoziierte Blutstrominfektionen (central line-associated bloodstream infections; CLABSI) [@Geerts2014; @Malinoski2013].
+
+Die meisten CRTs sind asymptomatisch.
+Patient\*innen mit ZVK werden in der klinischen Routine nur selten auf CRTs untersucht.
+Während die Inzidenz der CRT bei internistischen Patient\*innen zwischen 6 und 16,9 % liegt [@Haggstrom2020;@Wu2023], wurden bei chirurgischen Patienten\*innen mit ZVK in 55-100 % der Fälle CRT festgestellt [@Malinoski2013;@Yamashita2020;@Gibb2024].
+
+In unser eigenen prospektiven Beobachtungsstudie (
+Stellungnahme der Ethikkommission der Universitätsmedizin Greifswald vom
+01.02.2022, Registrierungsnummer BB 006/22, Titel:
+Katheter assoziierte Thrombosen (CRT) bei Intensivpatienten einer operativ interdisziplinären Intensivstation)
+bei kritisch-kranken,
+chirurgischen Patient\*innen mit ZVK fanden wir bereits am ersten Tag nach
+Implantation der Katheter in zwei Dritteln aller Fälle Thrombosen [@Gibb2024].
+
+Neben bekannten Risikofaktoren, wie Tumorerkrankungen oder pausierter
+Antikoagulation, sahen wir deutliche Unterschiede zwischen verschiedenen
+Kathetertypen.
+Insbesondere die antimikrobiell-beschichteten zentralen Venenkatheter fielen
+durch eine deutlich höhere Thromboserate auf (hazard ratio > 4).
+In Anbetracht verbesserter Hygiene auf den Intensivstationen tragen
+antimikrobielle Beschichtungen gegenüber früheren Daten mittlerweile
+kaum noch zur Reduktion von CLABSI bei [@CherryBukowiec2011; @Ullman2022].
+Ihre Verwendung wird allerdings bei hoher CLABSI-Inzidenz, Patient\*innen mit
+schwierigen Venenverhältnissen und/oder mit kürzlich implantierten
+Fremdmaterialien wie z.B. Herzklappen oder Aortenprothesen empfohlen [@Buetti2022].
+Auf unsere Intensivstation und zum Teil im OP werden antimikrobiell-beschichtete
+zentrale Venenkatheter routinemäßig verwendet.
+
+In bisherigen Studien sind katheterbedingte Risikofaktoren mit Ausnahme des
+Durchmessers nicht untersucht worden.
+Aus diesem Grund wollen wir in einer prospektiven, randomisierten,
+kontrollierten Studie unbeschichtete mit antimikrobiell-beschichteten ZVKs
+vergleichen.
+
+## Referenzen
+
+<!-- force references to be placed below -->
+<div id="refs"></div>
+
+# Fragestellung / Arbeitshypothese
+
+# Studientyp / Studiendesign
+
+# Zielkriterien
+
+## Primäres Zielkriterium
+
+## Sekundäre Zielkriterien
+
+- Thrombusgröße (Schaal, Lumen verlegt)
+- Wachstum über die Zeit
+
+# Methoden der Datenerhebung
+
+# Patienten/Probandencharakteristika
+
+## Patienten/Probandenpopulation
+
+## Einschlusskriterien
+
+- Tumorerkrankung an Pankreas, Magen, Leber oder Ösophagus, Duodenum.
+- OP zur Tumorentfernung.
+- Nach SOP Indikation zur ZVK-Anlage.
+
+## Ausschlusskriterien
+
+# Kompensation der Aufwendungen
+
+# Versuchsablauf
+
+Standardisierte sonografische Untersuchung
+- Flachlagerung, Kopf leicht nach rechts, 2 untersucher
+- thrombus kategorie: siehe Gerrit review, Schaal, Lumen verlegt
+
+# Patienten/Probandensicherheit
+
+## Nebenwirkungen
+
+## Risiken der Versuchsdurchführung
+
+## Abbruchkriterien
+
+# Gesetze / Verordnungen, die bei dem Vorhaben zu beachten sind
+
+- Deklaration von Helsinki (in der aktuellen Fassung)
+- Berufsordnung der Ärztinnen und Ärzte in Mecklenburg-Vorpommern (unter besonderer Berücksichtigung des §15 bzw. vergleichbare Abschnitte in dem jeweiligen Bundesland des teilnehmenden Zentrums).
+- Gesetz über den Öffentlichen Gesundheitsdienst im Land Mecklenburg-Vorpommern
+  vom 19. Juli 1994, §25 Umgang mit Personenbezogenen Daten
+- Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom
+  27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung
+  personenbezogener Daten, zum freien Datenverkehr und zur Aufhebung der
+  Richtlinie 95/46/EG (Datenschutz-Grundverordnung)
+
+# Überlegungen zum Abschluss einer Probandenversicherung/Wegeunfallversicherung
+
+# Statistische Planung
+
+```{r sample-size-estimation, file = frf("ethics", "sample_size", "sample_size_estimation.R"), include = FALSE}
+```
+```{r sample-size-estimaton-tbl, result = "asis", echo = FALSE}
+sample_size_tbl
+```
+
+# Datenmanagement / Biologische Marker
+
+# Patienten/Probanden-Information und Einwilligungserklärung mit Datenschutzerklärung
+
+# Unterschrift und Erklärung
+
+Der Projektleiter bestätigt mit der Unterschrift,
+
+- dass auch bei einer positiven Beurteilung des Vorhabens durch die Ethikkommission
+an der Universitätsmedizin Greifswald die ärztliche und juristische Verantwortung
+uneingeschränkt bei dem/der Projektleiter/in und seinen Mitarbeiter/innen
+verbleibt.
+- die Richtigkeit und Vollständigkeit dieses Antrages.
+
+
+Greifswald, `r .eval_meta(rmarkdown::metadata$date)`
+
+`r rmarkdown::metadata$author$name`
