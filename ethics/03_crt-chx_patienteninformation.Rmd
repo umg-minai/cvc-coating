@@ -1,0 +1,30 @@
+---
+title: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
+titleengl: Catheter-related thrombosis in central venous catheter coated with or without chlorhexidine - a randomised controlled trial.
+date: "`r format(Sys.Date(), '%d.%m.%Y')`"
+author:
+    name: "Dr. med. Sebastian Gibb"
+    phone: "03834 865801"
+    email: "sebastian.gibb@med.uni-greifswald.de"
+    department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
+    address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
+cfg-acronym: CRT-CHX
+cfg-version: '0.1'
+cfg-githash: "`r system('git rev-parse --short HEAD', intern = TRUE)`"
+cfg-principial-investigator: "Dr. med. Sebastian Gibb"
+cfg-principial-investigator-contact: "Tel. 03834 865801"
+cfg-department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
+cfg-dkrsnumber: TODO
+bibliography: bibliography.bib
+output:
+    bookdown::odt_document2:
+        reference_odt: pandoc/reference/reference-information.odt
+        pandoc_args:
+            - --lua-filter=pandoc/lua-filters/strip-meta.lua
+---
+
+```{r helper_functions, include = FALSE}
+.eval_meta <- function(x)eval(parse(text = gsub("(^`r\\s+)|(`$)", "", x)))
+```
+
+# Test
