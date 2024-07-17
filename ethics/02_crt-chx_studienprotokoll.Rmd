@@ -1,6 +1,6 @@
 ---
 title: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
-titleengl: Catheter-related thrombosis in central venous catheter coated with or without chlorhexidin - a randomised controlled trial.
+titleengl: Catheter-related thrombosis in central venous catheter coated with or without chlorhexidine - a randomised controlled trial.
 date: "`r format(Sys.Date(), '%d.%m.%Y')`"
 author:
     name: "Dr. med. Sebastian Gibb"
