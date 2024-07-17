@@ -1,0 +1,56 @@
+\documentclass[DIN,
+               pagenumber=false,
+               firstfoot=false,
+               enlargefirstpage=true,
+               backaddress=plain,
+               fontsize=11pt,
+               fromalign=left,
+               fromphone=true,
+               fromemail=true%
+             ]{scrlttr2}
+
+\usepackage[utf8]{inputenc}
+\usepackage[main=ngerman]{babel}
+\usepackage{ragged2e}
+
+\renewcaptionname{ngerman}{\enclname}{Anlagen}
+
+\setkomavar{fromname}{$fromname$}
+\setkomavar{fromaddress}{$fromaddress$}
+\setkomavar{fromphone}{$fromphone$}
+\setkomavar{fromemail}{$fromemail$}
+\setkomavar{signature}{$fromsignature$}
+
+\setkomavar{subject}{$subject$}
+
+% construct a new backaddress
+% taken from https://tex.stackexchange.com/questions/550092/two-line-backaddress-in-window-of-koma-script-letter
+\makeatletter
+\@setplength{backaddrheight}{18pt}
+
+\setkomavar{backaddress}{\parbox[c]{\useplength{toaddrwidth}}{%
+{%\raggedright%     <- (1) has no effect
+\def\\{\usekomavar{backaddressseparator}\@ogobble}%
+%\raggedright%      <- (2) breaks replacment of \\ with separator
+\usekomavar{fromname}\usekomavar{backaddressseparator}\usekomavar{fromaddress}}%
+\RaggedRight%       <- (3) prevents hyphenation but is left aligned <================
+}}
+\makeatother
+
+\begin{document}
+
+\begin{letter}{$for(address)$$address$$sep$\\$endfor$}
+\opening{$opening$}
+
+$body$
+
+$if(closing)$
+\closing{$closing$}
+$endif$
+$if(encl)$
+    \encl{\begin{itemize}$for(encl)$\item{$encl$}$sep$$endfor$\end{itemize}}
+$endif$
+
+\end{letter}
+
+\end{document}
