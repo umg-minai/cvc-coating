@@ -1,6 +1,8 @@
 GUIX:=/usr/local/bin/guix
 GUIXTM:=${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest.scm
+GUIXTME:=${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
+		shell --manifest=guix/manifest-ethics.scm
 DATE=$(shell date +'%Y%m%d')
 GITHEAD=$(shell git rev-parse --short HEAD)
 GITHEADL=$(shell git rev-parse HEAD)
@@ -22,6 +24,10 @@ guix/channels.pinned.scm: guix/channels.scm FORCE
 shell:
 	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest.scm
+
+.PHONEY:
+randomise:
+	${GUIXTME} -- Rscript --vanilla ethics/randomisation/blockrand.R
 
 FORCE:
 
