@@ -293,7 +293,7 @@ unserer wissenschaftlichen Mitarbeitern (Dr. Gregor Lichtner),
 der nicht an der Studie beteiligt ist, ausgehändigt.
 Er wird einen Startwert für den Randomisierungsalgorithmus wählen (sog. seed)
 und die Listen sowie Randomisierungsbriefe erstellen
-(Beispiel der Liste und Briefe anbei).
+(Beispiel der Liste und Briefe im Anhang).
 Die Briefe werden in der Prämedikationsambulanz hinterlegt.
 
 ## Einschluss der Patient\*innen
@@ -509,7 +509,62 @@ Patient\*innen (`r round(n.finalsamplesize["delta_hr=2"] / 2)` pro Studienarm).
 
 ## Randomisierung {#randomisation}
 
+Zur Randomisierung wird eine stratifizierte Blockrandomisierung mit variablen
+Blockgröße 2, 4 und 6 durchgeführt.
+Die Strata sind nach Geschlecht (männlich/weiblich) und hauptsächlicher
+Tumorlokalisation (Leber/Pankreas/Gastrointestinal) unterteilt.
+
+Das R-Script mit dem Code zur Erstellung der Randomisierungslisten wird einem
+unserer wissenschaftlichen Mitarbeitern (Dr. Gregor Lichtner),
+der nicht an der Studie beteiligt ist, ausgehändigt (R-Script im Anhang).
+Er wird einen Startwert für den Randomisierungsalgorithmus wählen (sog. seed)
+und die Listen sowie Randomisierungsbriefe erstellen
+(Beispiel der Liste und Briefe im Anhang).
+Die Randomisierung der Patient\*innen erfolgt anhand der in der
+Prämedikationsambulanz hinterlegten Briefe bei Studieneinschluss.
+Die eigentlichen Randomisierungslisten hält Herr Dr. Gregor Lichtner
+bis Abschluss der statistischen *per-protocol* Analyse unter Verschluss.
+
 ## Verblindung
+
+Die ZVKs sind von Größe (Länge, Durchmesser) und Form (Anordnung der Lumen)
+identisch.
+Sie unterscheiden sich in der Beschichtung (unbeschichtet und
+antimikrobiell-beschichtet), Beschriftung des sog. Hub und Farbe des Katheters
+distal des Hubs (unbeschichtet gelb, beschichtet blau).
+Des Weiteren ist auf der Verpackung der Produktname angegeben.
+
+Somit ist eine Verblindung der Anästhesist\*innen, die den ZVK legen nicht
+möglich.
+Auch die sichere Verblindung der Kolleg\*innen, die die Ultraschallvideos
+aufnehmen werden, ist nicht zu gewährleisten.
+Zur Beurteilung der Einstichstelle werden durchsichtige Pflasterverbände
+genutzt.
+Ein Wechsel auf blickdichte Pflasterverbände würde das Erkennen einer möglichen
+Katheterinfektion durch das Behandlungsteam behindern und
+den aktuellen Standard der ZVK-Pflege verändern.
+
+Die Patient\*innen könnten anhand der Farbe und der Produktbezeichnung mit Hilfe
+einer Internetrecherche die Verblindung aufheben.
+Es ist jedoch nicht anzunehmen, dass ein relevanter Teil der Patient\*innen
+diesen Aufwand kurz nach einer umfangreichen OP betreibt.
+Da die Patient\*innen weder Kontakt zu den Kolleg\*innen haben, die die
+Ultraschallvideos bewerten noch die Datenanalyse durchführen, ist die Gefahr der
+Entblindung sehr gering.
+
+
+Unverblindet sind:
+
+- die Anästhesist\*innen, die den ZVK anlegen,
+- die Kolleg\*innen, die die Ultraschalluntersuchungen durchführen.
+
+Verblindet sind:
+
+- die Patient\*innen,
+- die Kolleg\*innen, die die Patient\*innen aufklären und in die Studie
+  einschließen,
+- die Kolleg\*innen, die die Ultraschallvideos bewerten/vermessen,
+- die Kolleg\*innen, die die Daten auswerten.
 
 # Datenmanagement / Biologische Marker
 
@@ -542,5 +597,5 @@ Greifswald, `r .eval_meta(rmarkdown::metadata$date)`
 # TODO:
 
 - CRF ZVK-Anlage anhängen
-- Bsp. Randomisierungsliste und Briefe anhängen
+- Randomisierungs-R-Script anhängen; Bsp. Randomisierungsliste und Briefe anhängen
 - SOP "Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" anhängen
