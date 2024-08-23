@@ -61,3 +61,24 @@ git checkout main
 
 **REMINDER:** For reproducibility please push the *randomisation* branch and
 create a pull request after the analysis finished.
+
+## Codebook
+
+### `ethics/randomisation/randomisation_table_groups.csv`
+
+Used for blinded *per-protocol* analysis after finishing the data collection.
+
+- id: randomisation/patient id.
+- group: group/treatment identifier, "A" or "B".
+
+### `ethics/randomisation/randomisation_table_unblinded.csv`
+
+Used for final conclusion and unblinding.
+
+- id: randomisation/patient id.
+- stratum: selected stratum (sex and surgery/organ).
+- block.id: id of the randomisation block.
+- block.size: size of the current randomisation block.
+- treatment: randomised treatment.
+- group: group/treatment identifier, "A" or "B", same as in
+  `randomisation_table_unblinded.csv`.
