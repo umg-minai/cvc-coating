@@ -3,7 +3,7 @@
 ##
 ## TODO:
 ## 1. Adapt seed (and store it save and secure til the end of the analysis).
-## 2. Run whole script.
+## 2. Run whole script or better use `make randomise`.
 ## 3. Print and store "randomisation_table_unblinded.csv" and
 ## "randomisation_table_groups.csv" files at a save place.
 ## 4. Send the "randomisation_cards.pdf" for printing and enveloping.
