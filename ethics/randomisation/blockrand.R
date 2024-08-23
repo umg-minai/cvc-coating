@@ -4,7 +4,8 @@
 ## TODO:
 ## 1. Adapt seed (and store it save and secure til the end of the analysis).
 ## 2. Run whole script.
-## 3. Print and store "randomisation_list.csv" at a save place.
+## 3. Print and store "randomisation_table_unblinded.csv" and
+## "randomisation_table_groups.csv" files at a save place.
 ## 4. Send the "randomisation_cards.pdf" for printing and enveloping.
 ####
 
@@ -68,13 +69,22 @@ study <- do.call(
     )
 )
 
+## random group name for blinded per-protocol analysis
+study$group <- sample(c("A", "B"))[as.integer(study$treatment)]
+
 ####
 ## Save randomisation results
 ####
 
 write.csv(
+    study[c("id", "group")],
+    file = file.path(root, "randomisation_table_groups.csv"),
+    row.names = FALSE
+)
+
+write.csv(
     study,
-    file = file.path(root, "randomisation_table.csv"),
+    file = file.path(root, "randomisation_table_unblinded.csv"),
     row.names = FALSE
 )
 
