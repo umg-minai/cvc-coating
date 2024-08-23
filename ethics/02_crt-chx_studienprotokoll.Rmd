@@ -27,6 +27,9 @@ frf <- function(...)
     rprojroot::find_root_file(..., criterion = rprojroot::is_git_root)
 ```
 
+```{r sample-size-estimation, file = frf("ethics", "sample_size", "sample_size_estimation.R"), include = FALSE}
+```
+
 # Prüfplan-Synopsis
 
 ------------------------        --------------------------------------------------
@@ -42,19 +45,35 @@ frf <- function(...)
                                 E-Mail: `r rmarkdown::metadata$author$email`
                                 `r rmarkdown::metadata$author$department`
 
-**Fragestellung**
+**Fragestellung**               Unterscheiden sich unbeschichtete und antimikrobiell beschichtete zentralvenöse Katheter (ZVK) hinsichtlich ihrer Thromboseraten
 
-**Studiendesign**               Monozentrische, randomisierte, kontrollierte, 2-armige Beobachtungsstudie
+**Studiendesign**               Monozentrische, randomisierte, kontrollierte, 2-armige Studie
 
-**Primäres Zielkriterium**
+**Studienzeitraum**             ab 01.01.2025 - vorraussichtlich 18 Monate.
 
-**Sekundäre Zielkriterien**
+**Primäres Zielkriterium**      Thromboseraten der ZVKs
 
-**Patient\*innenpopulation**
+**Sekundäre Zielkriterien**     - Art des Thrombus.
+                                - Anzahl verschlossener Lumen.
+                                - Größe des Thrombus.
+                                - Wachstum des Thrombus.
+                                - Inflammations- und Thrombosemarker.
+                                - Art des Tumors.
+                                - Art des Eingriffs.
 
-**Einschlusskriterien**
+**Patient\*innenpopulation**    Chirurgische Patient\*innen zur elektiven Tumorresektion eines Tumors im Oberbauch mit Indikation für eine ZVK-Anlage.
 
-**Ausschlusskriterien**
+**Einschlusskriterien**         - Erwachsene, mindestens 18 Jahre.
+                                - Tumorerkrankung an Pankreas, Leber, Ösophagus, Magen oder Duodenum.
+                                - Elektive OP zur Tumorentfernung.
+                                - Indikation zur Anlage eines ZVK.
+                                - Anlage ZVK in rechter V. jugularis interna möglich.
+
+**Ausschlusskriterien**         - Ablehnung der Studienteilnahme.
+                                - Nicht-elektive OP.
+                                - Bekannter Thrombus in der rechten V. jugularis interna oder V. cava superior.
+
+**Fallzahl**                    - `r n.finalsamplesize["delta_hr=2"]`
 
 **Version**                     `r paste(rmarkdown::metadata[["cfg-version"]], .eval_meta(rmarkdown::metadata[["cfg-githash"]]), sep = "_")`
 
@@ -105,40 +124,129 @@ Antikoagulation, sahen wir deutliche Unterschiede zwischen verschiedenen
 Kathetertypen.
 Insbesondere die antimikrobiell-beschichteten zentralen Venenkatheter fielen
 durch eine deutlich höhere Thromboserate auf (hazard ratio > 4).
+Aufgrund der heterogenen Patient\*innencharakteristik und geringen Anzahl an
+einzelnen Kathetern je Kathetertyp konnte unsere Beobachtungsstudie jedoch nur
+die Hypothese für diese Studie bilden.
+
 In Anbetracht verbesserter Hygiene auf den Intensivstationen tragen
 antimikrobielle Beschichtungen gegenüber früheren Daten mittlerweile
 kaum noch zur Reduktion von CLABSI bei [@CherryBukowiec2011; @Ullman2022].
 Ihre Verwendung wird allerdings bei hoher CLABSI-Inzidenz, Patient\*innen mit
 schwierigen Venenverhältnissen und/oder mit kürzlich implantierten
 Fremdmaterialien wie z.B. Herzklappen oder Aortenprothesen empfohlen [@Buetti2022].
-Auf unsere Intensivstation und zum Teil im OP werden antimikrobiell-beschichtete
-zentrale Venenkatheter routinemäßig verwendet.
+Eine CRT ist allerdings ein entscheidener Risikofaktor für das Auftreten einer
+CLABSI [@Geerts2014].
+Somit könnten die antimikrobiell-beschichteten ZVKs ihrer eigentlichen Intention
+entgegen wirken.
 
 In bisherigen Studien sind katheterbedingte Risikofaktoren mit Ausnahme des
 Durchmessers nicht untersucht worden.
-Aus diesem Grund wollen wir in einer prospektiven, randomisierten,
-kontrollierten Studie unbeschichtete mit antimikrobiell-beschichteten ZVKs
-vergleichen.
-
-## Referenzen
-
-<!-- force references to be placed below -->
-<div id="refs"></div>
 
 # Fragestellung / Arbeitshypothese
 
+Die Studie soll klären, ob sich zentralvenöse Zugänge ohne und mit Chlorhexidinbeschichtung
+bei Patient\*innen nach einem tumorbedingten chirurgischen Eingriff im Oberbauch hinsichtlich
+der Rate an katheter-assoziierten Thrombosen unterscheiden.
+
 # Studientyp / Studiendesign
+
+Monozentrische, randomisierte, kontrollierte, 2-armige Studie.
 
 # Zielkriterien
 
 ## Primäres Zielkriterium
 
+Zeitpunkt des Auftretens sonografisch nachweisbarer Thromben am ZVK.
+
 ## Sekundäre Zielkriterien
 
-- Thrombusgröße (Schaal, Lumen verlegt)
-- Wachstum über die Zeit
+Abhängigkeit der Thrombusentehung bzw. Unterschiede in Bezug auf:
+
+- Art des Thrombus: Fibrinummantelung (fibrin sheat/fibrin sleeve), wandständiger Thrombus (mural thrombosis), venöser Thrombus, intraluminaler Thrombus [@Wall2015, @Geerts2014].
+- Anzahl verschlossener Lumen.
+- Maximalen Durchmesser des Thrombus.
+- Maximale Länge des Thrombus.
+- Wachstum des Thrombus über die Zeit.
+- Inflammations- und Thrombosemarkern: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere.
+- Art des Tumors.
+- Art des Eingriffs.
+- Alter.
+- BMI.
+- Gerinnungsbeinflussende Medikamente (Thrombozytenaggregationshemmer, Direkte
+  orale Antikoagulanzien, etc.) in der Vormedikation.
+- Thrombose in der Anamnese.
+- Nikotinabusus in der Anamnese.
+- Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
 
 # Methoden der Datenerhebung
+
+## Patientendaten
+
+### Präoperativ
+
+Erhebung Identifikationsdaten, biometrischer und anamnestischer Daten im Rahmen der Prämedikationssprechstunde.
+
+- Fallnummer.
+- Größe.
+- Gewicht.
+- Alter.
+- ASA Klassifikation.
+- ASS in der Vormedikation.
+- Thrombozytenaggregationshemmer in der Vormedikation.
+- Falithrom/Direkte Orale Antikoagulanzien/Thrombozytenaggregationshemmer in der Vormedikation.
+- Kontrazeptiva in der Vormedikation.
+- Thrombose in der Anamnese.
+- Nikotinabusus in der Anamnese.
+- Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
+- Art des Tumors.
+- Nachbestimmung o.g. Inflammations- und Thrombosemarker aus möglicherweise
+  vorhandenem Routinelabor als Ausgangswerte.
+
+### Postoperativ
+
+Erhebung von Behandlungsdaten.
+
+- Art und Dosierung Thromboseprophylaxe/therapeutischen
+  Antikoagulation/Thrombozytenaggregationshemmung.
+- Sepsis im Verlauf.
+
+## Katheter-assoziierte Daten
+
+Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
+
+- LOT (Chargennummer) des ZVK.
+- Punktionsort (V. jugularis rechts, V. jugularis links, ...).
+- Sonografiegestütze Punktion ja/nein.
+- Stichinzision ja/nein.
+- Erfahrung des*der Anwender*in (< 25 ZVKs, 25- <50 ZVKs, 50- <75 ZVKs, >= 100 ZVKs).
+- Komplikationen bei der Anlage: Mehrfachpunktion.
+- Komplikationen im Verlauf:
+    - klinisch diagnostizierte Thrombose.
+    - Lumenverschluss.
+    - Verdacht auf/Nachweis eine katheter-assoziierten Infektion.
+
+## Thrombusdiagnostik
+
+### Ultraschalluntersuchung
+
+- Tägliche Sonografie des Halses durch eine\*n Untersucher\*in nach unten
+  aufgeführtem standardisierten Untersuchungsablauf
+  bis Tag 14 oder bis ein Tag nach Zug des Katheters.
+- Als Patient\*innen-ID wird die Randomisierungs-ID und der Tag in dem Format
+  [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" eingegeben.
+- Speicherung der Videos und Bilder im DICOM-Format auf dem Sonogerät.
+
+### Auswertung Ultraschallbilder
+
+- Sichtung der Videos und Bilder mittels DICOM Viewer.
+- Feststellung des Vorhandenseins eines Thrombus.
+- Ausmessen des Thrombus (Durchmesser, Länge) und Dokumentation.
+
+## Laborwerte
+
+- Anlage eines studieneigenen Laborprofils mit: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere.
+- Keine zusätzliche Blutentnahme, lediglich Nachmeldung, wenn Blutabnahme
+  routinemäßig erfolgt.
 
 # Patienten/Probandencharakteristika
 
@@ -146,27 +254,196 @@ vergleichen.
 
 ## Einschlusskriterien
 
-- Tumorerkrankung an Pankreas, Magen, Leber oder Ösophagus, Duodenum.
-- OP zur Tumorentfernung.
-- Nach SOP Indikation zur ZVK-Anlage.
+- Erwachsene, mindestens 18 Jahre alt.
+- Tumorerkrankung an Pankreas, Leber, Ösophagus, Magen oder Duodenum.
+- Elektive OP zur Entfernung dieser Tumore, z.B. Leberresektion, pyloruserhaltenden Pankreaskopfresektion, oder Gastrektomie
+- Nach klinikinterner SOP "Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" Indikation zur Anlage eines ZVK (siehe Anlage).
+- Anlage ZVK in rechter V. jugularis interna möglich.
 
 ## Ausschlusskriterien
+
+- Ablehnung der Studienteilnahme.
+- Nicht-elektive OP.
+- Bekannter Thrombus in der rechten V. jugularis interna oder V. cava superior.
 
 # Kompensation der Aufwendungen
 
 # Versuchsablauf
 
-Standardisierte sonografische Untersuchung
-- Flachlagerung, Kopf leicht nach rechts, 2 untersucher
-- thrombus kategorie: siehe Gerrit review, Schaal, Lumen verlegt
+## Vorbereitung der zentralen Venenkatheter
 
-# Patienten/Probandensicherheit
+Die zu untersuchenden zentralen Venenkatheter (ZVK) sind bei uns gelistet und
+werde aktuell regelmäßig im OP verwendet.
+Entsprechend der Fallzahlschätzung (siehe \@ref(sample-size-estimation))
+werde vor Beginn der Studie
+
+- `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen, Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-12854-N).
+- `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen mit ARROWg+ard Blue Protection (beschichtet mit Chlorhexidin-Acetat und Silber-Sulfadiazin), Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-22854-N)
+
+bereitgelegt und mit dem angehängten Dokumentationsbogen beklebt.
+Die so präparierten ZVKs werden im Lager der Anästhesie in einem gesonderten Fach
+aufbewahrt.
+
+## Vorbereitung der Randomisierung
+
+Es erfolgt eine stratifizierte Blockrandomisierung, wie unter
+\@ref(randomisation) beschrieben.
+Das R-Script mit dem Code zur Erstellung der Randomisierungslisten wird einem
+unserer wissenschaftlichen Mitarbeitern (Dr. Gregor Lichtner),
+der nicht an der Studie beteiligt ist, ausgehändigt.
+Er wird einen Startwert für den Randomisierungsalgorithmus wählen (sog. seed)
+und die Listen sowie Randomisierungsbriefe erstellen
+(Beispiel der Liste und Briefe anbei).
+Die Briefe werden in der Prämedikationsambulanz hinterlegt.
+
+## Einschluss der Patient\*innen
+
+Die Patient\*innen stellen sich in der Prämedikationsambulanz zum
+Gespräch zur Vorbereitung auf die Anästhesie vor.
+
+Wenn die Einschlusskritieren für die Studie erfüllt sind, erfolgt die Aufklärung
+durch einen unserer Studienärzte.
+
+Im Falle einer Zustimmung zur Studienteilnahme wird der Randomisierungsbrief
+entsprechend des zugehörigen Stratums (z.B. männlich - Leberresektion) am
+Prämedikationsprotokoll befestigt.
+
+Die unterschriebene Einwilligungserklärung verbleibt bei der\*dem Patient\*in.
+Eine Kopie wird im Studienordner verwahrt, der in der Prämedikationsambulanz
+verbleibt.
+
+## Randomisierung der Patient\*innen
+
+Die Randomisierung erfolgt über die zugeordneten Randomisierungsbriefe.
+Im OP wird vor der Anlage des zentralen Venenkatheters der Brief
+durch die\*den Anästhesist\*in geöffnet und der entsprechende Katheter gewählt.
+
+## Anlage der zentralen Venenkatheter
+
+Die sterile und sonografische gestützte Anlage des zentralen Venenkatheters
+folgt dem klinikinternen Standard (roxtra-ID: 7864). Die Lage wird EKG-gestützt
+kontrolliert.
+
+Nach Anlage füllt der\*die Anästhesist\*in den am Katheter befestigten
+Dokumentationsbogen aus (siehe Anhang Dokumentationsbogen ZVK).
+Dieser Dokumentationsbogen wird in die Patient\*innenakte gelegt und die
+Studienleitung entsprechend über die ZVK-Anlage informiert.
+
+Eine ZVK-Anlage in ein anderes Gefäß als die V. jug. int. rechts führt zum
+Ausschluss der\*des Patient\*in.
+
+## Sonografische Untersuchung im postoperativen Verlauf
+
+Der zentrale Venenkatheter wird täglich durch eine\*n speziell geschulten
+Untersucher\*in sonografisch bis Tag 14 oder bis ein Tag nach Zug des Katheters
+kontrolliert.
+Die\*Der Untersucher\*in erfassen zusätzlich den tatsächlich gelegten Katheter.
+
+Soweit der postoperative Zustand es erlaubt wird folgender Untersuchungsablauf
+eingehalten.
+
+### Lagerung
+
+- Flache Lagerung der\*des Patient\*in (Kopfende 0°)
+- Kopf leicht nach links geneigt (ca. 30°)
+
+### Ablauf Ultraschalluntersuchung
+
+- Verwendung eines in der Anästhesie vorhandenen und täglich genutzten
+  Ultraschallgerätes GE Venue (Go).
+- Anlage einer "Neue[n] Untersuchung" am Ultraschallgerät.
+- Randomisierungs-ID und Tag im Format
+  [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" als Patienten-ID eingegeben.
+- Auswahl des Linearschallkopfes mit 12 MHz, Preset "Vene, obere".
+- Video kurze Achse: Index des Schallkopfes nach lateral,
+  von kranial (von der cutanen Einstichstelle) nach kaudal gleiten und
+  in die obere Thoraxapperatur hineinschwenken, V. jug. int. zentrieren,
+  Tiefe möglichst auf 4 cm begrenzen (6 bis 8 cm wenn V. jug. int. sonst nicht
+  im vollständigen Umfang abgebildet),
+  möglichst wenig Anpressdruck um Vene nicht zu komprimieren.
+- Video lange Achse: Index des Schallkopfes nach kranial
+  (Index des Schallkopfes an cutaner Einstichstelle),
+  V. jug. int. im Längsverlauf, dann nach medial schwenken und von medial nach
+  lateral durchschwenken.
+- Untersuchung auf dem Ultraschallgerät mit "Untersuchung abschließen" beenden.
+- Videos im "DICOM USB"-Format auf USB-Stick überspielen.
+- Videos vom USB-Stick auf Forschungslaufwerk übertragen.
+
+## Auswertung Ultraschallbilder
+
+Zwei unabhängige Untersucher\*innen (die nicht an der Aufnahme der Videos
+beteiligt waren) mit langjähriger Erfahrung im
+*point-of-care-ultrasound* und sonografie-gesteuerter Anlage von Gefäßzugängen
+werden getrennt voneinander die Videos mit einem DICOM-Viewer sichten.
+Dabei werden sie das Vorhandensein eines Thrombus, die Art und die maximale
+Quer- und Längsausdehnung vermessen und dokumentieren.
+
+## Statistische Auswertung
+
+Das primäre Zielkritierum, die Thrombus-freie-Zeit wird als
+Überlebenszeitanalyse mit einem Kaplan-Meier-Schätzer moduliert.
+Unterschiede in der Thrombus-freien-Zeit zwischen den beiden Studienarmen
+werden mit dem Gehan-Wilcoxon Test, wie R-Paket *survival* implementiert,
+geprüft [@survival-book; @R-survival].
+Die Vergleiche werden sowohl als *per-protocol*- und *as-treated*-Analyse
+durchgeführt (letztere wird prinzipbedingt erst nach der Entblindung
+möglich sein).
+
+Unterschiede in den sekundären Zielkriterien werden entsprechend des jeweiligen
+Skalenniveaus mit parametrischen bzw. nicht-parametrischen Hypothesentests
+(z.B. *t*-Test und Wilcoxon-Mann-Whitney-Test) geprüft.
+
+Um mögliche nicht-kontrollierte Einflussfaktoren zu finden, wird
+eine multivariable Cox Regressionsanalyse durchgeführt.
+[@Cox1972; @survival-book; @R-survival].
+Dabei werden folgende Faktoren adjustiert:
+
+- Geschlecht.
+- Alter.
+- BMI.
+- Art des Tumors.
+- Art des Eingriffs.
+- Inflammations- und Thrombosemarker.
+- Gerinnungsbeinflussende Medikamente (Thrombozytenaggregationshemmer, Direkte
+  orale Antikoagulanzien, etc.) in der Vormedikation.
+- Thrombose in der Anamnese.
+- Nikotinabusus in der Anamnese.
+- Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
+
+In allen statistischen Tests wird ein *p*-Wert von 0.05 als statistisch
+signifikanter Unterschied interpretiert. Mit Ausnahme des primären
+Zielkriteriums werden alle *p*-Werte mit der Benjamini-Hochberg Methode
+für multiples Testen korrgiiert [@Benjamini1995].
+
+# Patienten-/Probandensicherheit
+
+Die Anlage der ZVKs erfolgt für die jeweilige geplante
+Operation indikationsgemäß entsprechend der hausinternen SOP
+"Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" (siehe Anlage).
+Beide Kathetertypen werden aktuell regelmäßig in unser Klinik verwendet.
+Zusätzliche Blutabnahmen erfolgen nicht.
+Wiederholte kurzzeitige Ultraschalluntersuchungen sind unbedenklich.
+Ultraschalluntersuchungen in dieser Form werden in der Routine häufig
+durchgeführt.
+Die\*Der Ultraschalluntersucher\*in nimmt lediglich die Videos auf.
+Eine Mitteilung des individuellen Untersuchungsbefundes an die Behandelnden
+findet nicht statt.
+Dies soll verhindern, dass zusätzliche Maßnahmen, die vom üblichen Standard
+abweichen, durchgeführt werden (z.B. systemische Antikoagulation
+aufgrund einer katheter-assoziierten, aber klinisch unauffälligen Thrombose,
+die sonst nie diagnostiziert und behandelt worden wäre).
 
 ## Nebenwirkungen
 
+Es sind keine studienbedingten Nebenwirkungen zu erwarten.
+
 ## Risiken der Versuchsdurchführung
 
+Es sind keine studienbedingten Risiken zu erwarten.
+
 ## Abbruchkriterien
+
+Es sind keine Abbruchkriterien vorgesehen.
 
 # Gesetze / Verordnungen, die bei dem Vorhaben zu beachten sind
 
@@ -181,15 +458,62 @@ Standardisierte sonografische Untersuchung
 
 # Überlegungen zum Abschluss einer Probandenversicherung/Wegeunfallversicherung
 
+Da sich keine studienbedingten Risiken bzw. Wege ergeben, ist eine Versicherung
+nicht vorgesehen.
+
 # Statistische Planung
 
-```{r sample-size-estimation, file = frf("ethics", "sample_size", "sample_size_estimation.R"), include = FALSE}
-```
+## Fallzahlschätzung {#sample-size-estimation}
+
+In unser vorherigen Beobachtungsstudie sahen wir im Durchschnitt bei
+`r round(100 * p.event.avg)` % aller Arrow ZVKs eine CRT [@Gibb2024].
+Aufgrund der geringen Fallzahl von etwas mehr als `r signif(nrow(arr), 1)`
+Kathetern erwarten wir in der Folgestudie entsprechend des *regression toward
+the mean*-Phänomens und der bisherigen Literatur eine geringere Inzidenz.
+Für die Fallzahlschätzung nehmen wir eine CRT-Inzidenz von
+`r round(p.event.assumed * 100)` % an.
+
+Zwischen den unbeschichteten und antimikrobiell-beschichteten ZVKs sahen wir
+in unsere Beobachtungsstudie eine Differenz der *hazard ratio* von 2,5.
+Aufgrund der geringen Anzahl beschichteter Katheter und damit wahrscheinlicherer
+Extremreignisse reduzieren wir auch die angestrebte *hazard ratio* auf 2.0.
+
+Dies entspräche einer für uns weiterhin bedeutsamen *number-needed-to-harm* von
+`r ceiling(1 / (p.event.assumed - p.event.assumed^hr.assumed))` [@Altman1999].
+
+Anhand der durchschnittlichen Eventrate von
+`r round(p.event.assumed * 100)` % müssten für eine Power von
+`r round(100 * power)` % und einem Alpha-Fehler von `r round(100 * alpha)` %
+mindestens `r n.events["delta_hr=2"]` CRTs und somit
+`r n.samplesize["delta_hr=2"]` ZVKs beobachtet werden [@Moore2016, Eq. 11.3.2].
+
+
 ```{r sample-size-estimaton-tbl, result = "asis", echo = FALSE}
 sample_size_tbl
 ```
 
+
+In unser vorherigen Studie mussten wir aufgrund fehlender Dokumentation nach
+Anlage des ZVK im OP 12 % der Patient\*innen ausschließen.
+Hinzu kamen einige Ausschlüsse (ca. 5 %) aufgrund von schlechten Bedingungen
+für die Ultraschalluntersuchungen
+(sehr kaudale Punktionsstelle, Hautemphysem, u.a.)
+bzw. technische Probleme bei der Speicherung der Bilder/Videos auf dem
+Ultraschallgerät (ebenfalls ca. 5 %).
+Aufgrund dessen erhöhen wir die Fallzahl um 30 %
+um diese *drop-outs* bzw. *lost to follow-up* zu kompensieren.
+
+Insgesamt erhalten wir somit eine Fallzahl von
+`r n.finalsamplesize["delta_hr=2"]`
+Patient\*innen (`r round(n.finalsamplesize["delta_hr=2"] / 2)` pro Studienarm).
+
+## Randomisierung {#randomisation}
+
+## Verblindung
+
 # Datenmanagement / Biologische Marker
+
+- sonografer: dokumentation des tatsächlichen ZVK
 
 # Patienten/Probanden-Information und Einwilligungserklärung mit Datenschutzerklärung
 
@@ -207,3 +531,16 @@ verbleibt.
 Greifswald, `r .eval_meta(rmarkdown::metadata$date)`
 
 `r rmarkdown::metadata$author$name`
+
+# Referenzen
+
+<!-- force references to be placed below -->
+<div id="refs"></div>
+
+# Anhänge
+
+# TODO:
+
+- CRF ZVK-Anlage anhängen
+- Bsp. Randomisierungsliste und Briefe anhängen
+- SOP "Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" anhängen
