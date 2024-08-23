@@ -3,7 +3,6 @@
 ## @param delta numeric(1), delta in hazard ratio
 ## @param alpha numeric(1), alpha level
 ## @param beta numeric(1), 1 - power
-## @param two.sided logical(1), two sided test
 ##
 ## @return number of total needed events
 ##
@@ -12,7 +11,7 @@
 ## doi: 10.1007/978-3-319-31245-3
 ##
 needed_events <- function(delta, alpha = 0.05, beta = 0.2) {
-    ## proportion of control group
+    ## proportion of control group (equal sized: p == 0.5)
     p <- 0.5
     z <- qnorm(c(alpha, beta), lower.tail = FALSE)
     sum(z)^2 / (p * (1 - p) * log(delta)^2)
