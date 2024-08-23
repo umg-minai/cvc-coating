@@ -1,3 +1,14 @@
+## Assumptions
+##
+## rate of events (was 0.73 in previous CRT study)
+p.event.assumed <- 0.6
+## delta of hazard rate between both arms (was 2.5 in previous CRT study)
+hr.assumed <- 2.0
+## targeted power
+power <- 0.8
+## allowed alpha error
+alpha <- 0.05
+
 ## Calculate number of needed events for a two arm survival study.
 ##
 ## @param delta numeric(1), delta in hazard ratio
@@ -53,7 +64,10 @@ arr$CHX <- factor(
 ## as conservative estimate (instead of delta_HR of 2.5 (5 / 2)).
 delta <- c(1.5, 2, 2.5)
 
-n.events <- ceiling(needed_events(delta = delta, alpha = 0.05, beta = 0.2))
+n.events <- ceiling(
+    needed_events(delta = delta, alpha = alpha, beta = 1 - power)
+)
+names(n.events) <- paste0("delta_hr=", delta)
 
 ## probability of events in CRT
 p.event <- round(c(
@@ -69,19 +83,26 @@ p.event.avg <-
      mean(arr$CRT[arr$ManLu == "Arrow4"]) * sum(arr$ManLu == "Arrow4") +
      mean(arr$CRT[arr$ManLu == "Arrow5"]) * sum(arr$ManLu == "Arrow5")) /
     nrow(arr)
+## p.event.avg == 0.73
 
 ## minimal required sample size
-n.samplesize <- unname(ceiling(
-    n.events / (0.5 * p.event["uncoated"] + 0.5 * p.event["coated"])
-))
+#n.samplesize <- unname(ceiling(
+#    n.events / (0.5 * p.event["uncoated"] + 0.5 * p.event["coated"])
+#))
+n.samplesize <- ceiling(n.events / p.event.assumed)
+
+n.finalsamplesize <- signif(n.samplesize + 30, 2)
 
 sample_size_tbl <- knitr::kable(
     cbind(delta, n.events, n.samplesize),
+    row.names = FALSE,
     col.names = c("Delta HR", "Anzahl der Events", "Geschätze Fallzahl"),
     caption = paste0(
         "Übersicht Fallzahlschätzung. ",
-        "Annahme einer durchschnittlichen Wahrscheinlichtkeit ",
-        "an katheter-assozierten Thrombosen von ", round(100 * p.event.avg),
+        "Unter der Annahme einer durchschnittlichen Wahrscheinlichtkeit ",
+        "an katheter-assozierten Thrombosen von ", round(100 * p.event.assumed),
+        " % notwendige Events für eine Power von ", round(100 * power),
+        " % und einem Alpha-Fehler von ", round(100 * alpha),
         " %."
     )
 )
