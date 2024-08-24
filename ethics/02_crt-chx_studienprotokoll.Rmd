@@ -187,13 +187,14 @@ Abhängigkeit der Thrombusentehung bzw. Unterschiede in Bezug auf:
 Erhebung Identifikationsdaten, biometrischer und anamnestischer Daten im Rahmen der Prämedikationssprechstunde.
 
 - Fallnummer.
+- Geschlecht.
 - Größe.
 - Gewicht.
-- Alter.
+- Alter (zum Zeitpunkt des Studieneinschlusses).
 - ASA Klassifikation.
 - ASS in der Vormedikation.
 - Thrombozytenaggregationshemmer in der Vormedikation.
-- Falithrom/Direkte Orale Antikoagulanzien/Thrombozytenaggregationshemmer in der Vormedikation.
+- Falithrom/Direkte Orale Antikoagulanzien in der Vormedikation.
 - Kontrazeptiva in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
@@ -216,10 +217,10 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 
 - LOT (Chargennummer) des ZVK.
 - Punktionsort (V. jugularis rechts, V. jugularis links, ...).
-- Sonografiegestütze Punktion ja/nein.
 - Stichinzision ja/nein.
-- Erfahrung des*der Anwender*in (< 25 ZVKs, 25- <50 ZVKs, 50- <75 ZVKs, >= 100 ZVKs).
-- Komplikationen bei der Anlage: Mehrfachpunktion.
+- EKG-Lagekontrolle (erfolgreich/nicht erfolgreich/nicht durchgeführt/...).
+- Erfahrung des*der Anwender*in (< 25 ZVKs, 25- <50 ZVKs, 50-100 ZVKs, >= 100 ZVKs).
+- Komplikationen bei der Anlage: Mehrfachpunktion, frustraner Drahtvorschub, Pneumothorax, Sonstiges.
 - Komplikationen im Verlauf:
     - klinisch diagnostizierte Thrombose.
     - Lumenverschluss.
@@ -281,8 +282,9 @@ werde vor Beginn der Studie
 - `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen mit ARROWg+ard Blue Protection (beschichtet mit Chlorhexidin-Acetat und Silber-Sulfadiazin), Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-22854-N)
 
 bereitgelegt und mit dem angehängten Dokumentationsbogen beklebt.
-Die so präparierten ZVKs werden im Lager der Anästhesie in einem gesonderten Fach
-aufbewahrt.
+Der LOT-Aufkleber von der Verpackung wird auf den Dokumentationsbogen geklebt.
+Die so präparierten ZVKs werden im Lager der Anästhesie in einem gesonderten
+Fach aufbewahrt.
 
 ## Vorbereitung der Randomisierung
 
@@ -307,10 +309,17 @@ durch einen unserer Studienärzte.
 Im Falle einer Zustimmung zur Studienteilnahme wird der Randomisierungsbrief
 entsprechend des zugehörigen Stratums (z.B. männlich - Leberresektion) am
 Prämedikationsprotokoll befestigt.
+Zusätzlich wird die Randomisierungspatient\*innen-ID im (elektronischen)
+Narkoseprotokoll vermerkt.
+**TODO: @Christian, Was machen wir mit dem Brief, wenn wir ICM-basierte
+Narkoseprotokolle ohne Ausdruck haben?**
 
 Die unterschriebene Einwilligungserklärung verbleibt bei der\*dem Patient\*in.
 Eine Kopie wird im Studienordner verwahrt, der in der Prämedikationsambulanz
 verbleibt.
+
+Sollte eine Blutentnahme erfolgt sein, werden die studienspezifischen
+Laborparameter nachgemeldet.
 
 ## Randomisierung der Patient\*innen
 
@@ -332,15 +341,18 @@ Studienleitung entsprechend über die ZVK-Anlage informiert.
 Eine ZVK-Anlage in ein anderes Gefäß als die V. jug. int. rechts führt zum
 Ausschluss der\*des Patient\*in.
 
-## Sonografische Untersuchung im postoperativen Verlauf
+## Tägliche Visite im postoperativen Verlauf
 
 Der zentrale Venenkatheter wird täglich durch eine\*n speziell geschulten
 Untersucher\*in sonografisch bis Tag 14 oder bis ein Tag nach Zug des Katheters
 kontrolliert.
-Die\*Der Untersucher\*in erfassen zusätzlich den tatsächlich gelegten Katheter.
+Die\*Der Untersucher\*in digitalisieren am ersten Visitentag den händisch
+ausgefüllten Dokumentationsbogen.
+An jedem Visitentag prüfen sie, ob eine Blutentnahme erfolgte und
+melden ggf. die studienspezifischen Laborparameter nach.
 
-Soweit der postoperative Zustand es erlaubt wird folgender Untersuchungsablauf
-eingehalten.
+Soweit der postoperative Zustand es erlaubt wird folgender Ablauf
+für die Ultraschalluntersuchung eingehalten.
 
 ### Lagerung
 
@@ -367,7 +379,10 @@ eingehalten.
   lateral durchschwenken.
 - Untersuchung auf dem Ultraschallgerät mit "Untersuchung abschließen" beenden.
 - Videos im "DICOM USB"-Format auf USB-Stick überspielen.
-- Videos vom USB-Stick auf Forschungslaufwerk übertragen.
+- Videos vom USB-Stick auf Forschungslaufwerk übertragen und dort unter der
+  Randomisierungs-ID abgespeichert:
+  "crt-chx/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
+  "crt-chx/sono/videos/WL03-01/"
 
 ## Auswertung Ultraschallbilder
 
@@ -376,7 +391,13 @@ beteiligt waren) mit langjähriger Erfahrung im
 *point-of-care-ultrasound* und sonografie-gesteuerter Anlage von Gefäßzugängen
 werden getrennt voneinander die Videos mit einem DICOM-Viewer sichten.
 Dabei werden sie das Vorhandensein eines Thrombus, die Art und die maximale
-Quer- und Längsausdehnung vermessen und dokumentieren.
+Quer- und Längsausdehnung vermessen und dokumentieren, sowie Bilder der
+Messungen (kurze und lange Achse) speichern.
+Die Bilder werden auf dem Forschungslaufwerk unter dem Untersuchungskürzel sowie
+der Randomisierungs-ID mit folgendem Dateinamen gespeichert:
+"crt-chx/sono/bilder/Untersucherkürzel/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png",
+z.B. "crt-chx/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
+Wird kein Thrombus identifiziert entfällt die Bildspeicherung.
 
 ## Statistische Auswertung
 
@@ -409,6 +430,10 @@ Dabei werden folgende Faktoren adjustiert:
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
+- Stichinzision.
+- Erfahrung der\*des Anlegenden.
+- EKG-Lagekontrolle.
+- Komplikationen.
 
 In allen statistischen Tests wird ein *p*-Wert von 0.05 als statistisch
 signifikanter Unterschied interpretiert. Mit Ausnahme des primären
@@ -568,9 +593,49 @@ Verblindet sind:
 
 # Datenmanagement / Biologische Marker
 
-- sonografer: dokumentation des tatsächlichen ZVK
+Die tabellarischen Daten werden im UMG-eigenen RedCAP-System erfasst
+(Masken im Anhang).
+In RedCAP sind verschiedene Nutzungsrechte für die einzelnen Beteiligten
+hinterlegt, so dass
+die Studienärzt\*innen nach Einschluss der Patient\*innen nur die präoperativen
+Daten, die Ultraschalluntersucher\*innen nur die Daten zur ZVK-Anlage und
+täglichen ZVK-Ultraschallvisite, und die Kolleg\*innne, die die
+Ultraschallvideos bewerten nur die Daten zur CRT eingeben und einsehen können.
+Die Kolleg\*innen, die die Daten auswerten, haben bis auf die Tabelle mit den
+Zuordnungen der ZVK-LOTs und Randomisierungs-IDs lesenden Zugriff auf alle
+Tabellen.
+Somit bleibt die Verblindung gewahrt.
+
+Die Videos und Bilder der Ultraschalluntersuchungen werden auf der
+Forschungslaufwerk der Klinik für Anästhesie, Intensiv-, Notfall- und
+Schmerzmedizin in einem gesonderten Studienordner nach folgendem Schema
+gespeichert:
+
+- Videos: "crt-chx/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
+  "crt-chx/sono/videos/WL03-01/"
+- Bilder: "crt-chx/sono/bilder/Untersucherkürzel/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png", z.B. "crt-chx/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
+
+Zugriff auf diesen Studieordner haben lediglich die Kolleg\*innen, die die
+Videos erstellen und auswerten sollen.
+Zur Übertragung der Videos vom Ultraschallgerät auf das Studienlaufwerk werden
+diese temporär auf einem gesonderten USB-Stick gespeichert.
+
+Die Ergebnisse der Studie sollen veröffentlicht werden.
+Im Sinne guter Forschungspraxis und Reproduzierbarkeit planen wir mit Ausnahme
+der Zuordnungslisten (Fallnummer - Randomisierungs-ID) und Videos der
+Ultraschalluntersuchungen (aufgrund der Datengröße, je nach Länge des Videos
+0.5-2 GB je Untersuchung) alle erhobenen Daten und Auswertungen
+zu veröffentlichen.
+
+Die Patient\*innen werden vor Einwilligung während des Informationsgespräches
+über die Studie und auch in der angehängten Patient\*inneninformation darüber
+aufgeklärt.
+
+Das "Verzeichnis der Verarbeitungstätigkeiten" ist ebenfalls angehängt.
 
 # Patienten/Probanden-Information und Einwilligungserklärung mit Datenschutzerklärung
+
+Siehe angehängtes Dokument.
 
 # Unterschrift und Erklärung
 
@@ -596,6 +661,8 @@ Greifswald, `r .eval_meta(rmarkdown::metadata$date)`
 
 # TODO:
 
+- RedCAP-Masken anhängen
+- VVT anhängen
 - CRF ZVK-Anlage anhängen
 - Randomisierungs-R-Script anhängen; Bsp. Randomisierungsliste und Briefe anhängen
 - SOP "Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" anhängen
