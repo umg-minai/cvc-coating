@@ -1,13 +1,17 @@
 ---
-title: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
-titleengl: Catheter-related thrombosis in central venous catheter coated with or without chlorhexidine - a randomised controlled trial.
+title:
+    Patient\*inneninformation\
+
+    zur Studienteilnahme an der klinischen Studie\
+
+    \"Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie (CRT-CHX)\"
 date: "`r format(Sys.Date(), '%d.%m.%Y')`"
 author:
     name: "Dr. med. Sebastian Gibb"
     phone: "03834 865801"
     email: "sebastian.gibb@med.uni-greifswald.de"
-    department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
-    address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
+    department: "Universitätsmedizin Greifswald\\\nKlinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
+    address: "Ferdinand Sauerbruchstraße\n\n17475 Greifswald"
 cfg-acronym: CRT-CHX
 cfg-version: '0.1'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
@@ -23,8 +27,23 @@ output:
             - --lua-filter=pandoc/lua-filters/strip-meta.lua
 ---
 
-```{r helper_functions, include = FALSE}
-.eval_meta <- function(x)eval(parse(text = gsub("(^`r\\s+)|(`$)", "", x)))
-```
+\
 
-# Test
+\
+
+\
+
+# Studienleitung {-}
+
+`r rmarkdown::metadata$author$name`\
+Telefon: `r rmarkdown::metadata$author$phone`\
+E-Mail: `r rmarkdown::metadata$author$email`
+
+# Studienzentrum {-}
+
+`r rmarkdown::metadata$author$department`\
+`r rmarkdown::metadata$author$address`
+
+\newpage
+
+Sehr geehrte Patientin, sehr geehrter Patient,
