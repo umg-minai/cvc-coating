@@ -11,7 +11,7 @@ author:
 dkrsnumber: TODO
 cfg-acronym: CRT-CHX
 cfg-version: '0.1'
-cfg-githash: "`r system('git rev-parse --short HEAD', intern = TRUE)`"
+cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
 bibliography: bibliography.bib
 output:
     bookdown::odt_document2:
