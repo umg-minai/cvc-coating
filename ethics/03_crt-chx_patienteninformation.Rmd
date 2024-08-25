@@ -5,6 +5,7 @@ title:
     zur Studienteilnahme an der klinischen Studie\
 
     \"Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie (CRT-CHX)\"
+title2: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
 date: "`r format(Sys.Date(), '%d.%m.%Y')`"
 author:
     name: "Dr. med. Sebastian Gibb"
@@ -23,9 +24,19 @@ bibliography: bibliography.bib
 output:
     bookdown::odt_document2:
         reference_odt: pandoc/reference/reference-information.odt
+        fig_caption: true
         pandoc_args:
             - --lua-filter=pandoc/lua-filters/strip-meta.lua
 ---
+
+```{r helper_functions, include = FALSE}
+.eval_meta <- function(x)eval(parse(text = gsub("(^`r\\s+)|(`$)", "", x)))
+frf <- function(...)
+    rprojroot::find_root_file("ethics", ..., criterion = rprojroot::is_git_root)
+```
+
+```{r sample-size-estimation, file = frf("sample_size", "sample_size_estimation.R"), include = FALSE}
+```
 
 \
 
@@ -47,3 +58,325 @@ E-Mail: `r rmarkdown::metadata$author$email`
 \newpage
 
 Sehr geehrte Patientin, sehr geehrter Patient,
+
+wir möchten Sie fragen, ob Sie an einer wissenschaftlichen Studie teilnehmen
+möchten.
+
+Bei Ihnen ist eine größere Operation geplant, die es notwendig macht einen
+zentralen Venekatheter (ZVK) in die Halsvene zu legen
+(siehe auch \@ref(fig:ijv-ultrasound-image)).
+
+ZVKs sind Fremdkörper und können Blutgerinnsel verursachen.
+Wir wollen untersuchen, ob sich bei ZVK mit einer speziellen Beschichtung
+schneller oder häufiger Blutgerinnsel bilden.
+
+In den folgenden Abschnitten möchten wir Sie über die Ziele und Ablauf der
+Studien informieren.
+Wir erklären, was die Studienteilnahme für Sie bedeutet und
+welche Daten wir zu welchen Zweck erheben.
+
+Bitte nehmen Sie sich Zeit und lesen Sie diese Information genau durch,
+bevor Sie sich für oder gegen eine Teilnahme entscheiden.
+
+Bitte fragen Sie Ihre Ärztin/Ihren Arzt oder den Studienleiter
+`r rmarkdown::metadata[["cfg-principial-investigator"]]`
+wenn Sie Fragen haben oder Ihnen etwas unklar sein sollte.
+
+Die Teilnahme an der Studie ist freiwillig.
+Sie können jederzeit ohne Angabe von Gründen Ihre Einwilligung widerrufen,
+ohne dass Ihnen dadurch irgendwelche Nachteile entstehen.
+
+# Was ist der Inhalt der Studie und warum wird diese Studie durchgeführt?
+
+ZVKs gewährleisten die zügige und sichere Gabe kreislaufwirksamer
+Substanzen während und nach der Operation.
+Des Weiteren ermöglichen sie die Zufuhr von Nährstoffen über die Vene,
+wenn eine Nahrungsaufnahme nach der Operation über den Magendarmtrakt
+nicht möglich sein sollte.
+
+Typische Komplikationen bei ZVKs sind Blutstrominfektionen und Thrombosen.
+Bakterien können an Fremdkörpern, wie ZVKs, haften, von dort über den Blutstrom
+zu anderen Organen transportiert werden und lebensbedrohliche, ganzheitliche
+Entzündungsreaktionen/Infektionen im Körper (Sepsis) auslösen.
+Als Fremdkörper im Gefäßsystem aktivieren die ZVKs das Gerinnungssystem, so dass
+sich Blutgerinnsel im Gefäß bilden können.
+Diese Blutgerinnsel können zu Gefäßverschlüssen,
+wie dem lebensbedrohlichen Verschluss von Lungengefäßen (Lungenarterienembolie),
+führen.
+
+Sowohl die Blutstrominfektionen als auch die symptomatischen Thrombosen sind
+häufige Komplikationen von ZVKs (1-3 Behandelte von 100 Behandelten;
+Blutstrominfektionen ca. 1,4 - 2,8 %, ca. Thrombosen 0,9 - 2,5 % [@Parienti2015; @Bell2018]).
+
+Um das Risiko für Blutstrominfektionen zu senken, sind seit langem ZVKs mit
+einer Beschichtung im Einsatz, die die Besiedlung des ZVKs mit Bakterien
+verhindern soll.
+Bei der Einhaltung von Hygienestandards (sterile Anlage des ZVK,
+Händedesinfektion vor Medikamentengabe über den ZVK, u.a.) hat diese
+antibakterielle Beschichtung jedoch keinen zusätzlichen Effekt
+[@CherryBukowiec2011; @Ullman2022].
+
+In letzter Zeit werden ZVKs zunehmend mit Ultraschall untersucht.
+Dabei zeigt sich, dass Blutgerinnsel an den ZVKs viel häufiger sind,
+als bisher durch klinische Beobachtung erkannt wurde [@Wu2023; @Gibb2024].
+
+**In dieser Studie soll untersucht werden, ob sich Blutgerinnsel schneller
+oder häufiger an ZVKs mit oder ohne antibakterielle Beschichtung entwickeln.**
+
+Dazu sollen bei `r n.finalsamplesize["delta_hr=2"]` Patient\*innen die ZVKs
+bis zur Entfernung bzw. bis maximal 14 Tage täglich mittels Ultraschall
+auf anhaftende Blutgerinnsel kontrolliert werden.
+Per Zufall wird jeweils die Hälfte der Patient\*innen einen ZVK mit oder ohne
+antibakterielle Beschichtung erhalten.
+Abgesehen von der zufälligen Zulosung des jeweiligen ZVKs, der bis auf die
+mögliche Beschichtung identisch ist, und der täglichen Ultraschalluntersuchung
+der Halsvene ändert sich an der medizinisch Behandlung nichts.
+Die Ultraschalluntersuchung ist eine äußerliche Anwendung, ungefährlich und schmerzlos.
+Jede Untersuchung dauert ca. 10 Minuten und wird von einer\*einem ärztlichen
+Kolleg\*in oder wissenschaftlichen Mitarbeiter\*in an Ihrem Bett durchgeführt.
+Dabei werden Videos der Halsvene und umliegenden Gewebe aufgenommen.
+Beispielhafte Bilder zeigt Abbildung \@ref(fig:ijv-ultrasound-image) (allerdings
+hier ohne einliegenden ZVK).
+
+
+```{r ijv-ultrasound-image, out.width = "100%", fig.cap = "Ultraschallbilder der rechten Seite des Halses. A) Querschnitt der rechten Seite des Halses. Ansicht von den Füßen. Auf der linken Bildseite ist rechts und die rechte Bildseite mittig. Oben legt sich der große Kopfwendermuskel (Musculus sternocleidomastoideus, MSCM) über die innere Halsvene (Vena jugularis interna, VJI), die das Blut aus dem Kopf zum Herzen zurückführt. Der zentrale Venenkatheter wird in diese Vene gelegt (hier nicht abgebildet). Unterhalb der Vene findet sich die Halsschlagader (Arteria carotis communis, ACC). Weiter mittig dann die Luftröhre (Trachea, T). B) Längsschnit der rechten Seite des Halses. Auf der linken Bildseite entspricht kopfwärts und die rechte fußwärts. Auch hier liegt der große Kopfwendermuskel (Musculus sternocleidomastoideus, MSCM) oberhalb der Halsvene (Vena jugularis interna, VJI). Die Halsschlagader und Luftröhre sind in diesem Schnitt nicht zu sehen. ACC: Arteria carotis communis; MSCM: Musculus sternocleidomastoideus; T: Trachea; VJI: Vena jugularis interna.", echo = FALSE}
+knitr::include_graphics(frf("images", "ijv-annotated.jpg"))
+```
+
+
+Die Studie wird an der `r rmarkdown::metadata[["cfg-department"]]` durchgeführt
+und von `r rmarkdown::metadata[["cfg-principial-investigator"]]` geleitet.
+
+**Ihre Teilnahme an der Studie hat keinen Einfluss auf Ihre medizinische Behandlung,
+über die Sie bereits von Ihrem behandelnden Arzt aufgeklärt worden sind.
+Zusätzliche Besuche in der Klinik sind nicht erforderlich.**
+
+**Die Teilnahme an dieser Studie ist freiwillig.
+Sie werden nur dann einbezogen, wenn Sie dazu schriftlich Ihre Einwilligung erklären.
+Sofern Sie nicht an der Studie teilnehmen oder später aus ihr ausscheiden
+möchten, entstehen Ihnen dadurch keine Nachteile.
+Sie können jederzeit, auch ohne Angabe von
+Gründen, Ihre Einwilligung mündlich oder schriftlich widerrufen.**
+
+Die Studie wurde der zuständigen Ethikkommission vorgelegt.
+Sie hat keine Einwände erhoben.
+
+## Quellen {-}
+
+<!-- force references to be placed below -->
+<div id="refs"></div>
+
+# Was sind Nutzen und Risiken der Studie für mich persönlich?
+
+## Möglicher Nutzen
+
+Sie werden durch Ihre Teilnahme an dieser Studie keinen Nutzen für Ihre Gesundheit haben.
+Die Ergebnisse dieser Studie können dazu beitragen, dass für zukünftige Patient\*nnen, die einen ZVK benötigen, die Versorgung verbessert wird.
+
+## Mögliche Risiken
+
+Abgesehen von der täglichen Ultraschalluntersuchung ergeben sich keine
+Änderungen in der klinischen Routine und somit keine zusätzlichen Risken.
+Die Ultraschalluntersuchung ist ein ungefährlich und schmerzfrei.
+Um eine gute Bildqualität zu erreichen muss ein Gel auf Wasserbasis aufgetragen
+werden.
+Dieses wird bei Raumtemperatur gelagert und kann sich kühl anfühlen.
+In extrem seltenen Fällen kann es zu allergischen Hautreaktionen durch das Gel
+kommen.
+
+## Bin ich während der Studie versichert?
+
+Da sich durch die Studie keine weiteren Risiken zur klinischen Routine
+ergeben, gibt es keine zusätzliche Versicherung.
+
+# Was geschieht mit meinen Daten? - Datenschutz
+
+Ihre personenbezogenen Daten werden ausschließlich von den an der Studien beteiligten Mitarbeiter\*innen der Klinik für für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin der Universitätsmedizin Greifswald verarbeitet.
+Diese unterliegen der Schweigepflicht (§ 203 StGB) und sind zur Wahrung der Vertraulichkeit verpflichtet.
+
+## Datenverarbeiter
+
+### Verantwortliche Stelle
+
+Universitätsmedizin Greifswald Körperschaft des öffentlichen Rechts
+Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin
+Ferdinand-Sauerbruch-Straße
+17475 Greifswald
+Tel.: +49 (0) 3834 86-5801
+
+### Datenschutzbeauftragter
+
+Prof. Ulf Glende, Walther-Rathenau-Str. 49, 17475 Greifswald, E-Mail: datenschutz-umg@med.uni-greifswald.de
+
+## Zwecke und Rechtsgrundlagen der Verarbeitung
+
+Die Datenerhebung dient der statistischen Auswertung der Fragestellungen der
+Studie und der Reproduzierbarkeit sowie Nachvollziehbarkeit der Ergebnisse.
+Rechtsgrundlage für die Datenverarbeitung ist Ihre freiwillige Einwilligung (Art. 6 Abs. 1 Buchst. a), Art. 9 Abs. 2 Buchst. a) DSGVO).
+Ohne Ihre Einwilligung ist eine Teilnahme nicht möglich und es findet keine Verarbeitung Ihrer Daten statt.
+
+## Kategorien personenbezogener Daten, die verarbeitet werden
+
+Im Rahmen der Studien erheben wir folgende personenbezogene Daten:
+
+- Demographische Daten: Geschlecht, Alter, Größe, Gewicht.
+- Medikamente (Blutverdünnern, hormonelle Verhütungsmitteln):
+- Art Tumorerkrankung.
+- Raucherstatus.
+- Thrombose in der Vorgeschichte.
+- Vorhandensein von Fremdkörpern in Gefäßen (Schrittmacher, Ports, ...).
+- Laborwerte, die auf Entzündungsprozeße hinweisen können.
+
+Des Weiteren werden die Videos der Ultraschalluntersuchungen aufbewahrt.
+
+## Art der Verarbeitung
+
+All diese Daten werden ausschließlich pseudonymisiert gespeichert.
+Das bedeutet, dass keine Angaben, mit denen Sie direkt identifiziert werden können (z.B.
+Namen, Kontaktinformationen, Geburtsdatum, etc.) verwendet werden, sondern nur ein Nummern- und/oder Buchstabencode.
+
+Im Studienzentrum ist eine Pseudonymisierungsliste hinterlegt,
+auf der die krankenhausinternen Fallnummern (ebenfalls ein Pseudonym)
+den Nummern- und/oder Buchstabencodes zugeordnet sind.
+Diese Liste wird im Studienzentrum gesondert aufbewahrt und unterliegt dort
+technischen und organisatorischen Maßnahmen, die gewährleisten, dass Ihre personenenbezogenen
+Daten nicht durch unbefugte Personen zugeordnet werden können.
+Eine Entschlüsselung erfolgt nur, wenn Sie vor Studienabschluss gegen die Verwendung
+Ihrer Daten Widerspruch erheben, um Ihr Pseudonym zu finden und die damit
+verbundenen Daten zu löschen.
+
+Im Sinne guter Forschungspraxis, Reproduzierbarkeit und Nachvollziehbarkeit
+unser Auswertung planen wir **alle pseudonymisierten Daten und Bildausschnitte aus den
+Ultraschalluntersuchungen im Internet zu veröffentlichen**.
+
+Die Pseudonymisierungsliste wird *nicht* veröffentlicht.
+Eine Rückverfolgung Ihrer Daten ist somit für Dritte nicht möglich.
+
+## Dauer, für die die personenbezogenen Daten gespeichert werden
+
+Da wir planen **alle pseudonymisierten Daten und Bildausschnitte aus den
+Ultraschalluntersuchungen im Internet zu veröffentlichen** ist von einer
+**dauerhaften Speicherung** der Daten auszugehen.
+
+Spätestens 1 Jahr nach Publikation der Studienergebnisse wird die
+Pseudonymisierungsliste vernichtet.
+Eine Rückverfolgung Ihrer Daten ist auch durch uns dann nicht mehr möglich.
+
+## Betroffenenrechte
+
+### Widerruf erteilter Einwilligung (Art. 7 DSGVO)
+
+Sie können Ihre jeweilige Einwilligung jederzeit bis zur Veröffentlichung der Daten im Internet
+ohne Angabe von Gründen schriftlich oder mündlich widerrufen, ohne dass Ihnen daraus ein Nachteil entsteht.
+Wenn Sie Ihre Einwilligung widerrufen, wer den keine weiteren Daten mehr erhoben.
+
+Die bis zum Widerruf erfolgte Datenverarbeitung bleibt jedoch rechtmäßig.
+Bereits öffentlich gemachte Daten können durch uns nicht mehr gelöscht werden.
+Nach Vernichtung der Pseudonymisierungsliste ist eine Rückverfolgung Ihrer Daten
+auch für uns unmöglich und damit auch der Widerruf ausgeschlossen.
+
+### Weitere Rechte in Bezug auf Ihre Daten
+
+Sie haben das Recht, vom Verantwortlichen Auskunft über die von Ihnen gespeicherten personenbezogenen Daten (einschließlich der kostenlosen Überlassung einer Kopie der Daten) zu verlangen.
+Ebenfalls können Sie die Berichtigung unzutreffender Daten sowie gegebenenfalls eine Übertragung der
+von Ihnen zur Verfügung gestellten Daten und die Einschränkung ihrer Verarbeitung vor Veröffentlichung verlangen.
+
+### Beschwerderecht
+
+Sind Sie der Meinung, dass wir mit dieser Datenerhebung und -veröffentlichung
+gegen deutsches oder europäisches Datenschutzrecht verstoßen, so bitten wir Sie,
+mit uns Kontakt aufzunehmen, um Fragen klären zu können.
+
+Sie haben selbstverständlich auch das Recht, sich an die zuständige Aufsichtsbehörde zu wenden:
+
+Der Landesbeauftragte für Datenschutz und Informationsfreiheit Mecklenburg-Vorpommern, Werderstraße 74a 19055 Schwerin, Telefon: +49 385 59494 0, Telefax: +49 385 59494 58, E-Mail: info@datenschutz-mv.de
+Webseite: www.datenschutz-mv.de; www.informationsfreiheit-mv.de
+
+Sofern Sie eines der genannten Rechte uns gegenüber geltend machen wollen, so wenden Sie sich bitte an unseren Datenschutzbeauftragten.
+Im Zweifel können wir zusätzliche Informationen zur Bestätigung Ihrer Identität anfordern.
+
+# Was geschieht mit den Ergebnissen?
+
+Die Studie wurde offiziell beim Deutsches Register Klinischer Studien (DRKS)
+mit der Registrierungsnummer `r rmarkdown::metadata[["cfg-drksnumber"]]`
+registriert.
+Nach Studienende streben wir eine Publikation der Ergebnisse in einer wissenschaftlichen Fachzeitschrift an.
+Hierüber werden Sie nicht persönlich informiert.
+
+# An wen wende ich mich, wenn ich Fragen habe?
+
+Selbstverständlich steht Ihnen der Prüfarzt jederzeit für Fragen bezüglich der Studie zur Verfügung.
+Wenden Sie sich bitte an:
+
+`r rmarkdown::metadata$author$name`\
+`r rmarkdown::metadata$author$department`\
+`r rmarkdown::metadata$author$address`\
+Telefon: `r rmarkdown::metadata$author$phone`\
+E-Mail: `r rmarkdown::metadata$author$email`
+
+\newpage
+
+# Einwilligungserklärung
+
+## Einwilligung in die Studienteilnahme
+
+Ich bin über Wesen, Bedeutung und Tragweite der Studie sowie die sich für mich daraus
+  ergebenden Anforderungen aufgeklärt worden. Ich habe darüber hinaus den Text der Patient\*inneninformation und dieser Einwilligungserklärung gelesen.
+
+Ich hatte ausreichend Zeit, Fragen zu stellen und mich zu entscheiden. Aufgetretene Fragen wurden mir von der\*dem Studienärzt\*in beantwortet.
+
+Ich weiß, dass ich meine freiwillige Mitwirkung jederzeit beenden kann, ohne dass mir daraus Nachteile entstehen.
+
+## Einwilligungserklärung zum Datenschutz
+
+Ich willige ein, dass personenbezogene Daten über mich, wie in der Informationsschrift
+beschrieben erhoben und in Papierform sowie auf elektronischen Datenträgern in
+der `r rmarkdown::metadata[["cfg-department"]]` aufgezeichnet werden.
+Zu diesem Zweck entbinde ich die mich behandelnden Ärzte von der ärztlichen Schweigepflicht.
+
+Ich willige ein, dass pseudonymisierte Daten und Bilder der
+Ultraschalluntersuchungen im Internet veröffentlicht werden.
+
+Ich bin darüber aufgeklärt worden, dass ich meine Einwilligung zur Datenverarbeitung bis zur Veröffentlichung widerrufen kann.
+Im Falle des Widerrufs werden keine weiteren Daten mehr erhoben.
+
+Ich bin mir bewusst, dass bereits veröffentlichte Daten nicht widerrufen
+werden können und die Daten im Internet dauerhaft verfügbar sein werden.
+
+## Einwilligung
+
+Ich stimme der Teilnahme an der Studie\
+**"`r rmarkdown::metadata$title2`"**\
+zu: \
+\
+**&#9744; Ja \ \ \ \ \ \ \ &#9744; Nein**
+\
+
+Die nachstehenden Angaben müssen von der\*dem Studienteilnehmer\*in persönlich ausgefüllt werden:
+
++---------------------------------+-------------------------------------------+
++:================================+:==========================================+
+| Vor- und Nachname der\*des      |                                           |
+| Studienteilnehmer\*in           |                                           |
++---------------------------------+-------------------------------------------+
+| Ort und Datum                   |                                           |
++---------------------------------+-------------------------------------------+
+| Unterschrift der\*des           |                                           |
+| Studienteilnehmer\*in           |                                           |
++---------------------------------+-------------------------------------------+
+\
+
+Die nachstehenden Angaben müssen von der\*dem Prüfärzt\*in persönlich ausgefüllt werden:
+
++---------------------------------+-------------------------------------------+
++:================================+:==========================================+
+| Vor- und Nachname der\*des      |                                           |
+| Prüfärzt\*in                    |                                           |
++---------------------------------+-------------------------------------------+
+| Ort und Datum                   |                                           |
++---------------------------------+-------------------------------------------+
+| Unterschrift der\*des           |                                           |
+| Prüfärzt\*in                    |                                           |
++---------------------------------+-------------------------------------------+
+\
+**Randomisierungs-ID/Pseudonym**: __ __ __ __
