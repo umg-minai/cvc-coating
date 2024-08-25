@@ -8,7 +8,7 @@ author:
     email: "sebastian.gibb@med.uni-greifswald.de"
     department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
-dkrsnumber: TODO
+drksnumber: TODO
 cfg-acronym: CRT-CHX
 cfg-version: '0.1'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
@@ -38,7 +38,7 @@ frf <- function(...)
 **Englische Bezeichnung**       `r rmarkdown::metadata[["titleengl"]]`
 **der Studie**
 
-**Registrierungsnummer**        `r rmarkdown::metadata[["dkrsnumber"]]`
+**Registrierungsnummer**        `r rmarkdown::metadata[["drksnumber"]]`
 
 **Studienleiter**               `r rmarkdown::metadata$author$name`
 
