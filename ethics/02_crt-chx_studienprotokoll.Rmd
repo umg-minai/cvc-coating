@@ -606,9 +606,9 @@ Verblindet sind:
 
 # Datenmanagement / Biologische Marker
 
-Die tabellarischen Daten werden im UMG-eigenen RedCAP-System erfasst
+Die tabellarischen Daten werden im UMG-eigenen REDCap-System erfasst
 (Masken im Anhang).
-In RedCAP sind verschiedene Nutzungsrechte für die einzelnen Beteiligten
+In REDCap sind verschiedene Nutzungsrechte für die einzelnen Beteiligten
 hinterlegt, so dass
 die Studienärzt\*innen nach Einschluss der Patient\*innen nur die präoperativen
 Daten, die Ultraschalluntersucher\*innen nur die Daten zur ZVK-Anlage und
@@ -674,7 +674,7 @@ Greifswald, `r .eval_meta(rmarkdown::metadata$date)`
 
 # TODO:
 
-- RedCAP-Masken anhängen
+- REDCap-Masken anhängen
 - VVT anhängen
 - CRF ZVK-Anlage anhängen
 - Randomisierungs-R-Script anhängen; Bsp. Randomisierungsliste und Briefe anhängen
