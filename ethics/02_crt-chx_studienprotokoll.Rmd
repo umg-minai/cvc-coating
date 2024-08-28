@@ -367,13 +367,26 @@ für die Ultraschalluntersuchung eingehalten.
 - Randomisierungs-ID und Tag im Format
   [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" als Patienten-ID eingegeben.
 - Auswahl des Linearschallkopfes mit 12 MHz, Preset "Vene, obere".
-- Video kurze Achse: Index des Schallkopfes nach lateral,
-  von kranial (von der cutanen Einstichstelle) nach kaudal gleiten und
-  in die obere Thoraxapperatur hineinschwenken, V. jug. int. zentrieren,
+- Übersichtsvideo kurze Achse: Index des Schallkopfes nach lateral,
+  von kranial (Oberrand Schallkopf an der cutanen Einstichstelle)
+  nach kaudal gleiten und in die obere Thoraxapperatur hineinschwenken,
+  V. jug. int. zentrieren,
   Tiefe möglichst auf 4 cm begrenzen (6 bis 8 cm wenn V. jug. int. sonst nicht
   im vollständigen Umfang abgebildet),
   möglichst wenig Anpressdruck um Vene nicht zu komprimieren.
-- Video lange Achse: Index des Schallkopfes nach kranial
+
+**TODO: @Sven-Olaf: Videos mit Farbdoppler?**
+
+- Videos kurze Achse - Kompressions- und Duplexsonografie:
+    Index des Schallkopfes nach lateral,
+    von kranial (Oberrand Schallkopf an der cutanen Einstichstelle) nach kaudal
+    im Abstand von jeweils 1 cm je ein Video mit Kompression und Entlastung
+    der V. jug. int. ohne und mit aktiviertem Farbdoppler (Standardeinstellung
+    im Preset "Vene, obere"; bei Farbdoppler Schallkopf leicht (ca. 10°) nach
+    kaudal kippen, damit Fluss sichtbar und "blau" gefärbt;
+    sonstige Einstellung wie oben: V. jug. int. zentrieren,
+    Tiefe möglichst auf 4 cm begrenzen)
+- Übersichtsvideo lange Achse: Index des Schallkopfes nach kranial
   (Index des Schallkopfes an cutaner Einstichstelle),
   V. jug. int. im Längsverlauf, dann nach medial schwenken und von medial nach
   lateral durchschwenken.
