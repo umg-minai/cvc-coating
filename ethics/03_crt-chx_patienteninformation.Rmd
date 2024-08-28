@@ -352,7 +352,7 @@ zu: \
 **&#9744; Ja \ \ \ \ \ \ \ &#9744; Nein**
 \
 
-Die nachstehenden Angaben müssen von der\*dem Studienteilnehmer\*in persönlich ausgefüllt werden:
+**Die nachstehenden Angaben müssen von der\*dem Studienteilnehmer\*in persönlich ausgefüllt werden:**
 
 +---------------------------------+-------------------------------------------+
 +:================================+:==========================================+
@@ -366,7 +366,7 @@ Die nachstehenden Angaben müssen von der\*dem Studienteilnehmer\*in persönlich
 +---------------------------------+-------------------------------------------+
 \
 
-Die nachstehenden Angaben müssen von der\*dem Prüfärzt\*in persönlich ausgefüllt werden:
+**Die nachstehenden Angaben müssen von der\*dem Prüfärzt\*in persönlich ausgefüllt werden:**
 
 +---------------------------------+-------------------------------------------+
 +:================================+:==========================================+
@@ -379,4 +379,5 @@ Die nachstehenden Angaben müssen von der\*dem Prüfärzt\*in persönlich ausgef
 | Prüfärzt\*in                    |                                           |
 +---------------------------------+-------------------------------------------+
 \
+
 **Randomisierungs-ID/Pseudonym**: __ __ __ __
