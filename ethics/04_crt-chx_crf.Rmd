@@ -1,0 +1,70 @@
+---
+date: "`r format(Sys.Date(), '%d.%m.%Y')`"
+author:
+    name: "Dr. med. Sebastian Gibb"
+    phone: "03834 865801"
+    email: "sebastian.gibb@med.uni-greifswald.de"
+    department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
+    address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
+cfg-acronym: CRT-CHX
+cfg-version: '0.1'
+cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
+cfg-principial-investigator: "Dr. med. Sebastian Gibb"
+cfg-principial-investigator-contact: "Tel. 03834 865801"
+cfg-department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
+cfg-drksnumber: TODO
+output:
+    bookdown::odt_document2:
+        reference_odt: pandoc/reference/reference-crf.odt
+        pandoc_args:
+            - --lua-filter=pandoc/lua-filters/strip-meta.lua
+---
+
++---------------------------------+-------------------------------------------+
+| Identifikation                                                              |
++:================================+:==========================================+
+| ZVK LOT \                       | \                                         |
+|                                 | LOT-Aufkleber hier platzieren             |
++---------------------------------+-------------------------------------------+
+| Randomisierungs-Patient\*in-ID\ | \                                         |
+| z.B. WL01                       | __ __ __ __                               |
++---------------------------------+-------------------------------------------+
+| Fallnummer:                   \ | \                                         |
+| z.B. 2024123456                 | 2025 __ __ __ __ __ __                    |
++---------------------------------+-------------------------------------------+
+
+ \
+
++---------------------------------+-------------------------------------------+
+| Punktion                                                                    |
++:================================+:==========================================+
+| Zeitpunkt der Anlage            | \                                         |
+| z.B. 01.01.2025 10:31           | __ __ . __ __ . 2025  __ __ : __ __ Uhr   |
++---------------------------------+-------------------------------------------+
+| Punktionsort                    | &#9744; V. jug. int. rechts \             |
+|                                 | &#9744; V. jug. int. links \              |
+|                                 | &#9744; Anderer Ort:                      |
+|                                 | ________________________________          |
++---------------------------------+-------------------------------------------+
+| Stichinzision \                 | &#9744; ja \                              |
+| (Nadel oder Skapel)             | &#9744; nein                              |
++---------------------------------+-------------------------------------------+
+| EKG-Lagekontrolle \             | &#9744; erfolgreich \                     |
+|                                 | &#9744; nicht erfolgreich \               |
+|                                 | &#9744; nicht durchgeführt bei            |
+|                                 | Vorhofflimmern \                          |
+|                                 | &#9744; Sonstiges:                        |
+|                                 | ________________________________          |
++---------------------------------+-------------------------------------------+
+| Bisherige Erfahrung der\*des    | &#9744; weniger als 25 ZVKs \             |
+| Anlegenden \                    | &#9744; 25 bis weniger als 50 ZVKs \      |
+| (diesen ZVK nicht mit           | &#9744; 50 bis weniger als 100 ZVKs \     |
+| eingeschlossen)                 | &#9744; 100 oder mehr ZVKs                |
++---------------------------------+-------------------------------------------+
+| Komplikationen bei der Anlage \ | &#9744; Mehrfachpunktion der Haut \       |
+| (Mehrfachauswahl möglich)       | &#9744; Mehrfachpunktion des Gefäß \      |
+|                                 | &#9744; Min. einmalig frustraner          |
+|                                 | Drahtvorschub \                           |
+|                                 | &#9744; Sonstiges:                        |
+|                                 | ________________________________          |
++---------------------------------+-------------------------------------------+
