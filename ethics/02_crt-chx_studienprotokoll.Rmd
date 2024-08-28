@@ -8,17 +8,19 @@ author:
     email: "sebastian.gibb@med.uni-greifswald.de"
     department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
-drksnumber: TODO
 cfg-acronym: CRT-CHX
 cfg-version: '0.1'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
+cfg-principial-investigator: "Dr. med. Sebastian Gibb"
+cfg-principial-investigator-contact: "Tel. 03834 865801"
+cfg-department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
+cfg-drksnumber: TODO
 bibliography: bibliography.bib
 output:
     bookdown::odt_document2:
         reference_odt: pandoc/reference/reference-protocol.odt
         pandoc_args:
             - --lua-filter=pandoc/lua-filters/strip-meta.lua
-
 ---
 
 ```{r helper_functions, include = FALSE}
@@ -38,7 +40,7 @@ frf <- function(...)
 **Englische Bezeichnung**       `r rmarkdown::metadata[["titleengl"]]`
 **der Studie**
 
-**Registrierungsnummer**        `r rmarkdown::metadata[["drksnumber"]]`
+**Registrierungsnummer**        `r rmarkdown::metadata[["cfg-drksnumber"]]`
 
 **Studienleiter**               `r rmarkdown::metadata$author$name`
 
@@ -73,7 +75,7 @@ frf <- function(...)
                                 - Nicht-elektive OP.
                                 - Bekannter Thrombus in der rechten V. jugularis interna oder V. cava superior.
 
-**Fallzahl**                    - `r n.finalsamplesize["delta_hr=2"]`
+**Fallzahl**                    `r n.finalsamplesize["delta_hr=2"]`
 
 **Version**                     `r paste(rmarkdown::metadata[["cfg-version"]], .eval_meta(rmarkdown::metadata[["cfg-githash"]]), sep = "_")`
 
