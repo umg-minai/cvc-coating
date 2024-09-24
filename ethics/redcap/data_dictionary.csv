@@ -14,6 +14,8 @@ preop_antiaggregant_given,preop,,yesno,"Thrombozytenaggregationshemmer in der Vo
 preop_antiaggregant_name,preop,,dropdown,"Name des Thrombozytenaggregationshemmers","1, Clopidogrel | 2, Prasugrel | 3,  Ticlopidin | 4, Ticagrelor | 5, Cangrelor | 99, Sonstiges",,,,,,"[preop_antiaggregant_given] = '1'",,,,,,
 preop_anticoagulant_given,preop,,yesno,"Falithrom/DOAK in der Vormedikation",,,,,,,,y,,,,,
 preop_anticoagulant_name,preop,,dropdown,"Name des DOAK/Falithrom","1, Phenprocoumon (Falithrom) | 2, Apixaban (Eliquis) | 3, Rivaroxaban (Xarelto) | 4, Dabigatran (Pradaxa) | 99, Sonstiges",,autocomplete,,,,"[preop_anticoagulant_given] = '1'",,,,,,
+preop_nicotinabusus_present,preop,,yesno,"Florider Nikotinabusus?",,,,,,,,y,,,,,
+preop_nicotinabusus_packyears,preop,,text,"Anzahl der packyears ([Packungen pro Tag] x [Raucherjahre] oder [Anzahl Zigaretten pro Tag/20] x [Raucherjahre]):",,,integer,0,200,,"[preop_nicotinabusus_present] = '1'",,,,,,
 preop_contraceptive_given,preop,,yesno,"Kontrazeptivum/Hormonprparate in der Vormedikation (hormonelle Kontrazeptiva, oral/TTS/Depospritzen)",,,,,,,,y,,,,,
 preop_contraceptive_name,preop,,text,"Details zum Kontrazeptivum/Hormonprparat",,,,,,,"[preop_contraceptive_given] = '1'",,,,,,
 preop_thrombosis_history,preop,Risikofaktoren,yesno,"Thrombose (TVT/LAE) in der Anamnese",,,,,,,,y,,,,,
