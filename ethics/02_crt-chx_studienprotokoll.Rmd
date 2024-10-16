@@ -40,6 +40,8 @@ frf <- function(...)
 **Englische Bezeichnung**       `r rmarkdown::metadata[["titleengl"]]`
 **der Studie**
 
+**Kurzbezeichnung**             `r rmarkdown::metadata[["cfg-acronym"]]`
+
 **Registrierungsnummer**        `r rmarkdown::metadata[["cfg-drksnumber"]]`
 
 **Studienleiter**               `r rmarkdown::metadata$author$name`
@@ -51,7 +53,9 @@ frf <- function(...)
 
 **Studiendesign**               Monozentrische, randomisierte, kontrollierte, 2-armige Studie
 
-**Studienzeitraum**             ab 01.01.2025 - vorraussichtlich 18 Monate.
+**Zeitraum Pilotphase**         ab 01.03.2025 - voraussichtlich 2 Monate.
+
+**Studienzeitraum**             ab 05.05.2025 - voraussichtlich 18 Monate.
 
 **Primäres Zielkriterium**      Thromboseraten der ZVKs
 
@@ -78,6 +82,8 @@ frf <- function(...)
                                 - Bekannter Thrombus in der rechten V. jugularis interna oder V. cava superior. \
                                 - Bekannte Gerinnungsstörung. \
                                 - Bekannte Allergie ggü. Chlorhexidin.
+
+**Fallzahl Pilotphase**         10
 
 **Fallzahl**                    `r n.finalsamplesize["delta_hr=2"]`
 
@@ -189,7 +195,7 @@ Abhängigkeit der Thrombusenstehung bzw. Unterschiede in Bezug auf:
   orale Antikoagulanzien, etc.) in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
-- Vorerkrankungen wie Diabetes, Bluthochdruck, Hyperlipidämie/-cholesterinämie.
+- Vorerkrankungen wie Diabetes melltius, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia oder cava superior.
 
 # Methoden der Datenerhebung
@@ -212,7 +218,7 @@ Erhebung Identifikationsdaten, biometrischer und anamnestischer Daten im Rahmen 
 - Hormonpräparate/Kontrazeptiva in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
-- Vorerkrankungen wie Diabetes, Bluthochdruck, Hyperlipidämie/-cholesterinämie.
+- Vorerkrankungen wie Diabetes melltius, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
 - Art des Tumors.
 - Nachbestimmung o.g. Inflammations- und Thrombosemarker aus möglicherweise
@@ -467,7 +473,7 @@ Dabei wird für folgende Faktoren adjustiert:
   orale Antikoagulanzien, Heparine, etc.) in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
-- Vorerkrankungen wie Diabetes, Bluthochdruck, Hyperlipidämie/-cholesterinämie.
+- Vorerkrankungen wie Diabetes melltius, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
 - Anlagedauer.
 - Stichinzision.
@@ -674,6 +680,21 @@ Das "Verzeichnis der Verarbeitungstätigkeiten" ist ebenfalls angehängt.
 # Patienten-/Probanden-Information und Einwilligungserklärung mit Datenschutzerklärung
 
 Siehe angehängtes Dokument.
+
+# Pilotphase
+
+Vor Beginn der eigentlichen Studiephase ist eine Pilotphase von ca. 2 Monaten
+geplant.
+
+Für die Pilotphase ist die Rekrutierung von 10 Proband\*innen (5 je Gruppe)
+vorgesehen.
+Der Ablauf der Pilotphase entspricht dem hier dargestellten Protokoll.
+In der Pilotphase wird eine separate Randomisierungsliste genutzt.
+Nach Abschluss der Auswertung wird die Zuordnungsliste (Fallnummer -
+Randomisierungs-ID) gelöscht.
+Der Randomisierungs-ID wird ein "P" vorangestellt, z.B. "PWL03-01".
+Die Pilotphase wird zur Testung und Optimierung der Abläufe genutzt.
+Ihre Ergebnisse gehen nicht in die finale Auswertung der Studie mit ein.
 
 # Unterschrift und Erklärung
 
