@@ -69,6 +69,10 @@ study <- do.call(
     )
 )
 
+# simplified treatment group names
+study$treatmentname <-
+    ifelse(grepl("Blue", study$treatment), "blau", "gelb")
+
 ## random group name for blinded per-protocol analysis
 study$group <- sample(c("A", "B"))[as.integer(study$treatment)]
 
@@ -94,7 +98,7 @@ write.csv(
 
 cex <- 1.5
 study_name <- "CRT-CHX"
-group_col <- c("#440154FF", "#21908CFF")
+group_col <- c("#FDAE61FF", "#3288BDFF")
 strat_col <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00", "#A65628")
 
 names(group_col) <- levels(study$treatment)
@@ -136,15 +140,16 @@ for (i in seq_len(nrow(study))) {
     ))
     ## main field
     text(
-        x = c(0.5, 0.51 + swpid, 0.5, 0.5),
-        y = 0.9 - c(0, 0, 1.2, 2.5) * sh,
+        x = c(0.5, 0.51 + swpid, 0.5, 0.5, 0.5),
+        y = 0.9 - c(0, 0, 1.2, 2.5, 4) * sh,
         labels = c(
             pid, as.expression(bquote(bold(.(study$id[i])))),
             "Gruppe / Auszuwählender ZVK:",
-            as.expression(bquote(bold(.(as.character(study$treatment[i])))))
+            as.expression(bquote(bold(.(as.character(study$treatment[i]))))),
+            as.expression(bquote(bold(.(as.character(study$treatmentname[i])))))
         ),
-        col = c(rep("black", 3), group_col[study$treatment[i]]),
-        cex = c(rep(cex, 3), cex * 1.2)
+        col = c(rep("black", 3), rep(group_col[study$treatment[i]], 2)),
+        cex = c(rep(cex, 3), cex * 1.2, cex * 1.2)
     )
     abline(h = 0:1, col = "darkgrey", lty = "dashed")
 }
