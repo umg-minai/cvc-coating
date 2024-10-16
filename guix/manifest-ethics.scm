@@ -3,4 +3,7 @@
     "r-minimal"
     "r-blockrand"
     "r-bookdown"
-    "r-rprojroot"))
+    "r-diagrammer"
+    "r-diagrammersvg"
+    "r-rprojroot"
+    "r-rsvg"))
