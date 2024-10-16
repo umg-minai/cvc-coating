@@ -3,10 +3,11 @@ GUIXTME:=${GUIX} time-machine --channels=../guix/channels.pinned.scm -- \
 		shell --manifest=../guix/manifest-ethics.scm
 MD=$(wildcard *.md)
 RMD=$(wildcard *.Rmd)
+R=$(wildcard *.R)
 OUTPUTDIR:=output
 ODT=$(RMD:%.Rmd=$(OUTPUTDIR)/%.odt)
 DOCX=$(RMD:%.Rmd=$(OUTPUTDIR)/%.docx)
-PDF=$(MD:%.md=$(OUTPUTDIR)/%.pdf)
+PDF=$(MD:%.md=$(OUTPUTDIR)/%.pdf) $(R:%.R=$(OUTPUTDIR)/%.pdf)
 DISTRIBUTIONDIR:=distribution
 DISTRIBUTIONDOCX=$(wildcard $(DISTRIBUTIONDIR)/*.docx)
 DISTRIBUTIONPDF=$(wildcard $(DISTRIBUTIONDIR)/*.pdf)
@@ -38,6 +39,9 @@ $(OUTPUTDIR)/%.docx: $(OUTPUTDIR)/%.odt | $(OUTPUTDIR)
 
 $(OUTPUTDIR)/%.pdf: %.md | $(OUTPUTDIR)
 	${GUIXTME} pandoc -- pandoc $< --template=pandoc/templates/letter.tex --output $@
+
+$(OUTPUTDIR)/%.pdf: %.R | $(OUTPUTDIR)
+	${GUIXTME} -- Rscript $<
 
 $(DISTRIBUTIONDIR)/%.pdf: $(OUTPUTDIR)/%.pdf | $(OUTPUTDIR)
 	cp $< $(DISTRIBUTIONDIR)/$(basename $(notdir $<))_$(DATE)_$(shell git log -n 1 --pretty=format:%h -- $(notdir $(<:%.pdf=%.md))).pdf
