@@ -63,7 +63,7 @@ wir möchten Sie fragen, ob Sie an einer wissenschaftlichen Studie teilnehmen
 möchten.
 
 Bei Ihnen ist eine größere Operation geplant, die es notwendig macht einen
-zentralen Venekatheter (ZVK) in die Halsvene zu legen
+zentralen Venenkatheter (ZVK) in die Halsvene zu legen
 (siehe auch \@ref(fig:ijv-ultrasound-image)).
 
 ZVKs sind Fremdkörper und können Blutgerinnsel verursachen.
@@ -79,7 +79,7 @@ Bitte nehmen Sie sich Zeit und lesen Sie diese Information genau durch,
 bevor Sie sich für oder gegen eine Teilnahme entscheiden.
 
 Bitte fragen Sie Ihre Ärztin/Ihren Arzt oder den Studienleiter
-`r rmarkdown::metadata[["cfg-principial-investigator"]]`
+`r rmarkdown::metadata[["cfg-principial-investigator"]]`,
 wenn Sie Fragen haben oder Ihnen etwas unklar sein sollte.
 
 Die Teilnahme an der Studie ist freiwillig.
@@ -95,7 +95,7 @@ wenn eine Nahrungsaufnahme nach der Operation über den Magendarmtrakt
 nicht möglich sein sollte.
 
 Typische Komplikationen bei ZVKs sind Blutstrominfektionen und Thrombosen.
-Bakterien können an Fremdkörpern, wie ZVKs, haften, von dort über den Blutstrom
+Bakterien können an Fremdkörpern, wie ZVKs, anhaften, von dort über den Blutstrom
 zu anderen Organen transportiert werden und lebensbedrohliche, ganzheitliche
 Entzündungsreaktionen/Infektionen im Körper (Sepsis) auslösen.
 Als Fremdkörper im Gefäßsystem aktivieren die ZVKs das Gerinnungssystem, so dass
@@ -104,42 +104,43 @@ Diese Blutgerinnsel können zu Gefäßverschlüssen,
 wie dem lebensbedrohlichen Verschluss von Lungengefäßen (Lungenarterienembolie),
 führen.
 
-Sowohl die Blutstrominfektionen als auch die symptomatischen Thrombosen sind
+Sowohl die Blutstrominfektionen, als auch die symptomatischen Thrombosen sind
 häufige Komplikationen von ZVKs (1-3 Behandelte von 100 Behandelten;
-Blutstrominfektionen ca. 1,4 - 2,8 %, ca. Thrombosen 0,9 - 2,5 % [@Parienti2015; @Bell2018]).
+Blutstrominfektionen ca. 1,4 - 2,8 %, Thrombosen ca. 0,9 - 2,5 %).
+<!-- [@Parienti2015; @Bell2018] -->
 
 Um das Risiko für Blutstrominfektionen zu senken, sind seit langem ZVKs mit
 einer Beschichtung im Einsatz, die die Besiedlung des ZVKs mit Bakterien
 verhindern soll.
 Bei der Einhaltung von Hygienestandards (sterile Anlage des ZVK,
 Händedesinfektion vor Medikamentengabe über den ZVK, u.a.) hat diese
-antibakterielle Beschichtung jedoch keinen zusätzlichen Effekt
-[@CherryBukowiec2011; @Ullman2022].
+antibakterielle Beschichtung jedoch keinen zusätzlichen Effekt.
+<!-- [@CherryBukowiec2011; @Ullman2022] -->
 
-In letzter Zeit werden ZVKs zunehmend mit Ultraschall untersucht.
-Dabei zeigt sich, dass Blutgerinnsel an den ZVKs viel häufiger sind,
-als bisher durch klinische Beobachtung erkannt wurde [@Wu2023; @Gibb2024].
+Durch Ultraschalluntersuchungen der Blutgefäße, in denen Venenkatheter platziert
+wurden, finden sich Blutgerinnsel viel häufiger als bisher bekannt.
+<!-- [@Wu2023; @Gibb2024] -->
 
 **In dieser Studie soll untersucht werden, ob sich Blutgerinnsel schneller
-oder häufiger an ZVKs mit oder ohne antibakterielle Beschichtung entwickeln.**
+oder häufiger an ZVKs mit oder ohne antibakterieller Beschichtung entwickeln.**
 
 Dazu sollen bei `r n.finalsamplesize["delta_hr=2"]` Patient\*innen die ZVKs
 bis zur Entfernung bzw. bis maximal 14 Tage täglich mittels Ultraschall
 auf anhaftende Blutgerinnsel kontrolliert werden.
 Per Zufall wird jeweils die Hälfte der Patient\*innen einen ZVK mit oder ohne
-antibakterielle Beschichtung erhalten.
-Abgesehen von der zufälligen Zulosung des jeweiligen ZVKs, der bis auf die
-mögliche Beschichtung identisch ist, und der täglichen Ultraschalluntersuchung
-der Halsvene ändert sich an der medizinisch Behandlung nichts.
+antibakterielle Beschichtung erhalten (Randomisierung).
+Die Katheter sind ansonsten indentisch.
+Abgesehen von der zusätzlichen täglichen Ultraschalluntersuchung
+der Halsvenen erfolgen für Sie keine zusätzlichen Maßnahmen.
+Die medizinische Behandlung ändert sich durch die Studie nicht.
+
 Die Ultraschalluntersuchung ist eine äußerliche Anwendung, ungefährlich und schmerzlos.
-Jede Untersuchung dauert ca. 10 Minuten und wird von einer\*einem ärztlichen
+Sie dauert jeweils ca. 10 Minuten und wird von einer\*einem ärztlichen
 Kolleg\*in oder wissenschaftlichen Mitarbeiter\*in an Ihrem Bett durchgeführt.
-Dabei werden Videos der Halsvene und umliegenden Gewebe aufgenommen.
-Beispielhafte Bilder zeigt Abbildung \@ref(fig:ijv-ultrasound-image) (allerdings
-hier ohne einliegenden ZVK).
+Dabei werden Bilder bzw. Videos der Halsvene und umliegenden Gewebe aufgenommen
+(siehe Abbildung \@ref(fig:ijv-ultrasound-image)).
 
-
-```{r ijv-ultrasound-image, out.width = "100%", fig.cap = "Ultraschallbilder der rechten Seite des Halses. A) Querschnitt der rechten Seite des Halses. Ansicht von den Füßen. Auf der linken Bildseite ist rechts und die rechte Bildseite mittig. Oben legt sich der große Kopfwendermuskel (Musculus sternocleidomastoideus, MSCM) über die innere Halsvene (Vena jugularis interna, VJI), die das Blut aus dem Kopf zum Herzen zurückführt. Der zentrale Venenkatheter wird in diese Vene gelegt (hier nicht abgebildet). Unterhalb der Vene findet sich die Halsschlagader (Arteria carotis communis, ACC). Weiter mittig dann die Luftröhre (Trachea, T). B) Längsschnit der rechten Seite des Halses. Auf der linken Bildseite entspricht kopfwärts und die rechte fußwärts. Auch hier liegt der große Kopfwendermuskel (Musculus sternocleidomastoideus, MSCM) oberhalb der Halsvene (Vena jugularis interna, VJI). Die Halsschlagader und Luftröhre sind in diesem Schnitt nicht zu sehen. ACC: Arteria carotis communis; MSCM: Musculus sternocleidomastoideus; T: Trachea; VJI: Vena jugularis interna.", echo = FALSE}
+```{r ijv-ultrasound-image, out.width = "100%", fig.cap = "Ultraschallbilder großen rechten Halsgefäße und umgebender Strukturen. A) Querschnitt und B) Längsschnitt. ACC: Arteria carotis communis (Halsschlagader); MSCM: Musculus sternocleidomastoideus (großer Kopfwender); T: Trachea (Luftröhre); VJI: Vena jugularis interna (Halsvene).", echo = FALSE}
 knitr::include_graphics(frf("images", "ijv-annotated.jpg"))
 ```
 
@@ -158,8 +159,8 @@ möchten, entstehen Ihnen dadurch keine Nachteile.
 Sie können jederzeit, auch ohne Angabe von
 Gründen, Ihre Einwilligung mündlich oder schriftlich widerrufen.**
 
-Die Studie wurde der zuständigen Ethikkommission vorgelegt.
-Sie hat keine Einwände erhoben.
+Die Studie wurde von der zuständigen Ethikkommission begutachtet.
+Es liegen keine ethischen und rechtlichen Bedenken vor.
 
 ## Quellen {-}
 
@@ -171,14 +172,14 @@ Sie hat keine Einwände erhoben.
 ## Möglicher Nutzen
 
 Sie werden durch Ihre Teilnahme an dieser Studie keinen Nutzen für Ihre Gesundheit haben.
-Die Ergebnisse dieser Studie können dazu beitragen, dass für zukünftige Patient\*nnen, die einen ZVK benötigen, die Versorgung verbessert wird.
+Die Ergebnisse dieser Studie können dazu beitragen, dass für zukünftige Patient\*innen, die einen ZVK benötigen, die Versorgung verbessert wird.
 
 ## Mögliche Risiken
 
 Abgesehen von der täglichen Ultraschalluntersuchung ergeben sich keine
 Änderungen in der klinischen Routine und somit keine zusätzlichen Risken.
-Die Ultraschalluntersuchung ist ein ungefährlich und schmerzfrei.
-Um eine gute Bildqualität zu erreichen muss ein Gel auf Wasserbasis aufgetragen
+Die Ultraschalluntersuchung ist ungefährlich und schmerzfrei.
+Um eine gute Bildqualität zu erreichen, muss ein Gel auf Wasserbasis aufgetragen
 werden.
 Dieses wird bei Raumtemperatur gelagert und kann sich kühl anfühlen.
 In extrem seltenen Fällen kann es zu allergischen Hautreaktionen durch das Gel
@@ -191,10 +192,10 @@ ergeben, gibt es keine zusätzliche Versicherung.
 
 # Was geschieht mit meinen Daten? - Datenschutz
 
-Ihre personenbezogenen Daten werden ausschließlich von den an der Studien beteiligten Mitarbeiter\*innen der Klinik für für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin der Universitätsmedizin Greifswald verarbeitet.
+Ihre personenbezogenen Daten werden ausschließlich von den an der Studien beteiligten Mitarbeiter\*innen der Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin der Universitätsmedizin Greifswald verarbeitet.
 Diese unterliegen der Schweigepflicht (§ 203 StGB) und sind zur Wahrung der Vertraulichkeit verpflichtet.
 
-## Datenverarbeiter
+## Datenverarbeitung
 
 ### Verantwortliche Stelle
 
@@ -220,12 +221,13 @@ Ohne Ihre Einwilligung ist eine Teilnahme nicht möglich und es findet keine Ver
 Im Rahmen der Studien erheben wir folgende personenbezogene Daten:
 
 - Demographische Daten: Geschlecht, Alter, Größe, Gewicht.
-- Medikamente (Blutverdünnern, hormonelle Verhütungsmitteln):
-- Art Tumorerkrankung.
+- Medikamente (Blutverdünner, hormonelle Verhütungsmittel):
+- Art der Tumorerkrankung.
 - Raucherstatus.
 - Thrombose in der Vorgeschichte.
+- Thrombose-relevante Vorerkrankungen.
 - Vorhandensein von Fremdkörpern in Gefäßen (Schrittmacher, Ports, ...).
-- Laborwerte, die auf Entzündungsprozeße hinweisen können.
+- Laborwerte, die auf Entzündungsprozesse hinweisen können.
 
 Des Weiteren werden die Videos der Ultraschalluntersuchungen aufbewahrt.
 
@@ -233,28 +235,31 @@ Des Weiteren werden die Videos der Ultraschalluntersuchungen aufbewahrt.
 
 All diese Daten werden ausschließlich pseudonymisiert gespeichert.
 Das bedeutet, dass keine Angaben, mit denen Sie direkt identifiziert werden können (z.B.
-Namen, Kontaktinformationen, Geburtsdatum, etc.) verwendet werden, sondern nur ein Nummern- und/oder Buchstabencode.
+Namen, Kontaktinformationen, Geburtsdatum, etc.) verwendet werden, sondern nur ein Code aus Buchstaben und Nummern.
 
 Im Studienzentrum ist eine Pseudonymisierungsliste hinterlegt,
 auf der die krankenhausinternen Fallnummern (ebenfalls ein Pseudonym)
-den Nummern- und/oder Buchstabencodes zugeordnet sind.
+den Codes aus Buchstaben und Nummern zugeordnet sind.
 Diese Liste wird im Studienzentrum gesondert aufbewahrt und unterliegt dort
-technischen und organisatorischen Maßnahmen, die gewährleisten, dass Ihre personenenbezogenen
+technischen und organisatorischen Maßnahmen, die gewährleisten, dass Ihre personenbezogenen
 Daten nicht durch unbefugte Personen zugeordnet werden können.
 Eine Entschlüsselung erfolgt nur, wenn Sie vor Studienabschluss gegen die Verwendung
 Ihrer Daten Widerspruch erheben, um Ihr Pseudonym zu finden und die damit
 verbundenen Daten zu löschen.
 
 Im Sinne guter Forschungspraxis, Reproduzierbarkeit und Nachvollziehbarkeit
-unser Auswertung planen wir **alle pseudonymisierten Daten und Bildausschnitte aus den
-Ultraschalluntersuchungen im Internet zu veröffentlichen**.
+unser Auswertung planen wir
+**alle pseudonymisierten Daten sowie
+Bilder und Videos der Ultraschalluntersuchungen
+im Internet zu veröffentlichen**.
 
-Die Pseudonymisierungsliste wird *nicht* veröffentlicht.
-Eine Rückverfolgung Ihrer Daten ist somit für Dritte nicht möglich.
+Die Pseudonymisierungsliste wird *nicht* veröffentlicht und am Ende der
+Datenerhebung gelöscht.
+Eine Rückverfolgung Ihrer Daten ist auch durch uns dann nicht mehr möglich.
 
 ## Dauer, für die die personenbezogenen Daten gespeichert werden
 
-Da wir planen **alle pseudonymisierten Daten und Bildausschnitte aus den
+Da wir planen **alle pseudonymisierten Daten sowie Bilder und Videos der
 Ultraschalluntersuchungen im Internet zu veröffentlichen** ist von einer
 **dauerhaften Speicherung** der Daten auszugehen.
 
@@ -268,7 +273,7 @@ Eine Rückverfolgung Ihrer Daten ist auch durch uns dann nicht mehr möglich.
 
 Sie können Ihre jeweilige Einwilligung jederzeit bis zur Veröffentlichung der Daten im Internet
 ohne Angabe von Gründen schriftlich oder mündlich widerrufen, ohne dass Ihnen daraus ein Nachteil entsteht.
-Wenn Sie Ihre Einwilligung widerrufen, wer den keine weiteren Daten mehr erhoben.
+Wenn Sie Ihre Einwilligung widerrufen, werden keine weiteren Daten mehr erhoben.
 
 Die bis zum Widerruf erfolgte Datenverarbeitung bleibt jedoch rechtmäßig.
 Bereits öffentlich gemachte Daten können durch uns nicht mehr gelöscht werden.
@@ -334,7 +339,7 @@ beschrieben erhoben und in Papierform sowie auf elektronischen Datenträgern in
 der `r rmarkdown::metadata[["cfg-department"]]` aufgezeichnet werden.
 Zu diesem Zweck entbinde ich die mich behandelnden Ärzte von der ärztlichen Schweigepflicht.
 
-Ich willige ein, dass pseudonymisierte Daten und Bilder der
+Ich willige ein, dass pseudonymisierte Daten sowie Bilder und Videos der
 Ultraschalluntersuchungen im Internet veröffentlicht werden.
 
 Ich bin darüber aufgeklärt worden, dass ich meine Einwilligung zur Datenverarbeitung bis zur Veröffentlichung widerrufen kann.

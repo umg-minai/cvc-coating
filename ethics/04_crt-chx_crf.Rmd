@@ -38,8 +38,14 @@ output:
 +---------------------------------+-------------------------------------------+
 | Punktion                                                                    |
 +:================================+:==========================================+
-| Zeitpunkt der Anlage            | \                                         |
+| Beginn der Anlage               |                                           |
+| (Zeitpunkt des sterilen         |                                           |
+| Abdeckens)                      | \                                         |
 | z.B. 01.01.2025 10:31           | __ __ . __ __ . 2025  __ __ : __ __ Uhr   |
++---------------------------------+-------------------------------------------+
+| Ende der Anlage                 |                                           |
+| (Zeitpunkt Wundverband)         | \                                         |
+| z.B. 01.01.2025 10:51           | __ __ . __ __ . 2025  __ __ : __ __ Uhr   |
 +---------------------------------+-------------------------------------------+
 | Punktionsort                    | &#9744; V. jug. int. rechts \             |
 |                                 | &#9744; V. jug. int. links \              |
@@ -48,6 +54,9 @@ output:
 +---------------------------------+-------------------------------------------+
 | Stichinzision \                 | &#9744; ja \                              |
 | (Nadel oder Skapel)             | &#9744; nein                              |
++---------------------------------+-------------------------------------------+
+| Aktueller Herzrhythmus \        | &#9744; regelmäßig (SR/Schrittmacher)\    |
+|                                 | &#9744; unregelmäßig (VHF, TAA, ...)      |
 +---------------------------------+-------------------------------------------+
 | EKG-Lagekontrolle \             | &#9744; erfolgreich \                     |
 |                                 | &#9744; nicht erfolgreich \               |
@@ -61,10 +70,14 @@ output:
 | (diesen ZVK nicht mit           | &#9744; 50 bis weniger als 100 ZVKs \     |
 | eingeschlossen)                 | &#9744; 100 oder mehr ZVKs                |
 +---------------------------------+-------------------------------------------+
-| Komplikationen bei der Anlage \ | &#9744; Mehrfachpunktion der Haut \       |
-| (Mehrfachauswahl möglich)       | &#9744; Mehrfachpunktion des Gefäß \      |
+| Komplikationen bei der Anlage \ | &#9744; Keine \                           |
+| (Mehrfachauswahl möglich)       | &#9744; Mehrfachpunktion der Haut \       |
+|                                 | &#9744; Mehrfachpunktion des Gefäßes \    |
+|                                 | &#9744; Hämatombildung \                  |
 |                                 | &#9744; Min. einmalig frustraner          |
 |                                 | Drahtvorschub \                           |
 |                                 | &#9744; Sonstiges:                        |
 |                                 | ________________________________          |
++---------------------------------+-------------------------------------------+
+| Kommentar/Sonstiges:            | ________________________________          |
 +---------------------------------+-------------------------------------------+

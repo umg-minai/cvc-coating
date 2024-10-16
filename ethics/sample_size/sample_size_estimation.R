@@ -96,11 +96,11 @@ n.finalsamplesize <- signif(n.samplesize + 30, 2)
 sample_size_tbl <- knitr::kable(
     cbind(delta, n.events, n.samplesize),
     row.names = FALSE,
-    col.names = c("Delta HR", "Anzahl der Events", "Geschätze Fallzahl"),
+    col.names = c("Delta HR", "Anzahl der Events", "Geschätzte Fallzahl"),
     caption = paste0(
         "Übersicht Fallzahlschätzung. ",
-        "Unter der Annahme einer durchschnittlichen Wahrscheinlichtkeit ",
-        "an katheter-assozierten Thrombosen von ", round(100 * p.event.assumed),
+        "Unter der Annahme einer durchschnittlichen Wahrscheinlichkeit ",
+        "an katheter-assoziierten Thrombosen von ", round(100 * p.event.assumed),
         " % notwendige Events für eine Power von ", round(100 * power),
         " % und einem Alpha-Fehler von ", round(100 * alpha),
         " %."

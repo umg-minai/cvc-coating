@@ -1,6 +1,6 @@
 ---
 title: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
-titleengl: Catheter-related thrombosis in central venous catheter coated with or without chlorhexidine - a randomised controlled trial.
+titleengl: Catheter-related thrombosis in central venous catheter coated with or without chlorhexidine - a randomised controlled trial
 date: "`r format(Sys.Date(), '%d.%m.%Y')`"
 author:
     name: "Dr. med. Sebastian Gibb"
@@ -34,7 +34,7 @@ frf <- function(...)
 
 # Prüfplan-Synopsis
 
-------------------------        --------------------------------------------------
+----------------------------    --------------------------------------------------
 **Bezeichnung der Studie**      `r rmarkdown::metadata[["title"]]`
 
 **Englische Bezeichnung**       `r rmarkdown::metadata[["titleengl"]]`
@@ -55,25 +55,29 @@ frf <- function(...)
 
 **Primäres Zielkriterium**      Thromboseraten der ZVKs
 
-**Sekundäre Zielkriterien**     - Art des Thrombus.
-                                - Anzahl verschlossener Lumen.
-                                - Größe des Thrombus.
-                                - Wachstum des Thrombus.
-                                - Inflammations- und Thrombosemarker.
-                                - Art des Tumors.
+**Sekundäre Zielkriterien**     - Art des Thrombus. \
+                                - Anzahl verschlossener Lumen. \
+                                - Größe des Thrombus. \
+                                - Wachstum des Thrombus. \
+                                - Inflammations- und Thrombosemarker. \
+                                - Herzryhthmus. \
+                                - Art des Tumors. \
                                 - Art des Eingriffs.
 
 **Patient\*innenpopulation**    Chirurgische Patient\*innen zur elektiven Tumorresektion eines Tumors im Oberbauch mit Indikation für eine ZVK-Anlage.
 
-**Einschlusskriterien**         - Erwachsene, mindestens 18 Jahre.
-                                - Tumorerkrankung an Pankreas, Leber, Ösophagus, Magen oder Duodenum.
-                                - Elektive OP zur Tumorentfernung.
-                                - Indikation zur Anlage eines ZVK.
+**Einschlusskriterien**         - Erwachsene, mindestens 18 Jahre. \
+                                - Tumorerkrankung an Pankreas, Leber, Ösophagus, Magen oder Duodenum. \
+                                - Elektive OP zur Tumorentfernung. \
+                                - Indikation zur Anlage eines ZVK. \
                                 - Anlage ZVK in rechter V. jugularis interna möglich.
 
-**Ausschlusskriterien**         - Ablehnung der Studienteilnahme.
-                                - Nicht-elektive OP.
-                                - Bekannter Thrombus in der rechten V. jugularis interna oder V. cava superior.
+**Ausschlusskriterien**         - Ablehnung der Studienteilnahme. \
+                                - Nicht einwilligungsfähige Patient\*innnen. \
+                                - Nicht-elektive OP. \
+                                - Bekannter Thrombus in der rechten V. jugularis interna oder V. cava superior. \
+                                - Bekannte Gerinnungsstörung. \
+                                - Bekannte Allergie ggü. Chlorhexidin.
 
 **Fallzahl**                    `r n.finalsamplesize["delta_hr=2"]`
 
@@ -99,6 +103,8 @@ Telefon: `r rmarkdown::metadata$author$phone`
 - Philipp Sprenger, `r rmarkdown::metadata$author$department`
 - Dr. med. Christian Emde, `r rmarkdown::metadata$author$department`
 - Dr. med. Sven-Olaf Kuhn, `r rmarkdown::metadata$author$department`
+- Dr. med. Martin Feig, `r rmarkdown::metadata$author$department`
+- Dr. med. Eric Moegelin, `r rmarkdown::metadata$author$department`
 - Prof. Dr. med. Falk von Dincklage, `r rmarkdown::metadata$author$department`
 
 # Wissenschaftlicher Hintergrund
@@ -108,7 +114,7 @@ differenzierten Katecholamin- und folgenden Intensivtherapie implantiert [@Geert
 Katheter-assoziierte Thrombosen (catheter-related thrombosis; CRT)
 sind eine der Hauptkomplikationen des zentralvenösen Zugangs und
 ein wichtiger Risikofaktor für Lungenarterienembolien und katheter-assoziierte Blutstrominfektionen (central line-associated bloodstream infections; CLABSI) [@Geerts2014; @Malinoski2013].
-
+\
 Die meisten CRTs sind asymptomatisch.
 Patient\*innen mit ZVK werden in der klinischen Routine nur selten auf CRTs untersucht.
 Während die Inzidenz der CRT bei internistischen Patient\*innen zwischen 6 und 16,9 % liegt [@Haggstrom2020;@Wu2023], wurden bei chirurgischen Patienten\*innen mit ZVK in 55-100 % der Fälle CRT festgestellt [@Malinoski2013;@Yamashita2020;@Gibb2024].
@@ -116,7 +122,7 @@ Während die Inzidenz der CRT bei internistischen Patient\*innen zwischen 6 und 
 In unser eigenen prospektiven Beobachtungsstudie (
 Stellungnahme der Ethikkommission der Universitätsmedizin Greifswald vom
 01.02.2022, Registrierungsnummer BB 006/22, Titel:
-Katheter assoziierte Thrombosen (CRT) bei Intensivpatienten einer operativ interdisziplinären Intensivstation)
+Katheter-assoziierte Thrombosen (CRT) bei Intensivpatienten einer operativ interdisziplinären Intensivstation)
 bei kritisch-kranken,
 chirurgischen Patient\*innen mit ZVK fanden wir bereits am ersten Tag nach
 Implantation der Katheter in zwei Dritteln aller Fälle Thrombosen [@Gibb2024].
@@ -136,19 +142,21 @@ kaum noch zur Reduktion von CLABSI bei [@CherryBukowiec2011; @Ullman2022].
 Ihre Verwendung wird allerdings bei hoher CLABSI-Inzidenz, Patient\*innen mit
 schwierigen Venenverhältnissen und/oder mit kürzlich implantierten
 Fremdmaterialien wie z.B. Herzklappen oder Aortenprothesen empfohlen [@Buetti2022].
-Eine CRT ist allerdings ein entscheidener Risikofaktor für das Auftreten einer
+Eine CRT ist allerdings ein entscheidender Risikofaktor für das Auftreten einer
 CLABSI [@Geerts2014].
 Somit könnten die antimikrobiell-beschichteten ZVKs ihrer eigentlichen Intention
-entgegen wirken.
+entgegenwirken.
 
-In bisherigen Studien sind katheterbedingte Risikofaktoren mit Ausnahme des
-Durchmessers nicht untersucht worden.
+In bisherigen Studien sind materialbedingte Risikofaktoren der Katheter nicht
+untersucht worden.
 
 # Fragestellung / Arbeitshypothese
 
-Die Studie soll klären, ob sich zentralvenöse Zugänge ohne und mit Chlorhexidinbeschichtung
-bei Patient\*innen nach einem tumorbedingten chirurgischen Eingriff im Oberbauch hinsichtlich
-der Rate an katheter-assoziierten Thrombosen unterscheiden.
+Die Studie soll klären, ob sich die Häufigkeit und die Morphologie von
+katheter-assoziierten Thrombosen nach Implantation
+zentralvenöser Katheter ohne und mit Chlorhexidinbeschichtung
+bei Patient\*innen nach einem tumorbedingten chirurgischen Eingriff im Oberbauch
+unterscheiden.
 
 # Studientyp / Studiendesign
 
@@ -162,23 +170,27 @@ Zeitpunkt des Auftretens sonografisch nachweisbarer Thromben am ZVK.
 
 ## Sekundäre Zielkriterien
 
-Abhängigkeit der Thrombusentehung bzw. Unterschiede in Bezug auf:
+Abhängigkeit der Thrombusenstehung bzw. Unterschiede in Bezug auf:
 
-- Art des Thrombus: Fibrinummantelung (fibrin sheat/fibrin sleeve), wandständiger Thrombus (mural thrombosis), venöser Thrombus, intraluminaler Thrombus [@Wall2015, @Geerts2014].
+- Art des Thrombus: Fibrinummantelung (fibrin sheat/fibrin sleeve), wandständiger Thrombus (mural thrombosis), venöser Thrombus.
 - Anzahl verschlossener Lumen.
-- Maximalen Durchmesser des Thrombus.
+- Maximalen Ausdehnung (Durchmesser) des Thrombus.
 - Maximale Länge des Thrombus.
 - Wachstum des Thrombus über die Zeit.
-- Inflammations- und Thrombosemarkern: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere.
+- Inflammations- und Thrombosemarkern: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere, Fibrinogen.
+- Herzrhythmus: regelmäßig (Sinusrhythmus oder Herzschrittmacher), unregelmäßig
+  (Vorhofflimmern).
 - Art des Tumors.
 - Art des Eingriffs.
 - Alter.
 - BMI.
+- ASA-Klassifikation.
 - Gerinnungsbeinflussende Medikamente (Thrombozytenaggregationshemmer, Direkte
   orale Antikoagulanzien, etc.) in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
-- Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
+- Vorerkrankungen wie Diabetes, Bluthochdruck, Hyperlipidämie/-cholesterinämie.
+- Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia oder cava superior.
 
 # Methoden der Datenerhebung
 
@@ -196,10 +208,11 @@ Erhebung Identifikationsdaten, biometrischer und anamnestischer Daten im Rahmen 
 - ASA Klassifikation.
 - ASS in der Vormedikation.
 - Thrombozytenaggregationshemmer in der Vormedikation.
-- Falithrom/Direkte Orale Antikoagulanzien in der Vormedikation.
-- Kontrazeptiva in der Vormedikation.
+- Falithrom/Direkte Orale Antikoagulanzien/Heparine in der Vormedikation.
+- Hormonpräparate/Kontrazeptiva in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
+- Vorerkrankungen wie Diabetes, Bluthochdruck, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
 - Art des Tumors.
 - Nachbestimmung o.g. Inflammations- und Thrombosemarker aus möglicherweise
@@ -219,14 +232,16 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 
 - LOT (Chargennummer) des ZVK.
 - Punktionsort (V. jugularis rechts, V. jugularis links, ...).
+- Anlagedauer.
 - Stichinzision ja/nein.
+- Herzrhythmus: regelmäßig/unregelmäßig.
 - EKG-Lagekontrolle (erfolgreich/nicht erfolgreich/nicht durchgeführt/...).
 - Erfahrung des*der Anwender*in (< 25 ZVKs, 25- <50 ZVKs, 50-100 ZVKs, >= 100 ZVKs).
 - Komplikationen bei der Anlage: Mehrfachpunktion, frustraner Drahtvorschub, Pneumothorax, Sonstiges.
 - Komplikationen im Verlauf:
     - klinisch diagnostizierte Thrombose.
     - Lumenverschluss.
-    - Verdacht auf/Nachweis eine katheter-assoziierten Infektion.
+    - Verdacht auf/Nachweis einer katheter-assoziierten Infektion.
 
 ## Thrombusdiagnostik
 
@@ -237,7 +252,7 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
   bis Tag 14 oder bis ein Tag nach Zug des Katheters.
 - Als Patient\*innen-ID wird die Randomisierungs-ID und der Tag in dem Format
   [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" eingegeben.
-- Speicherung der Videos und Bilder im DICOM-Format auf dem Sonogerät.
+- Speicherung der Videos und Bilder im DICOM-Format auf dem Ultraschallgerät.
 
 ### Auswertung Ultraschallbilder
 
@@ -247,9 +262,10 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 
 ## Laborwerte
 
-- Anlage eines studieneigenen Laborprofils mit: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere.
-- Keine zusätzliche Blutentnahme, lediglich Nachmeldung, wenn Blutabnahme
-  routinemäßig erfolgt.
+- Anlage eines studieneigenen Laborprofils mit: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere, Fibrinogen.
+- Keine zusätzliche Blutentnahme, lediglich Nachmeldung (so noch möglich,
+  da Gerinnungsparameter max. 4 Stunden nach Blutentnahme nachgemeldet werden
+  können), wenn Blutabnahme routinemäßig erfolgt.
 
 # Patienten/Probandencharakteristika
 
@@ -266,19 +282,24 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 ## Ausschlusskriterien
 
 - Ablehnung der Studienteilnahme.
+- Nicht einwilligungsfähige Patient\*innnen.
 - Nicht-elektive OP.
 - Bekannter Thrombus in der rechten V. jugularis interna oder V. cava superior.
+- Bekannte Gerinnungsstörung.
+- Bekannte Allergie ggü. Chlorhexidin.
 
 # Kompensation der Aufwendungen
+
+Es ist keine Kompensation der Aufwendungen geplant.
 
 # Versuchsablauf
 
 ## Vorbereitung der zentralen Venenkatheter
 
 Die zu untersuchenden zentralen Venenkatheter (ZVK) sind bei uns gelistet und
-werde aktuell regelmäßig im OP verwendet.
+werden aktuell regelmäßig im OP verwendet.
 Entsprechend der Fallzahlschätzung (siehe \@ref(sample-size-estimation))
-werde vor Beginn der Studie
+werden vor Beginn der Studie
 
 - `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen, Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-12854-N).
 - `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen mit ARROWg+ard Blue Protection (beschichtet mit Chlorhexidin-Acetat und Silber-Sulfadiazin), Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-22854-N)
@@ -293,7 +314,7 @@ Fach aufbewahrt.
 Es erfolgt eine stratifizierte Blockrandomisierung, wie unter
 \@ref(randomisation) beschrieben.
 Das R-Script mit dem Code zur Erstellung der Randomisierungslisten wird einem
-unserer wissenschaftlichen Mitarbeitern (Dr. Gregor Lichtner),
+unserer wissenschaftlichen Mitarbeiter (Dr. Gregor Lichtner),
 der nicht an der Studie beteiligt ist, ausgehändigt.
 Er wird einen Startwert für den Randomisierungsalgorithmus wählen (sog. seed)
 und die Listen sowie Randomisierungsbriefe erstellen
@@ -313,8 +334,6 @@ entsprechend des zugehörigen Stratums (z.B. männlich - Leberresektion) am
 Prämedikationsprotokoll befestigt.
 Zusätzlich wird die Randomisierungspatient\*innen-ID im (elektronischen)
 Narkoseprotokoll vermerkt.
-**TODO: @Christian, Was machen wir mit dem Brief, wenn wir ICM-basierte
-Narkoseprotokolle ohne Ausdruck haben?**
 
 Die unterschriebene Einwilligungserklärung verbleibt bei der\*dem Patient\*in.
 Eine Kopie wird im Studienordner verwahrt, der in der Prämedikationsambulanz
@@ -331,7 +350,7 @@ durch die\*den Anästhesist\*in geöffnet und der entsprechende Katheter gewähl
 
 ## Anlage der zentralen Venenkatheter
 
-Die sterile und sonografische gestützte Anlage des zentralen Venenkatheters
+Die sterile und sonografisch gestützte Anlage des zentralen Venenkatheters
 folgt dem klinikinternen Standard (roxtra-ID: 7864). Die Lage wird EKG-gestützt
 kontrolliert.
 
@@ -345,15 +364,15 @@ Ausschluss der\*des Patient\*in.
 
 ## Tägliche Visite im postoperativen Verlauf
 
-Der zentrale Venenkatheter wird täglich durch eine\*n speziell geschulten
-Untersucher\*in sonografisch bis Tag 14 oder bis ein Tag nach Zug des Katheters
-kontrolliert.
+Der zentrale Venenkatheter wird täglich, beginnend am OP-Tag (Tag 0),
+durch eine\*n speziell geschulten Untersucher\*in sonografisch bis Tag 14
+oder bis einen Tag nach Zug des Katheters kontrolliert.
 Die\*Der Untersucher\*in digitalisieren am ersten Visitentag den händisch
 ausgefüllten Dokumentationsbogen.
 An jedem Visitentag prüfen sie, ob eine Blutentnahme erfolgte und
 melden ggf. die studienspezifischen Laborparameter nach.
 
-Soweit der postoperative Zustand es erlaubt wird folgender Ablauf
+Soweit der postoperative Zustand es erlaubt, wird folgender Ablauf
 für die Ultraschalluntersuchung eingehalten.
 
 ### Lagerung
@@ -370,18 +389,15 @@ für die Ultraschalluntersuchung eingehalten.
   [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" als Patienten-ID eingegeben.
 - Auswahl des Linearschallkopfes mit 12 MHz, Preset "Vene, obere".
 - Übersichtsvideo kurze Achse: Index des Schallkopfes nach lateral,
-  von kranial (Oberrand Schallkopf an der cutanen Einstichstelle)
+  von kranial (Oberrand Schallkopf an der kutanen Einstichstelle)
   nach kaudal gleiten und in die obere Thoraxapperatur hineinschwenken,
   V. jug. int. zentrieren,
   Tiefe möglichst auf 4 cm begrenzen (6 bis 8 cm wenn V. jug. int. sonst nicht
   im vollständigen Umfang abgebildet),
   möglichst wenig Anpressdruck um Vene nicht zu komprimieren.
-
-**TODO: @Sven-Olaf: Videos mit Farbdoppler?**
-
 - Videos kurze Achse - Kompressions- und Duplexsonografie:
     Index des Schallkopfes nach lateral,
-    von kranial (Oberrand Schallkopf an der cutanen Einstichstelle) nach kaudal
+    von kranial (Oberrand Schallkopf an der kutanen Einstichstelle) nach kaudal
     im Abstand von jeweils 1 cm je ein Video mit Kompression und Entlastung
     der V. jug. int. ohne und mit aktiviertem Farbdoppler (Standardeinstellung
     im Preset "Vene, obere"; bei Farbdoppler Schallkopf leicht (ca. 10°) nach
@@ -389,13 +405,13 @@ für die Ultraschalluntersuchung eingehalten.
     sonstige Einstellung wie oben: V. jug. int. zentrieren,
     Tiefe möglichst auf 4 cm begrenzen)
 - Übersichtsvideo lange Achse: Index des Schallkopfes nach kranial
-  (Index des Schallkopfes an cutaner Einstichstelle),
+  (Index des Schallkopfes an kutaner Einstichstelle),
   V. jug. int. im Längsverlauf, dann nach medial schwenken und von medial nach
   lateral durchschwenken.
 - Untersuchung auf dem Ultraschallgerät mit "Untersuchung abschließen" beenden.
 - Videos im "DICOM USB"-Format auf USB-Stick überspielen.
 - Videos vom USB-Stick auf Forschungslaufwerk übertragen und dort unter der
-  Randomisierungs-ID abgespeichert:
+  Randomisierungs-ID abspeichern:
   "crt-chx/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
   "crt-chx/sono/videos/WL03-01/"
 
@@ -403,23 +419,29 @@ für die Ultraschalluntersuchung eingehalten.
 
 Zwei unabhängige Untersucher\*innen (die nicht an der Aufnahme der Videos
 beteiligt waren) mit langjähriger Erfahrung im
-*point-of-care-ultrasound* und sonografie-gesteuerter Anlage von Gefäßzugängen
+*point-of-care-ultrasound* und in sonografie-gesteuerter Anlage von Gefäßzugängen
 werden getrennt voneinander die Videos mit einem DICOM-Viewer sichten.
 Dabei werden sie das Vorhandensein eines Thrombus, die Art und die maximale
 Quer- und Längsausdehnung vermessen und dokumentieren, sowie Bilder der
 Messungen (kurze und lange Achse) speichern.
 Die Bilder werden auf dem Forschungslaufwerk unter dem Untersuchungskürzel sowie
 der Randomisierungs-ID mit folgendem Dateinamen gespeichert:
-"crt-chx/sono/bilder/Untersucherkürzel/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png",
+"crt-chx/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png",
 z.B. "crt-chx/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
-Wird kein Thrombus identifiziert entfällt die Bildspeicherung.
+Wird kein Thrombus identifiziert, entfällt die Bildspeicherung.
+
+Die Einteilungen der Thrombusarten wären:
+- Fibrinummantelung (fibrin sheat/fibrin sleeve): gleichförmige Ummantelung des Katheters, maximale 2 mm Dicke (Abstand Katheter zu äußerer Rand des Thrombus).
+- Wandständiger Thrombus (mural thrombosis): Thrombus mit Kontakt zur Gefäßwand (in der Regel der Einstichstelle)
+- Venöser Thrombus (nicht wandständiger Thrombus vom Katheter ausgehend, größer
+  als 2 mm)
 
 ## Statistische Auswertung
 
 Das primäre Zielkritierum, die Thrombus-freie-Zeit wird als
 Überlebenszeitanalyse mit einem Kaplan-Meier-Schätzer moduliert.
 Unterschiede in der Thrombus-freien-Zeit zwischen den beiden Studienarmen
-werden mit dem Gehan-Wilcoxon Test, wie R-Paket *survival* implementiert,
+werden mit dem Gehan-Wilcoxon-Test, wie im R-Paket *survival* implementiert,
 geprüft [@survival-book; @R-survival].
 Die Vergleiche werden sowohl als *per-protocol*- und *as-treated*-Analyse
 durchgeführt (letztere wird prinzipbedingt erst nach der Entblindung
@@ -430,30 +452,33 @@ Skalenniveaus mit parametrischen bzw. nicht-parametrischen Hypothesentests
 (z.B. *t*-Test und Wilcoxon-Mann-Whitney-Test) geprüft.
 
 Um mögliche nicht-kontrollierte Einflussfaktoren zu finden, wird
-eine multivariable Cox Regressionsanalyse durchgeführt.
+eine multivariable Cox-Regressionsanalyse durchgeführt.
 [@Cox1972; @survival-book; @R-survival].
-Dabei werden folgende Faktoren adjustiert:
+Dabei wird für folgende Faktoren adjustiert:
 
 - Geschlecht.
 - Alter.
 - BMI.
 - Art des Tumors.
 - Art des Eingriffs.
+- Herzrhythmus: regelmäßig/unregelmäßig.
 - Inflammations- und Thrombosemarker.
 - Gerinnungsbeinflussende Medikamente (Thrombozytenaggregationshemmer, Direkte
-  orale Antikoagulanzien, etc.) in der Vormedikation.
+  orale Antikoagulanzien, Heparine, etc.) in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
+- Vorerkrankungen wie Diabetes, Bluthochdruck, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
+- Anlagedauer.
 - Stichinzision.
 - Erfahrung der\*des Anlegenden.
 - EKG-Lagekontrolle.
 - Komplikationen.
 
-In allen statistischen Tests wird ein *p*-Wert von 0.05 als statistisch
+In allen statistischen Tests wird ein *p*-Wert von 0,05 als statistisch
 signifikanter Unterschied interpretiert. Mit Ausnahme des primären
 Zielkriteriums werden alle *p*-Werte mit der Benjamini-Hochberg Methode
-für multiples Testen korrgiiert [@Benjamini1995].
+für multiples Testen korrigiert [@Benjamini1995].
 
 # Patienten-/Probandensicherheit
 
@@ -514,11 +539,11 @@ Für die Fallzahlschätzung nehmen wir eine CRT-Inzidenz von
 `r round(p.event.assumed * 100)` % an.
 
 Zwischen den unbeschichteten und antimikrobiell-beschichteten ZVKs sahen wir
-in unsere Beobachtungsstudie eine Differenz der *hazard ratio* von 2,5.
+in unserer Beobachtungsstudie eine Differenz der *hazard ratio* von 2,5.
 Aufgrund der geringen Anzahl beschichteter Katheter und damit wahrscheinlicherer
-Extremreignisse reduzieren wir auch die angestrebte *hazard ratio* auf 2.0.
+Extremereignisse reduzieren wir auch die angestrebte *hazard ratio* auf 2,0.
 
-Dies entspräche einer für uns weiterhin bedeutsamen *number-needed-to-harm* von
+Dies entspräche einer für uns weiterhin bedeutsamen *number needed to harm* von
 `r ceiling(1 / (p.event.assumed - p.event.assumed^hr.assumed))` [@Altman1999].
 
 Anhand der durchschnittlichen Eventrate von
@@ -533,14 +558,14 @@ sample_size_tbl
 ```
 
 
-In unser vorherigen Studie mussten wir aufgrund fehlender Dokumentation nach
+In unserer vorherigen Studie mussten wir aufgrund fehlender Dokumentation nach
 Anlage des ZVK im OP 12 % der Patient\*innen ausschließen.
 Hinzu kamen einige Ausschlüsse (ca. 5 %) aufgrund von schlechten Bedingungen
 für die Ultraschalluntersuchungen
 (sehr kaudale Punktionsstelle, Hautemphysem, u.a.)
 bzw. technische Probleme bei der Speicherung der Bilder/Videos auf dem
 Ultraschallgerät (ebenfalls ca. 5 %).
-Aufgrund dessen erhöhen wir die Fallzahl um 30 %
+Aufgrund dessen erhöhen wir die Fallzahl um 30 %,
 um diese *drop-outs* bzw. *lost to follow-up* zu kompensieren.
 
 Insgesamt erhalten wir somit eine Fallzahl von
@@ -550,12 +575,12 @@ Patient\*innen (`r round(n.finalsamplesize["delta_hr=2"] / 2)` pro Studienarm).
 ## Randomisierung {#randomisation}
 
 Zur Randomisierung wird eine stratifizierte Blockrandomisierung mit variablen
-Blockgröße 2, 4 und 6 durchgeführt.
+Blockgrößen von 2, 4 und 6 durchgeführt.
 Die Strata sind nach Geschlecht (männlich/weiblich) und hauptsächlicher
 Tumorlokalisation (Leber/Pankreas/Gastrointestinal) unterteilt.
 
 Das R-Script mit dem Code zur Erstellung der Randomisierungslisten wird einem
-unserer wissenschaftlichen Mitarbeitern (Dr. Gregor Lichtner),
+unserer wissenschaftlichen Mitarbeiter (Dr. Gregor Lichtner),
 der nicht an der Studie beteiligt ist, ausgehändigt (R-Script im Anhang).
 Er wird einen Startwert für den Randomisierungsalgorithmus wählen (sog. seed)
 und die Listen sowie Randomisierungsbriefe erstellen
@@ -614,7 +639,7 @@ In REDCap sind verschiedene Nutzungsrechte für die einzelnen Beteiligten
 hinterlegt, so dass
 die Studienärzt\*innen nach Einschluss der Patient\*innen nur die präoperativen
 Daten, die Ultraschalluntersucher\*innen nur die Daten zur ZVK-Anlage und
-täglichen ZVK-Ultraschallvisite, und die Kolleg\*innne, die die
+täglichen ZVK-Ultraschallvisite, und die Kolleg\*innen, die die
 Ultraschallvideos bewerten nur die Daten zur CRT eingeben und einsehen können.
 Die Kolleg\*innen, die die Daten auswerten, haben bis auf die Tabelle mit den
 Zuordnungen der ZVK-LOTs und Randomisierungs-IDs lesenden Zugriff auf alle
@@ -628,19 +653,17 @@ gespeichert:
 
 - Videos: "crt-chx/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
   "crt-chx/sono/videos/WL03-01/"
-- Bilder: "crt-chx/sono/bilder/Untersucherkürzel/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png", z.B. "crt-chx/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
+- Bilder: "crt-chx/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png", z.B. "crt-chx/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
 
-Zugriff auf diesen Studieordner haben lediglich die Kolleg\*innen, die die
+Zugriff auf diesen Studienordner haben lediglich die Kolleg\*innen, die die
 Videos erstellen und auswerten sollen.
 Zur Übertragung der Videos vom Ultraschallgerät auf das Studienlaufwerk werden
 diese temporär auf einem gesonderten USB-Stick gespeichert.
 
 Die Ergebnisse der Studie sollen veröffentlicht werden.
 Im Sinne guter Forschungspraxis und Reproduzierbarkeit planen wir mit Ausnahme
-der Zuordnungslisten (Fallnummer - Randomisierungs-ID) und Videos der
-Ultraschalluntersuchungen (aufgrund der Datengröße, je nach Länge des Videos
-0.5-2 GB je Untersuchung) alle erhobenen Daten und Auswertungen
-zu veröffentlichen.
+der Zuordnungslisten (Fallnummer - Randomisierungs-ID)
+alle erhobenen Daten, Bilder, Videos und Auswertungen zu veröffentlichen.
 
 Die Patient\*innen werden vor Einwilligung während des Informationsgespräches
 über die Studie und auch in der angehängten Patient\*inneninformation darüber
@@ -648,7 +671,7 @@ aufgeklärt.
 
 Das "Verzeichnis der Verarbeitungstätigkeiten" ist ebenfalls angehängt.
 
-# Patienten/Probanden-Information und Einwilligungserklärung mit Datenschutzerklärung
+# Patienten-/Probanden-Information und Einwilligungserklärung mit Datenschutzerklärung
 
 Siehe angehängtes Dokument.
 
@@ -658,8 +681,7 @@ Der Projektleiter bestätigt mit der Unterschrift,
 
 - dass auch bei einer positiven Beurteilung des Vorhabens durch die Ethikkommission
 an der Universitätsmedizin Greifswald die ärztliche und juristische Verantwortung
-uneingeschränkt bei dem/der Projektleiter/in und seinen Mitarbeiter/innen
-verbleibt.
+uneingeschränkt beim Projektleiter und seinen Mitarbeitenden verbleibt.
 - die Richtigkeit und Vollständigkeit dieses Antrages.
 
 
