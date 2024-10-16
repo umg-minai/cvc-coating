@@ -40,7 +40,7 @@ make randomise
 Add randomisation tables to *randomisation* branch.
 
 ```sh
-git add ethics/randomisation/*.csv
+git add --force ethics/randomisation/*.csv
 git commit -m "feat: add randomisation tables"
 ```
 
