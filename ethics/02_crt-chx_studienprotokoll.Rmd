@@ -282,7 +282,7 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 - Erwachsene, mindestens 18 Jahre alt.
 - Tumorerkrankung an Pankreas, Leber, Ösophagus, Magen oder Duodenum.
 - Elektive OP zur Entfernung dieser Tumore, z.B. Leberresektion, pyloruserhaltenden Pankreaskopfresektion, oder Gastrektomie
-- Nach klinikinterner SOP "Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" Indikation zur Anlage eines ZVK (siehe Anlage).
+- Nach klinikinterner SOP "Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" (roxtra-ID: 7842) Indikation zur Anlage eines ZVK (siehe Anlage).
 - Anlage ZVK in rechter V. jugularis interna möglich.
 
 ## Ausschlusskriterien
@@ -490,7 +490,7 @@ für multiples Testen korrigiert [@Benjamini1995].
 
 Die Anlage der ZVKs erfolgt für die jeweilige geplante
 Operation indikationsgemäß entsprechend der hausinternen SOP
-"Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" (siehe Anlage).
+"Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" (roxtra-ID: 7842 und siehe Anlage).
 Beide Kathetertypen werden aktuell regelmäßig in unser Klinik verwendet.
 Zusätzliche Blutabnahmen erfolgen nicht.
 Wiederholte kurzzeitige Ultraschalluntersuchungen sind unbedenklich.
