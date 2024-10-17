@@ -587,7 +587,7 @@ Tumorlokalisation (Leber/Pankreas/Gastrointestinal) unterteilt.
 
 Das R-Script mit dem Code zur Erstellung der Randomisierungslisten wird einem
 unserer wissenschaftlichen Mitarbeiter (Dr. Gregor Lichtner),
-der nicht an der Studie beteiligt ist, ausgehändigt (R-Script im Anhang).
+der nicht an der Studie beteiligt ist, ausgehändigt.
 Er wird einen Startwert für den Randomisierungsalgorithmus wählen (sog. seed)
 und die Listen sowie Randomisierungsbriefe erstellen
 (Beispiel der Liste und Briefe im Anhang).
@@ -714,13 +714,3 @@ Greifswald, `r .eval_meta(rmarkdown::metadata$date)`
 
 <!-- force references to be placed below -->
 <div id="refs"></div>
-
-# Anhänge
-
-# TODO:
-
-- REDCap-Masken anhängen
-- VVT anhängen
-- CRF ZVK-Anlage anhängen
-- Randomisierungs-R-Script anhängen; Bsp. Randomisierungsliste und Briefe anhängen
-- SOP "Anästhesiologische Versorgung von Patienten im Fachbereich Allgemein- und Viszeralchirurgie" anhängen
