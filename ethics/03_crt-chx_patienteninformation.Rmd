@@ -19,7 +19,7 @@ cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::cur
 cfg-principial-investigator: "Dr. med. Sebastian Gibb"
 cfg-principial-investigator-contact: "Tel. 03834 865801"
 cfg-department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
-cfg-drksnumber: TODO
+cfg-drksnumber: DRKS00035159
 bibliography: bibliography.bib
 output:
     bookdown::odt_document2:
