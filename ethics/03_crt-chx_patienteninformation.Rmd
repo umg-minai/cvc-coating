@@ -162,11 +162,6 @@ Gründen, Ihre Einwilligung mündlich oder schriftlich widerrufen.**
 Die Studie wurde von der zuständigen Ethikkommission begutachtet.
 Es liegen keine ethischen und rechtlichen Bedenken vor.
 
-## Quellen {-}
-
-<!-- force references to be placed below -->
-<div id="refs"></div>
-
 # Was sind Nutzen und Risiken der Studie für mich persönlich?
 
 ## Möglicher Nutzen
@@ -318,6 +313,10 @@ Wenden Sie sich bitte an:
 `r rmarkdown::metadata$author$address`\
 Telefon: `r rmarkdown::metadata$author$phone`\
 E-Mail: `r rmarkdown::metadata$author$email`
+
+\newpage
+
+Diese Seite wurde absichtlich leer gelassen.
 
 \newpage
 
