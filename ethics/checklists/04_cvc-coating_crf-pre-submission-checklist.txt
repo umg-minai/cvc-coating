@@ -1,2 +1,7 @@
 "LOT-Aufkleber hier platzieren" grau eingefärbt?
 Beide Tabellenrahmen gesetzt?
+Schriftgröße auf 10.5 pt reduziert?
+Leerzeilen zwischen beiden Tabellen entfernt?
+Kopfzeile formatieren, "Kopfzeile, Abstand auf 0.00 cm" reduziert?
+Fußzeile formatieren, "Fußzeile, Abstand auf 0.00 cm" reduziert?
+Seite formatieren, "Format/Seitenvorlage", Seitenränder auf 1.50 und 1.0 cm reduziert?
