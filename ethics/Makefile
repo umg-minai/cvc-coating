@@ -44,7 +44,7 @@ $(OUTPUTDIR)/%.pdf: %.R | $(OUTPUTDIR)
 	${GUIXTME} -- Rscript $<
 
 $(DISTRIBUTIONDIR)/%.pdf: $(OUTPUTDIR)/%.pdf | $(OUTPUTDIR)
-	cp $< $(DISTRIBUTIONDIR)/$(basename $(notdir $<))_$(DATE)_$(shell git log -n 1 --pretty=format:%h -- $(notdir $(<:%.pdf=%.md))).pdf
+	cp $< $(DISTRIBUTIONDIR)/$(basename $(notdir $<))_$(DATE)_$(shell git log -n 1 --pretty=format:%h -- $(notdir $(<:%.pdf=%.*))).pdf
 
 $(DISTRIBUTIONDIR)/%.docx: $(OUTPUTDIR)/%.docx | $(DISTRIBUTIONDIR)
 	if [ -f "checklists/$(basename $(notdir $<))-pre-submission-checklist.txt" ] ; then \
