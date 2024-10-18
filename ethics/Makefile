@@ -35,7 +35,7 @@ $(OUTPUTDIR)/%.odt: %.Rmd | $(OUTPUTDIR)
 	${GUIXTME} -- Rscript -e "rmarkdown::render('$<', output_dir = '$(OUTPUTDIR)')"
 
 $(OUTPUTDIR)/%.docx: $(OUTPUTDIR)/%.odt | $(OUTPUTDIR)
-	${GUIXTME} libreoffice -- libreoffice --headless --convert-to docx $< --outdir $(OUTPUTDIR)
+	${GUIXTME} libreoffice --headless --convert-to docx $< --outdir $(OUTPUTDIR)
 
 $(OUTPUTDIR)/%.pdf: %.md | $(OUTPUTDIR)
 	${GUIXTME} pandoc -- pandoc $< --template=pandoc/templates/letter.tex --output $@
@@ -55,7 +55,7 @@ $(SUBMISSIONDIR)/%.pdf: $(DISTRIBUTIONDIR)/%.pdf | $(SUBMISSIONDIR)
 	cp $< $(SUBMISSIONDIR)/
 
 $(SUBMISSIONDIR)/%.docx: $(DISTRIBUTIONDIR)/%.docx | $(SUBMISSIONDIR)
-	${GUIXTME} libreoffice -- libreoffice --headless --convert-to pdf $< --outdir $(SUBMISSIONDIR)
+	${GUIXTME} libreoffice --headless --convert-to pdf $< --outdir $(SUBMISSIONDIR)
 
 .PHONEY:
 dist: $(patsubst $(OUTPUTDIR)/%,$(DISTRIBUTIONDIR)/%,$(DOCX)) $(patsubst $(OUTPUTDIR)/%,$(DISTRIBUTIONDIR)/%,$(PDF)) | $(DISTRIBUTIONDIR)
