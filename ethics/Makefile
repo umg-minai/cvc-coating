@@ -39,7 +39,7 @@ $(OUTPUTDIR)/%.pdf: %.md | $(OUTPUTDIR)
 $(OUTPUTDIR)/%.pdf: %.R | $(OUTPUTDIR)
 	${GUIXTME} -- Rscript $<
 
-$(DISTRIBUTIONDIR)/%.pdf: $(OUTPUTDIR)/%.pdf | $(OUTPUTDIR)
+$(DISTRIBUTIONDIR)/%.pdf: $(OUTPUTDIR)/%.pdf | $(DISTRIBUTIONDIR)
 	cp $< $(DISTRIBUTIONDIR)/$(basename $(notdir $<))_$(DATE)_$(shell git log -n 1 --pretty=format:%h -- $(notdir $(<:%.pdf=%.*))).pdf
 
 $(DISTRIBUTIONDIR)/%.odt: $(OUTPUTDIR)/%.odt | $(DISTRIBUTIONDIR)
