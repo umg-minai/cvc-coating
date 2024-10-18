@@ -1,4 +1,4 @@
-# Prospektive, multizentrische Beobachtungsstudie zur Bestimmung der Effizienz von Aktivkohlefiltern sowie der Wiedergewinnung von im OP verwendetem Sevofluran (VCT-OR-MC)
+# CVC-Coating: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
 
 ## Über die Studie
 
