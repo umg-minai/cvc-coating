@@ -4,7 +4,7 @@ title:
 
     zur Studienteilnahme an der klinischen Studie\
 
-    \"Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie (CRT-CHX)\"
+    \"Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie (CVC-Coating)\"
 title2: Katheter-assoziierte Thrombosen an zentralvenösen Kathetern mit bzw. ohne Chlorhexidinbeschichtung - eine randomisierte kontrollierte Studie
 date: "`r format(Sys.Date(), '%d.%m.%Y')`"
 author:
@@ -13,7 +13,7 @@ author:
     email: "sebastian.gibb@med.uni-greifswald.de"
     department: "Universitätsmedizin Greifswald\\\nKlinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstraße\n\n17475 Greifswald"
-cfg-acronym: CRT-CHX
+cfg-acronym: CVC-Coating
 cfg-version: '0.1'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
 cfg-principial-investigator: "Dr. med. Sebastian Gibb"

@@ -8,7 +8,7 @@ author:
     email: "sebastian.gibb@med.uni-greifswald.de"
     department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
-cfg-acronym: CRT-CHX
+cfg-acronym: CVC-Coating
 cfg-version: '0.1'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
 cfg-principial-investigator: "Dr. med. Sebastian Gibb"
@@ -418,8 +418,8 @@ für die Ultraschalluntersuchung eingehalten.
 - Videos im "DICOM USB"-Format auf USB-Stick überspielen.
 - Videos vom USB-Stick auf Forschungslaufwerk übertragen und dort unter der
   Randomisierungs-ID abspeichern:
-  "crt-chx/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
-  "crt-chx/sono/videos/WL03-01/"
+  "cvc-coating/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
+  "cvc-coating/sono/videos/WL03-01/"
 
 ## Auswertung Ultraschallbilder
 
@@ -432,8 +432,8 @@ Quer- und Längsausdehnung vermessen und dokumentieren, sowie Bilder der
 Messungen (kurze und lange Achse) speichern.
 Die Bilder werden auf dem Forschungslaufwerk unter dem Untersuchungskürzel sowie
 der Randomisierungs-ID mit folgendem Dateinamen gespeichert:
-"crt-chx/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png",
-z.B. "crt-chx/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
+"cvc-coating/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png",
+z.B. "cvc-coating/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
 Wird kein Thrombus identifiziert, entfällt die Bildspeicherung.
 
 Die Einteilungen der Thrombusarten wären:
@@ -657,9 +657,9 @@ Forschungslaufwerk der Klinik für Anästhesie, Intensiv-, Notfall- und
 Schmerzmedizin in einem gesonderten Studienordner nach folgendem Schema
 gespeichert:
 
-- Videos: "crt-chx/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
-  "crt-chx/sono/videos/WL03-01/"
-- Bilder: "crt-chx/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png", z.B. "crt-chx/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
+- Videos: "cvc-coating/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/", z.B.
+  "cvc-coating/sono/videos/WL03-01/"
+- Bilder: "cvc-coating/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png", z.B. "cvc-coating/sono/bilder/gibbs/WL03-01-L.png" für WL03, Tag 1, lange Achse.
 
 Zugriff auf diesen Studienordner haben lediglich die Kolleg\*innen, die die
 Videos erstellen und auswerten sollen.

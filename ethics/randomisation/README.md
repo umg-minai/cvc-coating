@@ -1,4 +1,4 @@
-# Randomisation for CRT-CHX
+# Randomisation for CVC-Coating
 
 ## Boostrap on debian
 

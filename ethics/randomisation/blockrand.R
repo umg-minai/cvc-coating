@@ -1,5 +1,5 @@
 ####
-## Block randomisation for CRT-CHX
+## Block randomisation for CVC-Coating
 ##
 ## TODO:
 ## 1. Adapt seed (and store it save and secure til the end of the analysis).
@@ -97,7 +97,7 @@ write.csv(
 ####
 
 cex <- 1.5
-study_name <- "CRT-CHX"
+study_name <- "CVC-Coating"
 group_col <- c("#FDAE61FF", "#3288BDFF")
 strat_col <- c("#E41A1C", "#377EB8", "#4DAF4A", "#984EA3", "#FF7F00", "#A65628")
 

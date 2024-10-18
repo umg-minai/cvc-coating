@@ -176,6 +176,6 @@ graph <- "
 "
 rsvg::rsvg_pdf(
         charToRaw(DiagrammeRsvg::export_svg(grViz(graph))),
-        file = frf("ethics", "output", "06_crt-chx_flowchart.pdf")
+        file = frf("ethics", "output", "06_cvc-coating_flowchart.pdf")
 )
 
