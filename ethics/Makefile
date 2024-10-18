@@ -17,8 +17,6 @@ DATE=$(shell date +'%Y%m%d')
 
 .DELETE_ON_ERROR:
 
-$(info $(DISTRIBUTIONODT:$(DISTRIBUTIONDIR)/%.odt=$(SUBMISSIONDIR)/%.pdf))
-
 all: $(ODT) $(PDF)
 
 .PHONEY:
