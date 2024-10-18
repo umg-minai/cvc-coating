@@ -437,6 +437,7 @@ z.B. `cvc-coating/sono/bilder/gibbs/WL03-01-L.png` für WL03, Tag 1, lange Achse
 Wird kein Thrombus identifiziert, entfällt die Bildspeicherung.
 
 Die Einteilungen der Thrombusarten wären:
+
 - Fibrinummantelung (fibrin sheat/fibrin sleeve): gleichförmige Ummantelung des Katheters, maximale 2 mm Dicke (Abstand Katheter zu äußerer Rand des Thrombus).
 - Wandständiger Thrombus (mural thrombosis): Thrombus mit Kontakt zur Gefäßwand (in der Regel der Einstichstelle)
 - Venöser Thrombus (nicht wandständiger Thrombus vom Katheter ausgehend, größer
@@ -522,8 +523,8 @@ Es sind keine Abbruchkriterien vorgesehen.
 - Berufsordnung der Ärztinnen und Ärzte in Mecklenburg-Vorpommern (unter besonderer Berücksichtigung des §15 bzw. vergleichbare Abschnitte in dem jeweiligen Bundesland des teilnehmenden Zentrums).
 - Gesetz über den Öffentlichen Gesundheitsdienst im Land Mecklenburg-Vorpommern
   vom 19. Juli 1994, §25 Umgang mit Personenbezogenen Daten
-- Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom
-  27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung
+- Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates
+  vom 27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung
   personenbezogener Daten, zum freien Datenverkehr und zur Aufhebung der
   Richtlinie 95/46/EG (Datenschutz-Grundverordnung)
 
