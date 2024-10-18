@@ -14,7 +14,7 @@ author:
     department: "Universitätsmedizin Greifswald\\\nKlinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstraße\n\n17475 Greifswald"
 cfg-acronym: CVC-Coating
-cfg-version: '0.1'
+cfg-version: '1.0'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
 cfg-principial-investigator: "Dr. med. Sebastian Gibb"
 cfg-principial-investigator-contact: "Tel. 03834 865801"
