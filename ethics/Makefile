@@ -1,7 +1,7 @@
 GUIX:=/usr/local/bin/guix
 GUIXTME:=${GUIX} time-machine --channels=../guix/channels.pinned.scm -- \
 		shell --manifest=../guix/manifest-ethics.scm
-MD=$(wildcard *.md)
+MD=$(filter-out README.md,$(wildcard *.md))
 RMD=$(wildcard *.Rmd)
 R=$(wildcard *.R)
 OUTPUTDIR:=output
