@@ -707,10 +707,12 @@ an der Universitätsmedizin Greifswald die ärztliche und juristische Verantwort
 uneingeschränkt beim Projektleiter und seinen Mitarbeitenden verbleibt.
 - die Richtigkeit und Vollständigkeit dieses Antrages.
 
-
+\
 Greifswald, `r .eval_meta(rmarkdown::metadata$date)`
 
+\
 `r rmarkdown::metadata$author$name`
+\newpage
 
 # Referenzen
 
