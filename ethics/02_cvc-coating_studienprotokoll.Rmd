@@ -16,6 +16,7 @@ cfg-principial-investigator-contact: "Tel. 03834 865801"
 cfg-department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
 cfg-drksnumber: DRKS00035159
 bibliography: bibliography.bib
+csl: pandoc/csl/springer-basic-brackets.csl
 output:
     bookdown::odt_document2:
         reference_odt: pandoc/reference/reference-protocol.odt
