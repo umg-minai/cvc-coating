@@ -69,8 +69,8 @@ https://umg-minai.github.io/crt/
 
 You are welcome to:
 
-- submit suggestions and bug-reports at: <https://github.com/umg-minai/vct-or-mc/issues>
-- send a pull request on: <https://github.com/umg-minai/vct-or-mc/>
+- submit suggestions and bug-reports at: <https://github.com/umg-minai/cvc-coating/issues>
+- send a pull request on: <https://github.com/umg-minai/cvc-coating/>
 - compose an e-mail to: <mail@sebastiangibb.de>
 
 We try to follow:
