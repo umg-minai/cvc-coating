@@ -3,3 +3,5 @@ distribute/
 misc/
 output/
 contacts/
+.nextcloudsync.log
+.sync_*
