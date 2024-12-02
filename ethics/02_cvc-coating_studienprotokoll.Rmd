@@ -9,7 +9,7 @@ author:
     department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
 cfg-acronym: CVC-Coating
-cfg-version: '1.0'
+cfg-version: '1.1'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
 cfg-principial-investigator: "Dr. med. Sebastian Gibb"
 cfg-principial-investigator-contact: "Tel. 03834 865801"
@@ -71,7 +71,8 @@ frf <- function(...)
 
 **Patient\*innenpopulation**    Chirurgische Patient\*innen zur elektiven Tumorresektion eines Tumors im Oberbauch mit Indikation für eine ZVK-Anlage.
 
-**Einschlusskriterien**         - Erwachsene, mindestens 18 Jahre. \
+**Einschlusskriterien**         - Vorliegen einer schriftlichen Einwilligungserklärung. \
+                                - Erwachsene, mindestens 18 Jahre. \
                                 - Tumorerkrankung an Pankreas, Leber, Ösophagus, Magen oder Duodenum. \
                                 - Elektive OP zur Tumorentfernung. \
                                 - Indikation zur Anlage eines ZVK. \
@@ -92,6 +93,13 @@ frf <- function(...)
 
 **Datum**                       `r .eval_meta(rmarkdown::metadata$date)`
 ----------------------------------------------------------------------------------
+
+# Änderungen gegenüber vorherigen Versionen
+
+## Version 1.1
+
+- Vorliegen einer schriftlichen Einwilligungserklärung als weiteres
+  Einschlusskriterium.
 
 # Verantwortlichkeiten und Kooperationen
 
@@ -280,6 +288,7 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 
 ## Einschlusskriterien
 
+- Vorliegen einer schriftlichen Einwilligungserklärung.
 - Erwachsene, mindestens 18 Jahre alt.
 - Tumorerkrankung an Pankreas, Leber, Ösophagus, Magen oder Duodenum.
 - Elektive OP zur Entfernung dieser Tumore, z.B. Leberresektion, pyloruserhaltenden Pankreaskopfresektion, oder Gastrektomie
@@ -309,7 +318,7 @@ Entsprechend der Fallzahlschätzung (siehe \@ref(sample-size-estimation))
 werden vor Beginn der Studie
 
 - `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen, Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-12854-N).
-- `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen mit ARROWg+ard Blue Protection (beschichtet mit Chlorhexidin-Acetat und Silber-Sulfadiazin), Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-22854-N)
+- `r ceiling(n.finalsamplesize[2] / 2)` Arrow ZVKs des Typs CVC 4-Lumen mit ARROWg+ard Blue Protection (beschichtet mit Chlorhexidin-Acetat und Silber-Sulfadiazin), Durchmesser 8,5 Fr, Länge 15 cm (Ref: EU-22854-N).
 
 bereitgelegt und mit dem angehängten Dokumentationsbogen beklebt.
 Der LOT-Aufkleber von der Verpackung wird auf den Dokumentationsbogen geklebt.

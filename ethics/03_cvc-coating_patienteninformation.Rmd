@@ -14,7 +14,7 @@ author:
     department: "Universitätsmedizin Greifswald\\\nKlinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstraße\n\n17475 Greifswald"
 cfg-acronym: CVC-Coating
-cfg-version: '1.0'
+cfg-version: '1.1'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
 cfg-principial-investigator: "Dr. med. Sebastian Gibb"
 cfg-principial-investigator-contact: "Tel. 03834 865801"
@@ -129,7 +129,7 @@ bis zur Entfernung bzw. bis maximal 14 Tage täglich mittels Ultraschall
 auf anhaftende Blutgerinnsel kontrolliert werden.
 Per Zufall wird jeweils die Hälfte der Patient\*innen einen ZVK mit oder ohne
 antibakterielle Beschichtung erhalten (Randomisierung).
-Die Katheter sind ansonsten indentisch.
+Die Katheter sind ansonsten identisch.
 Abgesehen von der zusätzlichen täglichen Ultraschalluntersuchung
 der Halsvenen erfolgen für Sie keine zusätzlichen Maßnahmen.
 Die medizinische Behandlung ändert sich durch die Studie nicht.
@@ -150,6 +150,9 @@ und von `r rmarkdown::metadata[["cfg-principial-investigator"]]` geleitet.
 
 **Ihre Teilnahme an der Studie hat keinen Einfluss auf Ihre medizinische Behandlung,
 über die Sie bereits von Ihrem behandelnden Arzt aufgeklärt worden sind.
+Um dies zu gewährleisten werden Befunde, die im Rahmen der Studie erhoben werden,
+z.B. evtl. Blutgerinnsel an Ihrem ZVK, weder Ihnen noch dem Behandlungsteam
+mitgeteilt.
 Zusätzliche Besuche in der Klinik sind nicht erforderlich.**
 
 **Die Teilnahme an dieser Studie ist freiwillig.
@@ -216,7 +219,7 @@ Ohne Ihre Einwilligung ist eine Teilnahme nicht möglich und es findet keine Ver
 Im Rahmen der Studien erheben wir folgende personenbezogene Daten:
 
 - Demographische Daten: Geschlecht, Alter, Größe, Gewicht.
-- Medikamente (Blutverdünner, hormonelle Verhütungsmittel):
+- Medikamente (Blutverdünner, hormonelle Verhütungsmittel, ...):
 - Art der Tumorerkrankung.
 - Raucherstatus.
 - Thrombose in der Vorgeschichte.
@@ -305,7 +308,7 @@ Hierüber werden Sie nicht persönlich informiert.
 
 # An wen wende ich mich, wenn ich Fragen habe?
 
-Selbstverständlich steht Ihnen der Prüfarzt jederzeit für Fragen bezüglich der Studie zur Verfügung.
+Selbstverständlich steht Ihnen der Studienarzt jederzeit für Fragen bezüglich der Studie zur Verfügung.
 Wenden Sie sich bitte an:
 
 `r rmarkdown::metadata$author$name`\
@@ -338,14 +341,14 @@ beschrieben erhoben und in Papierform sowie auf elektronischen Datenträgern in
 der `r rmarkdown::metadata[["cfg-department"]]` aufgezeichnet werden.
 Zu diesem Zweck entbinde ich die mich behandelnden Ärzte von der ärztlichen Schweigepflicht.
 
-Ich willige ein, dass pseudonymisierte Daten sowie Bilder und Videos der
+Ich willige ein, dass *alle* pseudonymisierte Daten sowie Bilder und Videos der
 Ultraschalluntersuchungen im Internet veröffentlicht werden.
 
 Ich bin darüber aufgeklärt worden, dass ich meine Einwilligung zur Datenverarbeitung bis zur Veröffentlichung widerrufen kann.
 Im Falle des Widerrufs werden keine weiteren Daten mehr erhoben.
 
-Ich bin mir bewusst, dass bereits veröffentlichte Daten nicht widerrufen
-werden können und die Daten im Internet dauerhaft verfügbar sein werden.
+Ich bin mir bewusst, dass bereits veröffentlichte Daten *nicht* widerrufen
+werden können und die Daten im Internet *dauerhaft* verfügbar sein werden.
 
 ## Einwilligung
 
@@ -370,17 +373,17 @@ zu: \
 +---------------------------------+-------------------------------------------+
 \
 
-**Die nachstehenden Angaben müssen von der\*dem Prüfärzt\*in persönlich ausgefüllt werden:**
+**Die nachstehenden Angaben müssen von der\*dem Studienärzt\*in persönlich ausgefüllt werden:**
 
 +---------------------------------+-------------------------------------------+
 +:================================+:==========================================+
 | Vor- und Nachname der\*des      |                                           |
-| Prüfärzt\*in                    |                                           |
+| Studienärzt\*in                 |                                           |
 +---------------------------------+-------------------------------------------+
 | Ort und Datum                   |                                           |
 +---------------------------------+-------------------------------------------+
 | Unterschrift der\*des           |                                           |
-| Prüfärzt\*in                    |                                           |
+| Studienärzt\*in                 |                                           |
 +---------------------------------+-------------------------------------------+
 \
 
