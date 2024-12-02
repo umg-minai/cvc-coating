@@ -245,25 +245,44 @@ Eine Entschlüsselung erfolgt nur, wenn Sie vor Studienabschluss gegen die Verwe
 Ihrer Daten Widerspruch erheben, um Ihr Pseudonym zu finden und die damit
 verbundenen Daten zu löschen.
 
+Die Pseudonymisierungsliste wird *nicht* veröffentlicht und am Ende der
+Datenerhebung gelöscht.
+Die Daten sind damit anonymisiert.
+Eine Rückverfolgung Ihrer Daten ist auch durch uns dann nicht mehr möglich.
+
 Im Sinne guter Forschungspraxis, Reproduzierbarkeit und Nachvollziehbarkeit
 unser Auswertung planen wir
-**alle pseudonymisierten Daten sowie
+**alle anonymisierten Daten sowie
 Bilder und Videos der Ultraschalluntersuchungen
 im Internet zu veröffentlichen**.
 
-Die Pseudonymisierungsliste wird *nicht* veröffentlicht und am Ende der
-Datenerhebung gelöscht.
-Eine Rückverfolgung Ihrer Daten ist auch durch uns dann nicht mehr möglich.
+Bitte beachten Sie allerdings, dass eine Identifikation Ihrer Person
+nicht völlig ausgeschlossen werden kann.
+Es besteht stets ein Restrisiko einer Rückverfolgbarkeit der Daten zu
+Ihrer Person durch das Hinzuziehen weiterer Informationen,
+beispielsweise aus dem Internet oder medizinischen Datenbanken.
+Zudem kann eine Verarbeitung Ihrer Daten durch nicht
+EU-Länder, die kein angemessenen Datenschutzniveau vorweisen,
+nicht ausgeschlossen werden.
 
 ## Dauer, für die die personenbezogenen Daten gespeichert werden
 
-Da wir planen **alle pseudonymisierten Daten sowie Bilder und Videos der
+Da wir planen **alle anonymisierten Daten sowie Bilder und Videos der
 Ultraschalluntersuchungen im Internet zu veröffentlichen** ist von einer
 **dauerhaften Speicherung** der Daten auszugehen.
 
 Spätestens 1 Jahr nach Publikation der Studienergebnisse wird die
 Pseudonymisierungsliste vernichtet.
 Eine Rückverfolgung Ihrer Daten ist auch durch uns dann nicht mehr möglich.
+
+Bitte beachten Sie allerdings, dass eine Identifikation Ihrer Person
+nicht völlig ausgeschlossen werden kann.
+Es besteht stets ein Restrisiko einer Rückverfolgbarkeit der Daten zu
+Ihrer Person durch das Hinzuziehen weiterer Informationen,
+beispielsweise aus dem Internet oder medizinischen Datenbanken.
+Zudem kann eine Verarbeitung Ihrer Daten durch nicht
+EU-Länder, die kein angemessenen Datenschutzniveau vorweisen,
+nicht ausgeschlossen werden.
 
 ## Betroffenenrechte
 
@@ -319,10 +338,6 @@ E-Mail: `r rmarkdown::metadata$author$email`
 
 \newpage
 
-Diese Seite wurde absichtlich leer gelassen.
-
-\newpage
-
 # Einwilligungserklärung
 
 ## Einwilligung in die Studienteilnahme
@@ -341,7 +356,7 @@ beschrieben erhoben und in Papierform sowie auf elektronischen Datenträgern in
 der `r rmarkdown::metadata[["cfg-department"]]` aufgezeichnet werden.
 Zu diesem Zweck entbinde ich die mich behandelnden Ärzte von der ärztlichen Schweigepflicht.
 
-Ich willige ein, dass *alle* pseudonymisierte Daten sowie Bilder und Videos der
+Ich willige ein, dass *alle* anonymisierte Daten sowie Bilder und Videos der
 Ultraschalluntersuchungen im Internet veröffentlicht werden.
 
 Ich bin darüber aufgeklärt worden, dass ich meine Einwilligung zur Datenverarbeitung bis zur Veröffentlichung widerrufen kann.
