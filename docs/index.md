@@ -19,9 +19,9 @@ In dieser Studie soll untersucht werden, ob sich Blutgerinnsel schneller oder h√
 
 ## Dokumente
 
-- [Studienprotokoll](02_cvc-coating_studienprotokoll_20241018_be95a8d.pdf)
-- [Patient\*inneninformation](03_cvc-coating_patienteninformation_20241018_1ea2772.pdf)
-- [Dokumentationsbogen/Case Report Form](04_cvc-coating_crf_20241018_f53d4dd.pdf)
+- [Studienprotokoll](02_cvc-coating_studienprotokoll_20241202_9250b7e.pdf)
+- [Patient\*inneninformation](03_cvc-coating_patienteninformation_20241202_31c7a72.pdf)
+- [Dokumentationsbogen/Case Report Form](04_cvc-coating_crf_20241202_f53d4dd.pdf)
 
 ## Studienleitung
 
