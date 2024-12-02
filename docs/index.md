@@ -19,6 +19,7 @@ In dieser Studie soll untersucht werden, ob sich Blutgerinnsel schneller oder h√
 
 ## Dokumente
 
+- [Registrierung beim DRKS: DRKS00035159](https://www.drks.de/search/de/trial/DRKS00035159)
 - [Studienprotokoll](02_cvc-coating_studienprotokoll_20241202_9250b7e.pdf)
 - [Patient\*inneninformation](03_cvc-coating_patienteninformation_20241202_31c7a72.pdf)
 - [Dokumentationsbogen/Case Report Form](04_cvc-coating_crf_20241202_f53d4dd.pdf)
