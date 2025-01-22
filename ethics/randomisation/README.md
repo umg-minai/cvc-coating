@@ -9,8 +9,8 @@ sudo apt install make git guix
 ## Clone git repositories and create branch
 
 ```sh
-git clone https://github.com/umg-minai/crt-chx.git
-cd crt-chx/
+git clone https://github.com/umg-minai/cvc-coating.git
+cd cvc-coating/
 git checkout -b randomisation
 ```
 
