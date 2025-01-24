@@ -11,7 +11,7 @@
 
 ####
 ## TODO: change the following seed to whatever you like
-set.seed(20240220)
+set.seed(795278274)
 
 ####
 ## TODO: if you don't want to clone the whole repository and using guix
@@ -34,7 +34,7 @@ library("blockrand")
 
 .blockrand <- function(
     ## n per stratum
-    n = 50,
+    n = 10,
     ## treatment levels (2 different CVC)
     levels = c(
         "EU-22854-N (CVC 4-Lumen ARROWg+ard Blue Protection)",
