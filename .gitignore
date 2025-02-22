@@ -5,3 +5,6 @@ output/
 contacts/
 .nextcloudsync.log
 .sync_*
+.unison*
+TODO
+NOTES
