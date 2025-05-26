@@ -55,10 +55,10 @@ git annex initremote ant type=rsync rsyncurl=rsync://antl/media/wd/crt-chx/git-a
 https://weasis.org
 
 ```bash
-wget https://github.com/nroduit/Weasis/releases/download/v4.4.0/weasis_4.4.0-1_amd64.deb
-wget https://github.com/nroduit/Weasis/releases/download/v4.4.0/weasis_4.4.0-1_amd64.deb.sha256
-sha256sum -c weasis_4.4.0-1_amd64.deb.sha256
-sudo dpkg -i weasis_4.4.0-1_amd64.deb
+wget https://github.com/nroduit/Weasis/releases/download/v4.5.1/weasis_4.5.1-1_amd64.deb
+wget https://github.com/nroduit/Weasis/releases/download/v4.5.1/weasis_4.5.1-1_amd64.deb.sha256
+sha256sum -c weasis_4.5.1-1_amd64.deb.sha256
+sudo dpkg -i weasis_4.5.1-1_amd64.deb
 ```
 
 ## Predecessor study
