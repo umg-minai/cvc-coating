@@ -52,7 +52,7 @@ surgery_ops,surgery,"Operation: [mapping][fallnummer]",text,"Haupt-OPS-Code der 
 surgery_incision_time,surgery,,text,"Zeitpunkt Schnitt",,,datetime_ymd,"01.01.2025 00:00","01.01.2027 00:00",,,y,,,,,
 surgery_suture_time,surgery,,text,"Zeitpunkt Naht",,,datetime_ymd,"01.01.2025 00:00","01.01.2027 00:00",,,y,,,,,
 surgery_duration_time,surgery,,calc,"Schnitt-Naht-Zeit","round(datediff([surgery_suture_time], [surgery_incision_time], 'm', 'm'))",,,,,,,,,,,," @READONLY"
-visite_time,visite,"Visite: [mapping][fallnummer]",text,"Zeitpunkt der Visite",,,datetime_ymd,,,,,y,,,,," @DEFAULT=@NOW"
+visite_time,visite,"Visite: [mapping][fallnummer]",text,"Zeitpunkt der Visite",,,datetime_ymd,,,,,y,,,,,
 visite_ward,visite,,radio,Station,"1, ITS | 2, IMC | 3, Normalstation",,,,,,,,,,,,
 visite_cvc_was_removed,visite,,yesno,"ZVK heute entfernt?",,,,,,,,y,,,,,
 visite_cvc_removal_reason,visite,,radio,"Grund für die ZVK-Entfernung","1, V.a. ZVK-assoziierte Blutstrominfektion/Sepsis (CLABSI) | 2, Symptomatische Thrombose (z.B. LAE) | 3, Tod des Patienten | 4, Systematisch (Routinewechsel, nicht mehr notwendig, ...) | 5, Unbekannt",,,,,,"[visite_cvc_was_removed] = '1'",,,,,,
