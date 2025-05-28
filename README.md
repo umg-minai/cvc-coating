@@ -61,6 +61,14 @@ sha256sum -c weasis_4.5.1-1_amd64.deb.sha256
 sudo dpkg -i weasis_4.5.1-1_amd64.deb
 ```
 
+### Update DICOMDIR files
+
+Fix different named IDs and update DICOMDIR file.
+
+```bash
+make pilot-rewrite-dicom-ids
+```
+
 ## Predecessor study
 
 https://umg-minai.github.io/crt/

@@ -1,0 +1,3 @@
+(specifications->manifest
+  '("bash"
+    "dcmtk"))
