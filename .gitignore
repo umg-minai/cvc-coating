@@ -1,10 +1,13 @@
+admin/
 cache/
+data/
 distribute/
 misc/
 output/
 contacts/
 .nextcloudsync.log
-.sync_*
+.sync*
 .unison*
+*.docx
 TODO
 NOTES
