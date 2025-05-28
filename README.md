@@ -47,7 +47,7 @@ https://git-annex.branchable.com/
 ```bash
 WEBDAV_USERNAME=xxx WEBDAV_PASSWORD=xxx git annex initremote uni-greifswald-nextcloud type=webdav url=https://nextcloud.uni-greifswald.de/remote.php/dav/files/gibbs/9726.crt-chx/git-annex chunk=10mb encryption=none
 
-git annex initremote ant type=rsync rsyncurl=antl:/media/wd/crt-chx/git-annex chunk=10mb encryption=none
+git annex initremote ant type=rsync rsyncurl=antl:/media/wd/cvc-coating/git-annex chunk=10mb encryption=none
 ```
 
 ### Install DICOM viewer
