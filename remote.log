@@ -1,2 +1,2 @@
 1e5d0a5d-87ff-4b7b-829d-74cf6d752642 chunk=10mb encryption=none name=uni-greifswald-nextcloud type=webdav url=https://nextcloud.uni-greifswald.de/remote.php/dav/files/gibbs/9726.crt-chx/git-annex timestamp=1748512662.071177686s
-86fe3255-e589-452d-8ef2-55f2bbb7e541 chunk=10mb encryption=none name=ant rsyncurl=rsync://ant/media/wd/crt-chx/git-annex type=rsync timestamp=1721153666.383685982s
+86fe3255-e589-452d-8ef2-55f2bbb7e541 chunk=10mb encryption=none name=ant rsyncurl=rsync://ant/media/wd/crt-chx/git-annex type=rsync timestamp=1748512696.292604777s
