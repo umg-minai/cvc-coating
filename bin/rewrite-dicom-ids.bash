@@ -11,7 +11,7 @@ fi
 
 cd ${DICOMDIR}
 
-for DICOMFILE in $(find ${DICOMSUBDIR} -type f); do
+for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l); do
   DUMPID=$(dcmdump --search PatientID --search-first ${DICOMFILE})
   DUMPPN=$(dcmdump --search PatientName --search-first ${DICOMFILE})
   OID=$(echo "${DUMPID}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_]\{1,2\}d\?[0-9]\{1,2\}[^]]*\).*$/!d; s//\1/')
