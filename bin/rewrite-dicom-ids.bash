@@ -14,10 +14,10 @@ cd ${DICOMDIR}
 for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l); do
   DUMPID=$(dcmdump --search PatientID --search-first ${DICOMFILE})
   DUMPPN=$(dcmdump --search PatientName --search-first ${DICOMFILE})
-  OID=$(echo "${DUMPID}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_]\{1,2\}d\?[0-9]\{1,2\}[^]]*\).*$/!d; s//\1/')
-  OPN=$(echo "${DUMPPN}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_]\{1,2\}d\?[0-9]\{1,2\}[^]]*\).*$/!d; s//\1/')
-  ID=$(echo ${OID} | sed 's#[-_]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#')
-  PN=$(echo ${OPN} | sed 's#[-_]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#')
+  OID=$(echo "${DUMPID}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\).*$/!d; s//\1/')
+  OPN=$(echo "${DUMPPN}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\).*$/!d; s//\1/')
+  ID=$(echo ${OID} | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#')
+  PN=$(echo ${OPN} | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#')
 
   if [ -z "${ID}" -a -z "${PN}" ] ; then
     echo "${DICOMFILE}: error - neither ID nor Name valid"; exit 1
