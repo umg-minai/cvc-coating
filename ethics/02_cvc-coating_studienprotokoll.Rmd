@@ -9,7 +9,7 @@ author:
     department: "Universitätsmedizin Greifswald, Klinik für Anästhesie, Intensiv-, Notfall- und Schmerzmedizin"
     address: "Ferdinand Sauerbruchstr\n\n17475 Greifswald"
 cfg-acronym: CVC-Coating
-cfg-version: '1.1'
+cfg-version: '2.0'
 cfg-githash: "`r system(paste0('git log -n 1 --pretty=format:%h -- ', knitr::current_input()), intern = TRUE)`"
 cfg-principial-investigator: "Dr. med. Sebastian Gibb"
 cfg-principial-investigator-contact: "Tel. 03834 865801"
@@ -54,9 +54,9 @@ frf <- function(...)
 
 **Studiendesign**               Monozentrische, randomisierte, kontrollierte, 2-armige Studie
 
-**Zeitraum Pilotphase**         ab 01.03.2025 - voraussichtlich 2 Monate.
+**Zeitraum Pilotphase**         ab 01.05.2025 - voraussichtlich 2 Monate.
 
-**Studienzeitraum**             ab 05.05.2025 - voraussichtlich 18 Monate.
+**Studienzeitraum**             ab 01.08.2025 - voraussichtlich 18 Monate.
 
 **Primäres Zielkriterium**      Thromboseraten der ZVKs
 
@@ -67,7 +67,9 @@ frf <- function(...)
                                 - Inflammations- und Thrombosemarker. \
                                 - Herzryhthmus. \
                                 - Art des Tumors. \
-                                - Art des Eingriffs.
+                                - Art des Eingriffs. \
+                                - Lungenarterienembolie oder
+                                  Katheter-assoziierte Bakteriämie bis Tag 30.
 
 **Patient\*innenpopulation**    Chirurgische Patient\*innen zur elektiven Tumorresektion eines Tumors im Oberbauch mit Indikation für eine ZVK-Anlage.
 
@@ -96,6 +98,13 @@ frf <- function(...)
 
 # Änderungen gegenüber vorherigen Versionen
 
+## Version 2.0
+
+- Ultraschalluntersuchungen von täglich für 14 Tage auf Tage 0-5, 7, 10, 14
+  reduziert.
+- Studienbeginn auf 01.08. verschoben.
+- Beteiligte Ärzte ergänzt.
+
 ## Version 1.1
 
 - Vorliegen einer schriftlichen Einwilligungserklärung als weiteres
@@ -120,6 +129,8 @@ Telefon: `r rmarkdown::metadata$author$phone`
 - Dr. med. Sven-Olaf Kuhn, `r rmarkdown::metadata$author$department`
 - Dr. med. Martin Feig, `r rmarkdown::metadata$author$department`
 - Dr. med. Eric Moegelin, `r rmarkdown::metadata$author$department`
+- Eik Schäfer, `r rmarkdown::metadata$author$department`
+- Gesine Scherwietes, `r rmarkdown::metadata$author$department`
 - Prof. Dr. med. Falk von Dincklage, `r rmarkdown::metadata$author$department`
 
 # Wissenschaftlicher Hintergrund
@@ -188,6 +199,7 @@ Zeitpunkt des Auftretens sonografisch nachweisbarer Thromben am ZVK.
 Abhängigkeit der Thrombusenstehung bzw. Unterschiede in Bezug auf:
 
 - Art des Thrombus: Fibrinummantelung (fibrin sheat/fibrin sleeve), wandständiger Thrombus (mural thrombosis), venöser Thrombus.
+- Lokalisation des Thrombus: Einstichstelle, ausschließlich am Kathether, ausschließlich an der Gefäßwand
 - Anzahl verschlossener Lumen.
 - Maximalen Ausdehnung (Durchmesser) des Thrombus.
 - Maximale Länge des Thrombus.
@@ -206,6 +218,7 @@ Abhängigkeit der Thrombusenstehung bzw. Unterschiede in Bezug auf:
 - Nikotinabusus in der Anamnese.
 - Vorerkrankungen wie Diabetes melltius, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia oder cava superior.
+- Auftreten einer Lungenarterienembolie oder Katheter-assoziierte Bakteriämie bis Tag 30.
 
 # Methoden der Datenerhebung
 
@@ -264,7 +277,7 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 
 - Tägliche Sonografie des Halses durch eine\*n Untersucher\*in nach unten
   aufgeführtem standardisierten Untersuchungsablauf
-  bis Tag 14 oder bis ein Tag nach Zug des Katheters.
+  an Tag 0-5, 7, 10 und 14.
 - Als Patient\*innen-ID wird die Randomisierungs-ID und der Tag in dem Format
   [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" eingegeben.
 - Speicherung der Videos und Bilder im DICOM-Format auf dem Ultraschallgerät.
@@ -380,12 +393,12 @@ Ausschluss der\*des Patient\*in.
 
 ## Tägliche Visite im postoperativen Verlauf
 
-Der zentrale Venenkatheter wird täglich, beginnend am OP-Tag (Tag 0),
-durch eine\*n speziell geschulten Untersucher\*in sonografisch bis Tag 14
-oder bis einen Tag nach Zug des Katheters kontrolliert.
+Der zentrale Venenkatheter wird, beginnend am OP-Tag (Tag 0),
+durch eine\*n speziell geschulten Untersucher\*in sonografisch an den Tagen 0-5,
+7, 10 und 14 kontrolliert.
 Die\*Der Untersucher\*in digitalisieren am ersten Visitentag den händisch
 ausgefüllten Dokumentationsbogen.
-An jedem Visitentag prüfen sie, ob eine Blutentnahme erfolgte und
+An jedem Tag bis Tag 14 prüfen sie, ob eine Blutentnahme erfolgte und
 melden ggf. die studienspezifischen Laborparameter nach.
 
 Soweit der postoperative Zustand es erlaubt, wird folgender Ablauf
@@ -424,6 +437,8 @@ für die Ultraschalluntersuchung eingehalten.
   (Index des Schallkopfes an kutaner Einstichstelle),
   V. jug. int. im Längsverlauf, dann nach medial schwenken und von medial nach
   lateral durchschwenken.
+- Wenn Thrombus identifziert Standbild in langer und kurzer Achse in jeweils
+  maximaler Ausdehnung speichern.
 - Untersuchung auf dem Ultraschallgerät mit "Untersuchung abschließen" beenden.
 - Videos im "DICOM USB"-Format auf USB-Stick überspielen.
 - Videos vom USB-Stick auf Forschungslaufwerk übertragen und dort unter der
