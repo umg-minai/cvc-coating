@@ -17,7 +17,8 @@ GITHEADL=$(shell git rev-parse HEAD)
 guix-pin-channels: guix/channels.pinned.scm
 
 guix/channels.pinned.scm: guix/channels.scm FORCE
-	${GUIX} time-machine --channels=guix/channels.scm -- \
+	${GUIX} time-machine --channels=guix/channels.scm \
+		--url=https://git.guix.gnu.org/guix.git -- \
 		describe -f channels > guix/channels.pinned.scm
 
 .PHONEY:
