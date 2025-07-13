@@ -2,5 +2,8 @@
   '("r-minimal"
     "r-bibtex"
     "r-bookdown"
+    "r-cardx"
     "r-gtsummary"
-    "r-rprojroot"))
+    "r-rprojroot"
+    "r-survival"
+    "r-survminer"))
