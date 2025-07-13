@@ -100,8 +100,7 @@ frf <- function(...)
 
 ## Version 2.0
 
-- Ultraschalluntersuchungen von täglich für 14 Tage auf Tage 0-5, 7, 10, 14
-  reduziert.
+- Ultraschalluntersuchungen von täglich für 14 Tage auf Tage 0-5, 6-8 (7), 9-11 (10), 13-15 (14) reduziert.
 - Studienbeginn auf 01.08. verschoben.
 - Beteiligte Ärzte ergänzt.
 
@@ -277,7 +276,8 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 
 - Tägliche Sonografie des Halses durch eine\*n Untersucher\*in nach unten
   aufgeführtem standardisierten Untersuchungsablauf
-  an Tag 0-5, 7, 10 und 14.
+  an den Tagen 0-5 täglich, und jeweils einmal innerhalb der Zeiträume
+  Tag 6-8, Tag 9-11 und Tag 13-15 (idealerweise Tag 7, 10, 14).
 - Als Patient\*innen-ID wird die Randomisierungs-ID und der Tag in dem Format
   [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" eingegeben.
 - Speicherung der Videos und Bilder im DICOM-Format auf dem Ultraschallgerät.

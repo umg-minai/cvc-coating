@@ -39,8 +39,10 @@ Dies deckt sich mit unseren Erfahrungen aus der vorausgegangenen
 Beobachtungsstudie (BB 006/22).
 Zur Entlastung der Patient\*innen und Minimierung des Aufwandes reduzieren wir
 in unser Studie die Beobachtungszeiten von täglich bis einschließlich Tag 14 (15
-Ultraschalluntersuchungen) auf Tag 0-5, 7, 10 und 14 (9
-Ultraschalluntersuchungen).
+Ultraschalluntersuchungen) auf
+die Tage 0-5 täglich, und jeweils einmal innerhalb der Zeiträume
+  Tag 6-8, Tag 9-11 und Tag 13-15 (idealerweise Tag 7, 10, 14; 9
+Ultraschalluntersuchungen insgesamt).
 
 Um die klinische Relevanz der Thrombosen besser einschätzen zu können,
 erfassen wir zusätzlich das Auftreten einer Lungenarterienembolie und
