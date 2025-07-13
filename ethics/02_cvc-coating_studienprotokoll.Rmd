@@ -200,10 +200,10 @@ Abhängigkeit der Thrombusenstehung bzw. Unterschiede in Bezug auf:
 - Art des Thrombus: Fibrinummantelung (fibrin sheat/fibrin sleeve), wandständiger Thrombus (mural thrombosis), venöser Thrombus.
 - Lokalisation des Thrombus: Einstichstelle, ausschließlich am Kathether, ausschließlich an der Gefäßwand
 - Anzahl verschlossener Lumen.
-- Maximalen Ausdehnung (Durchmesser) des Thrombus.
+- Maximale Ausdehnung (Durchmesser) des Thrombus.
 - Maximale Länge des Thrombus.
 - Wachstum des Thrombus über die Zeit.
-- Inflammations- und Thrombosemarkern: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere, Fibrinogen.
+- Inflammations- und Thrombosemarker: Leukozyten, CRP, PCT, Thrombozyten, D-Dimere, Fibrinogen.
 - Herzrhythmus: regelmäßig (Sinusrhythmus oder Herzschrittmacher), unregelmäßig
   (Vorhofflimmern).
 - Art des Tumors.
@@ -215,9 +215,10 @@ Abhängigkeit der Thrombusenstehung bzw. Unterschiede in Bezug auf:
   orale Antikoagulanzien, etc.) in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
-- Vorerkrankungen wie Diabetes melltius, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
+- Vorerkrankungen wie Diabetes mellitus, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia oder cava superior.
-- Auftreten einer Lungenarterienembolie oder Katheter-assoziierte Bakteriämie bis Tag 30.
+- Fetthaltige Infusionslösungen über ZVK (z.B. Propofol, parenterale Ernährung)
+- Auftreten einer Lungenarterienembolie oder Katheter-assoziierten Bakteriämie bis Tag 30.
 
 # Methoden der Datenerhebung
 
@@ -239,7 +240,7 @@ Erhebung Identifikationsdaten, biometrischer und anamnestischer Daten im Rahmen 
 - Hormonpräparate/Kontrazeptiva in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
-- Vorerkrankungen wie Diabetes melltius, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
+- Vorerkrankungen wie Diabetes mellitus, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
 - Art des Tumors.
 - Nachbestimmung o.g. Inflammations- und Thrombosemarker aus möglicherweise
@@ -255,7 +256,7 @@ Erhebung von Behandlungsdaten.
 
 ## Katheter-assoziierte Daten
 
-Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
+Dokumentation nach Anlage des Katheters durch betreuende\*n Anästhesist\*in
 
 - LOT (Chargennummer) des ZVK.
 - Punktionsort (V. jugularis rechts, V. jugularis links, ...).
@@ -263,7 +264,7 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 - Stichinzision ja/nein.
 - Herzrhythmus: regelmäßig/unregelmäßig.
 - EKG-Lagekontrolle (erfolgreich/nicht erfolgreich/nicht durchgeführt/...).
-- Erfahrung des*der Anwender*in (< 25 ZVKs, 25- <50 ZVKs, 50-100 ZVKs, >= 100 ZVKs).
+- Erfahrung des\*der Anwender\*in (< 25 ZVKs, 25- <50 ZVKs, 50-100 ZVKs, >= 100 ZVKs).
 - Komplikationen bei der Anlage: Mehrfachpunktion, frustraner Drahtvorschub, Pneumothorax, Sonstiges.
 - Komplikationen im Verlauf:
     - klinisch diagnostizierte Thrombose.
@@ -274,17 +275,17 @@ Dokumentation nach Anlage des Katheters durch betreuende*n Anästhesist*in
 
 ### Ultraschalluntersuchung
 
-- Tägliche Sonografie des Halses durch eine\*n Untersucher\*in nach unten
+- Sonografie des Halses durch eine\*n Untersucher\*in nach unten
   aufgeführtem standardisierten Untersuchungsablauf
   an den Tagen 0-5 täglich, und jeweils einmal innerhalb der Zeiträume
   Tag 6-8, Tag 9-11 und Tag 13-15 (idealerweise Tag 7, 10, 14).
 - Als Patient\*innen-ID wird die Randomisierungs-ID und der Tag in dem Format
-  [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" eingegeben.
+  [A-Z][A-Z][0-9][0-9].[0-9][0-9], z.B. "WL03.01" eingegeben.
 - Speicherung der Videos und Bilder im DICOM-Format auf dem Ultraschallgerät.
 
 ### Auswertung Ultraschallbilder
 
-- Sichtung der Videos und Bilder mittels DICOM Viewer.
+- Sichtung der Videos und Bilder mittels DICOM-Viewer.
 - Feststellung des Vorhandenseins eines Thrombus.
 - Ausmessen des Thrombus (Durchmesser, Länge) und Dokumentation.
 
@@ -415,11 +416,11 @@ für die Ultraschalluntersuchung eingehalten.
   Ultraschallgerätes GE Venue (Go).
 - Anlage einer "Neue[n] Untersuchung" am Ultraschallgerät.
 - Randomisierungs-ID und Tag im Format
-  [A-Z][A-Z][0-9][0-9]-[0-9][0-9], z.B. "WL03-01" als Patienten-ID eingegeben.
+  [A-Z][A-Z][0-9][0-9].[0-9][0-9], z.B. "WL03.01" als Patienten-ID eingegeben.
 - Auswahl des Linearschallkopfes mit 12 MHz, Preset "Vene, obere".
 - Übersichtsvideo kurze Achse: Index des Schallkopfes nach lateral,
   von kranial (Oberrand Schallkopf an der kutanen Einstichstelle)
-  nach kaudal gleiten und in die obere Thoraxapperatur hineinschwenken,
+  nach kaudal gleiten und in die obere Thoraxaperatur hineinschwenken,
   V. jug. int. zentrieren,
   Tiefe möglichst auf 4 cm begrenzen (6 bis 8 cm wenn V. jug. int. sonst nicht
   im vollständigen Umfang abgebildet),
@@ -443,8 +444,8 @@ für die Ultraschalluntersuchung eingehalten.
 - Videos im "DICOM USB"-Format auf USB-Stick überspielen.
 - Videos vom USB-Stick auf Forschungslaufwerk übertragen und dort unter der
   Randomisierungs-ID abspeichern:
-  `cvc-coating/sono/videos/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]/`, z.B.
-  `cvc-coating/sono/videos/WL03-01/`
+  `cvc-coating/sono/videos/[A-Z][A-Z][0-9][0-9].[0-9][0-9]/`, z.B.
+  `cvc-coating/sono/videos/WL03.01/`
 
 ## Auswertung Ultraschallbilder
 
@@ -457,8 +458,8 @@ Quer- und Längsausdehnung vermessen und dokumentieren, sowie Bilder der
 Messungen (kurze und lange Achse) speichern.
 Die Bilder werden auf dem Forschungslaufwerk unter dem Untersuchungskürzel sowie
 der Randomisierungs-ID mit folgendem Dateinamen gespeichert:
-`cvc-coating/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9]-[0-9][0-9]-[LS].png`,
-z.B. `cvc-coating/sono/bilder/gibbs/WL03-01-L.png` für WL03, Tag 1, lange Achse.
+`cvc-coating/sono/bilder/*Untersucherkürzel*/[A-Z][A-Z][0-9][0-9].[0-9][0-9]-[LS].png`,
+z.B. `cvc-coating/sono/bilder/gibbs/WL03.01-L.png` für WL03, Tag 1, lange Achse.
 Wird kein Thrombus identifiziert, entfällt die Bildspeicherung.
 
 Die Einteilungen der Thrombusarten wären:
@@ -499,17 +500,18 @@ Dabei wird für folgende Faktoren adjustiert:
   orale Antikoagulanzien, Heparine, etc.) in der Vormedikation.
 - Thrombose in der Anamnese.
 - Nikotinabusus in der Anamnese.
-- Vorerkrankungen wie Diabetes melltius, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
+- Vorerkrankungen wie Diabetes mellitus, arterielle Hypertonie, Hyperlipidämie/-cholesterinämie.
 - Vorhandensein eines Ports/Schrittmachers/ICDs o.ä. Fremdmaterial in Vv. jugularis, subclavia, oder cava superior.
 - Anlagedauer.
 - Stichinzision.
 - Erfahrung der\*des Anlegenden.
 - EKG-Lagekontrolle.
-- Komplikationen.
+- Fetthaltige Infusionslösungen über ZVK.
+- Komplikationen (Lungenarterienembolie oder katheter-assoziierte Infektion).
 
 In allen statistischen Tests wird ein *p*-Wert von 0,05 als statistisch
 signifikanter Unterschied interpretiert. Mit Ausnahme des primären
-Zielkriteriums werden alle *p*-Werte mit der Benjamini-Hochberg Methode
+Zielkriteriums werden alle *p*-Werte mit der Benjamini-Hochberg-Methode
 für multiples Testen korrigiert [@Benjamini1995].
 
 # Patienten-/Probandensicherheit
@@ -709,7 +711,7 @@ Siehe angehängtes Dokument.
 
 # Pilotphase
 
-Vor Beginn der eigentlichen Studiephase ist eine Pilotphase von ca. 2 Monaten
+Vor Beginn der eigentlichen Studienphase ist eine Pilotphase von ca. 2 Monaten
 geplant.
 
 Für die Pilotphase ist die Rekrutierung von 10 Proband\*innen (5 je Gruppe)
@@ -718,7 +720,7 @@ Der Ablauf der Pilotphase entspricht dem hier dargestellten Protokoll.
 In der Pilotphase wird eine separate Randomisierungsliste genutzt.
 Nach Abschluss der Auswertung wird die Zuordnungsliste (Fallnummer -
 Randomisierungs-ID) gelöscht.
-Der Randomisierungs-ID wird ein "P" vorangestellt, z.B. "PWL03-01".
+Der Randomisierungs-ID wird ein "P" vorangestellt, z.B. "PWL03.01".
 Die Pilotphase wird zur Testung und Optimierung der Abläufe genutzt.
 Ihre Ergebnisse gehen nicht in die finale Auswertung der Studie mit ein.
 
