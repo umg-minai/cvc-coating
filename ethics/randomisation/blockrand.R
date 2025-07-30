@@ -127,7 +127,7 @@ for (i in seq_len(nrow(study))) {
         y = 0.45 - c(0, 1, 2, 2, 3, 5.5) * sh,
         labels = c(
             paste0("Studie: ", study_name),
-            "Studienleitung: Sebastian Gibb (Tel. 5870)",
+            "Studienleitung: Sebastian Gibb (Tel. 80103)",
             pid, as.expression(bquote(bold(.(study$id[i])))),
             "Stratum:",
             as.expression(bquote(bold(.(
