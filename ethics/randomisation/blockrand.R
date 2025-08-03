@@ -109,7 +109,8 @@ pdf(
     height = 29.7 / 2.54,
     width =  21 / 2.54,
     paper = "a4",
-    onefile = TRUE
+    onefile = TRUE,
+    encoding  = "ISOLatin1.enc",
 )
 par(mfrow = c(3, 1), mai = c(0, 0, 0, 0), xaxs = "i", yaxs = "i")
 
