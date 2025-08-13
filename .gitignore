@@ -3,6 +3,7 @@ cache/
 data/
 distribute/
 misc/
+scripts/*.html
 output/
 contacts/
 .nextcloudsync.log
