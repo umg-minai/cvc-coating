@@ -1,0 +1,55 @@
+---
+title: |
+    CVC-Coating - Thrombus-free time
+date: "`r format(Sys.time(), '%d.%m.%Y')`"
+author: Sebastian Gibb
+output:
+    html_document:
+        code_folding: show
+        code_download: true
+        toc: true
+        toc_float:
+            collapsed: false
+            smooth_scroll: false
+    word_document:
+        number_sections: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(comment = "#>")
+
+frf <- function(...)
+    rprojroot::find_root_file(..., criterion = ".editorconfig", path = ".")
+```
+
+```{r packages, include = FALSE}
+library("gtsummary")
+library("survival")
+library("survminer")
+```
+
+```{r import, include = FALSE}
+vsts <- readRDS(frf("data", "cleaned", "pilot", "rounds.RDS"))
+```
+
+```{r survival, echo = FALSE}
+# TODO: change after randomisation information
+chrs <- readRDS(frf("data", "cleaned", "pilot", "characteristics.RDS"))
+chrs$group <- ifelse(chrs$cvc_lot == "71F24B0695", "blue", "yellow")
+vsts <- merge(vsts, chrs[c("record_id", "group")])
+
+FUP <- sapply(split(vsts, vsts$record_id), function(x){i <- which(x$measurement_crt_present2 == 1)[1L]; if (is.na(i)) 14 else i})
+CRT <- sapply(split(vsts, vsts$record_id), function(x)any(x$measurement_crt_present2 == 1))
+GRP <- sapply(split(vsts, vsts$record_id), function(x)x$group[1L])
+
+tblsrv <-
+    list(
+        Overall = survfit(Surv(FUP, CRT) ~ 1),
+        Group =  survfit(Surv(FUP, CRT) ~ group, data =
+    ) |>
+    tbl_survfit(
+        probs = 0.5,
+        label_header = "**Median CRT-free time**"
+    )
+tblsrv
+```

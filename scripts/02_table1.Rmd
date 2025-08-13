@@ -1,0 +1,180 @@
+---
+title: |
+    CVC-Coating - Table1
+date: "`r format(Sys.time(), '%d.%m.%Y')`"
+author: Sebastian Gibb
+output:
+    html_document:
+        code_folding: show
+        code_download: true
+        toc: true
+        toc_float:
+            collapsed: false
+            smooth_scroll: false
+    word_document:
+        number_sections: true
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(comment = "#>")
+
+frf <- function(...)
+    rprojroot::find_root_file(..., criterion = ".editorconfig", path = ".")
+```
+
+```{r packages, include = FALSE}
+library("gtsummary")
+```
+
+```{r import, include = FALSE}
+chrs <- readRDS(frf("data", "cleaned", "pilot", "characteristics.RDS"))
+
+levels(chrs$cvc_experience.factor) <- 
+    c("< 25", "[25, 50)", "[50, 100)", ">= 100")
+```
+
+```{r table1, echo = FALSE}
+theme_gtsummary_journal()
+theme_gtsummary_compact(font_size = 8L)
+
+# TODO: change after randomisation information
+chrs$group <- ifelse(chrs$cvc_lot == "71F24B0695", "blue", "yellow") 
+
+tbl_patients <- chrs |>
+    select(group,
+           sex.factor,
+           age,
+           bmi,
+           asa.factor,
+           preop_ass_given,
+           preop_antiaggregant_given,
+           preop_anticoagulant_given,
+           preop_nicotinabusus_present,
+           preop_nicotinabusus_packyears,
+           preop_contraceptive_given.factor,
+           preop_thrombosis_history.factor,
+           preop_diabetes,
+           preop_hypertension,
+           preop_hyperlipidemia,
+           preop_hypercholesterolemia,
+           preop_implantat_history,
+           preop_tumor,
+           preop_wbc,
+           preop_crp,
+           preop_pct,
+           preop_plt,
+           preop_fib,
+           preop_ddimer,
+           cvc_heart_rhythm.factor
+           ) |>
+    tbl_summary(
+        by = group,
+        missing_text = "(Missing)",
+        type = list(
+            age ~ "continuous", 
+            sex.factor ~ "dichotomous",
+            preop_nicotinabusus_packyears ~ "continuous",
+            preop_contraceptive_given.factor ~ "dichotomous",
+            preop_thrombosis_history.factor ~ "dichotomous",
+            preop_wbc ~ "continuous",
+            preop_crp ~ "continuous",
+            preop_pct ~ "continuous",
+            preop_plt ~ "continuous",
+            preop_fib ~ "continuous",
+            preop_ddimer ~ "continuous"
+        ),
+        label = list(
+            age ~ "Age [years]",
+            sex.factor ~ "Sex (male)",
+            bmi ~ "BMI",
+            asa.factor ~ "ASA classification",
+            preop_ass_given ~ "ASS",
+            preop_antiaggregant_given ~ "Antiaggregant",
+            preop_anticoagulant_given ~ "Anticoagulant",
+            preop_nicotinabusus_present ~ "Nicotin",
+            preop_nicotinabusus_packyears ~ "Nicotin [packyears]",
+            preop_contraceptive_given.factor ~ "Contraceptive",
+            preop_thrombosis_history.factor ~ "Thrombosis in history",
+            preop_diabetes ~ "Diabetes mellitus",
+            preop_hypertension ~ "Hypertension",
+            preop_hyperlipidemia ~ "Hyperlipidemia",
+            preop_hypercholesterolemia ~ "Hypercholesterolemia",
+            preop_implantat_history ~ "Implantat in history",
+            preop_wbc ~ "WBC [Gpt/L]",
+            preop_crp ~ "CRP [mg/L]",
+            preop_pct ~ "PCT [ng/L]",
+            preop_plt ~ "Platelets [Gpt/L]",
+            preop_fib ~ "Fibrinogen [g/L]",
+            preop_ddimer ~ "D-dimer [mg/L]",
+            cvc_heart_rhythm.factor ~ "Sinus rhythm"
+        ),
+        value = list(
+            sex.factor ~ "männlich",
+            preop_contraceptive_given.factor ~ "Ja",
+            preop_thrombosis_history.factor ~ "Ja",
+            cvc_heart_rhythm.factor ~ "regelmäßig (z.B. Sinusrhythmus, Herzschrittmacher)"
+        )
+    ) |>
+    add_overall()
+
+tbl_cvcs <- chrs |>
+    select(group,
+           cvc_lot,
+           cvc_duration_time,
+           cvc_site.factor,
+           cvc_incision,
+           cvc_ecg_pos_check.factor,
+           cvc_experience.factor
+           ) |>
+    tbl_summary(
+        by = group,
+        missing_text = "(Missing)",
+        type = list(
+            cvc_duration_time ~ "continuous",
+            cvc_site.factor ~ "dichotomous"
+        ),
+        label = list(
+            cvc_lot ~ "LOT",
+            cvc_duration_time ~ "Insertion duration [min]",
+            cvc_site.factor ~ "Site (right IJV)",
+            cvc_incision ~ "Incision",
+            cvc_ecg_pos_check.factor ~ "ECG position check",
+            cvc_experience.factor ~ "Experience"
+        ),
+        value = list(
+            cvc_site.factor ~ "V. jugularis interna rechts",
+            cvc_ecg_pos_check.factor ~ "erfolgreich"
+        )
+    ) |>
+    add_overall()
+
+tbl_surgery <- chrs |>
+    select(group,
+           surgery_ops,
+           surgery_duration_time
+           ) |>
+    tbl_summary(
+        by = group,
+        missing_text = "(Missing)",
+        type = list(
+            surgery_duration_time ~ "continuous"
+        ),
+        label = list(
+            surgery_ops ~ "OPS code",
+            surgery_duration_time ~ "Duration [min]"
+        )
+    ) |>
+    add_overall()
+
+tbl1 <- tbl_stack(
+    tbls = list(
+        tbl_patients, tbl_cvcs, tbl_surgery
+    ),
+    group_header = c(
+        "(A) Patients",
+        "(B) CVC",
+        "(C) Surgery"
+    )
+) 
+tbl1
+```
