@@ -54,8 +54,8 @@ surgery_suture_time,surgery,,text,"Zeitpunkt Naht",,,datetime_ymd,"01.01.2025 00
 surgery_duration_time,surgery,,calc,"Schnitt-Naht-Zeit","round(datediff([surgery_suture_time], [surgery_incision_time], 'm', 'm'))",,,,,,,,,,,," @READONLY"
 visite_time,visite,"Visite: [mapping][fallnummer]",text,"Zeitpunkt der Visite",,,datetime_ymd,,,,,y,,,,,
 visite_ward,visite,,radio,Station,"1, ITS | 2, IMC | 3, Normalstation",,,,,,,,,,,,
-visite_cvc_was_removed,visite,,yesno,"ZVK heute entfernt?",,,,,,,,y,,,,,
-visite_cvc_removal_reason,visite,,radio,"Grund für die ZVK-Entfernung","1, V.a. ZVK-assoziierte Blutstrominfektion/Sepsis (CLABSI) | 2, Symptomatische Thrombose (z.B. LAE) | 3, Tod des Patienten | 4, Systematisch (Routinewechsel, nicht mehr notwendig, ...) | 5, Unbekannt",,,,,,"[visite_cvc_was_removed] = '1'",,,,,,
+visite_cvc_present,visite,,yesno,"ZVK in situ?",,,,,,,,y,,,,,
+visite_cvc_removal_reason,visite,,radio,"Grund für die ZVK-Entfernung","1, V.a. ZVK-assoziierte Blutstrominfektion/Sepsis (CLABSI) | 2, Symptomatische Thrombose (z.B. LAE) | 3, Tod des Patienten | 4, Systematisch (Routinewechsel, nicht mehr notwendig, ...) | 5, Unbekannt",,,,,,"[visite_cvc_present] = '0'",,,,,,
 visite_cvc_closed_lumen,visite,,dropdown,"Anzahl verschlossener Lumen","1, 1 | 2, 2 | 3, 3 | 4, 4 | 99, unbekannt",,,,,,,y,,,,,
 visite_iv_drugs,visite,,yesno,"Intravenöse Medikamentengabe (inkl. Antibiotika/Olimel/...)",,,,,,,,y,,,,,
 visite_heart_rhythm,visite,,radio,"Wie ist der Herzrhythmus der Patientin/des Patienten aktuell?","1, regelmäßig (z.B. Sinusrhythmus, Herzschrittmacher)| 2, unregelmäßig (z.B. Vorhofflimmern)",,,,,,,y,,,,,
