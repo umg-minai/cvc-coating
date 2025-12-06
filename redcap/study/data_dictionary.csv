@@ -48,7 +48,7 @@ cvc_experience,crf,,radio,"Bisherige Erfahrung der*des Anlegenden","1, weniger a
 cvc_complications,crf,,checkbox,"Komplikationen bei der Anlage","1, Keine | 2, Mehrfachpunktion der Haut | 3, Mehrfachpunktion des Gefäßes | 4, Hämatombildung | 5, Min. einmalig frustraner Drahtvorschub | 99, Sonstiges {cvc_complication_details}",,,,,,,,,,,,
 cvc_complication_details,crf,,text,"Komplikationen, sonstiges",,,,,,,"[cvc_complications(99)] = '1'",,,,,,
 cvc_comment,crf,Kommentare,text,Kommentar,,,,,,,,,,,,,
-surgery_ops,surgery,"Operation: [mapping][fallnummer]",text,"Haupt-OPS-Code der durchgeführten Primär-OP (z.B. 5-524.1 für Partielle Duodenopankreatektomie mit Teilresektion des Magens (OP nach Whipple))",,,,,,,,y,,,,," @PLACEHOLDER='5-500.0' @CHARLIMIT='7'"
+surgery_ops,surgery,"Operation: [mapping][fallnummer]",text,"Haupt-OPS-Code der durchgeführten Primär-OP (z.B. 5-524.1 für Partielle Duodenopankreatektomie mit Teilresektion des Magens (OP nach Whipple))",,,,,,,,y,,,,," @PLACEHOLDER='5-500.0' @CHARLIMIT='8'"
 surgery_incision_time,surgery,,text,"Zeitpunkt Schnitt",,,datetime_ymd,"01.01.2025 00:00","01.01.2027 00:00",,,y,,,,,
 surgery_suture_time,surgery,,text,"Zeitpunkt Naht",,,datetime_ymd,"01.01.2025 00:00","01.01.2027 00:00",,,y,,,,,
 surgery_duration_time,surgery,,calc,Schnitt-Naht-Zeit,"round(datediff([surgery_suture_time], [surgery_incision_time], 'm', 'm'))",,,,,,,,,,,," @READONLY"
