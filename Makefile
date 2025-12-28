@@ -1,4 +1,4 @@
-GUIX:=/usr/bin/guix
+GUIX:=/usr/local/bin/guix
 GUIXTM:=${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest.scm
 GUIXTME:=${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
