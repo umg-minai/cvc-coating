@@ -68,7 +68,7 @@ sudo dpkg -i weasis_4.6.5-1_amd64.deb
 Fix different named IDs and update DICOMDIR file.
 
 ```bash
-make pilot-rewrite-dicom-ids
+make rewrite-dicom-ids
 ```
 
 ### Use git annex

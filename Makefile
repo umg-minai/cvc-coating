@@ -31,6 +31,11 @@ pilot-rewrite-dicom-ids:
 	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest-dcm.scm -- \
 		bash bin/rewrite-dicom-ids.bash images/ultrasound/pilot/dicom
+.PHONEY:
+rewrite-dicom-ids:
+	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
+		shell --manifest=guix/manifest-dcm.scm -- \
+		bash bin/rewrite-dicom-ids.bash images/ultrasound/study/dicom
 
 .PHONEY:
 randomise:
