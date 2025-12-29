@@ -71,6 +71,26 @@ Fix different named IDs and update DICOMDIR file.
 make rewrite-dicom-ids
 ```
 
+#### Troubleshooting
+
+Sometimes duplicated SOPInstanceUIDs appear:
+
+```
+W: file GEMS_IMG/2025_OCT/18/__19116/PAIJ2DG6: directory record for this SOP instance already exists
+```
+
+Find duplicated files:
+
+```bash
+bin/dcmdup.sh GEMS_IMG/2025_OCT/18/__19116/PAIJ2DG6
+```
+
+Compare the duplicated files:
+
+```bash
+bin/dcmdiff.sh GEMS_IMG/2025_OCT/18/JD190116/PAIJ2BO2 GEMS_IMG/2025_OCT/18/__19116/PAIJ2DG6
+```
+
 ### Use git annex
 
 ```bash
