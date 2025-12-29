@@ -3,6 +3,7 @@ set -o errexit -o pipefail
 
 DICOMDIR=${1}
 DICOMSUBDIR=GEMS_IMG
+DCMDUMP="dcmdump --load-short --read-file-only"
 
 if [ ! -d "${DICOMDIR}/${DICOMSUBDIR}" ] ; then
   echo "Directory ${DICOMDIR}/${DICOMSUBDIR} doesn't exists"
@@ -12,9 +13,9 @@ fi
 cd ${DICOMDIR}
 
 for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l); do
-  DUMPID=$(dcmdump --search PatientID --search-first ${DICOMFILE})
-  DUMPPN=$(dcmdump --search PatientName --search-first ${DICOMFILE})
-  DUMPSD=$(dcmdump --search StudyID --search-first ${DICOMFILE})
+  DUMPID=$(${DCMDUMP} --search PatientID --search-first ${DICOMFILE})
+  DUMPPN=$(${DCMDUMP} --search PatientName --search-first ${DICOMFILE})
+  DUMPSD=$(${DCMDUMP} --search StudyID --search-first ${DICOMFILE})
   OID=$(echo "${DUMPID}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/')
   OPN=$(echo "${DUMPPN}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/')
   OSD=$(echo "${DUMPSD}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/')
