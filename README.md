@@ -89,6 +89,12 @@ Compare the duplicated files:
 bin/dcmdiff.sh GEMS_IMG/2025_OCT/18/JD190116/PAIJ2BO2 GEMS_IMG/2025_OCT/18/__19116/PAIJ2DG6
 ```
 
+Overwrite study ID:
+
+```bash
+guix time-machine --channels=guix/channels.pinned.scm -- shell --manifest=guix/manifest-dcm.scm -- dcmodify --insert "(0020,0010)=MG07-00" --no-backup GEMS_IMG/2026_FEB/24/JD202502/Q2OKF082
+```
+
 List non-study DICOM files:
 
 ```bash
