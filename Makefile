@@ -38,6 +38,12 @@ rewrite-dicom-ids:
 		bash bin/rewrite-dicom-ids.bash images/ultrasound/study/dicom
 
 .PHONEY:
+list-non-study-dicom:
+	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
+		shell --manifest=guix/manifest-dcm.scm -- \
+		bash bin/list-non-study-dicom.bash images/ultrasound/study/dicom
+
+.PHONEY:
 randomise:
 	${GUIXTME} -- Rscript --vanilla ethics/randomisation/blockrand.R
 

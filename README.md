@@ -89,6 +89,12 @@ Compare the duplicated files:
 bin/dcmdiff.sh GEMS_IMG/2025_OCT/18/JD190116/PAIJ2BO2 GEMS_IMG/2025_OCT/18/__19116/PAIJ2DG6
 ```
 
+List non-study DICOM files:
+
+```bash
+make list-non-study-dicom
+```
+
 ### Use git annex
 
 ```bash
