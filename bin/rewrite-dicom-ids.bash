@@ -10,18 +10,28 @@ if [ ! -d "${DICOMDIR}/${DICOMSUBDIR}" ] ; then
   exit 1
 fi
 
-cd ${DICOMDIR}
+extract() {
+  echo "${1}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/'
+}
+
+normalize() {
+  echo "${1}" | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#; s#(.*$##'
+}
+
+cd "${DICOMDIR}"
 
 for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l); do
-  DUMPID=$(${DCMDUMP} --search PatientID --search-first ${DICOMFILE})
-  DUMPPN=$(${DCMDUMP} --search PatientName --search-first ${DICOMFILE})
-  DUMPSD=$(${DCMDUMP} --search StudyID --search-first ${DICOMFILE})
-  OID=$(echo "${DUMPID}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/')
-  OPN=$(echo "${DUMPPN}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/')
-  OSD=$(echo "${DUMPSD}" | sed '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/')
-  ID=$(echo ${OID} | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#; s#(.*$##')
-  PN=$(echo ${OPN} | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#; s#(.*$##')
-  SD=$(echo ${OSD} | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#; s#(.*$##')
+  DUMP=$(${DCMDUMP} --search PatientID --search PatientName --search StudyID "${DICOMFILE}")
+  DUMPID=$(grep -m1 -F '(0010,0020)' <<< "${DUMP}" || true)
+  DUMPPN=$(grep -m1 -F '(0010,0010)' <<< "${DUMP}" || true)
+  DUMPSD=$(grep -m1 -F '(0020,0010)' <<< "${DUMP}" || true)
+
+  OID=$(extract "${DUMPID}")
+  OPN=$(extract "${DUMPPN}")
+  OSD=$(extract "${DUMPSD}")
+  ID=$(normalize "${OID}")
+  PN=$(normalize "${OPN}")
+  SD=$(normalize "${OSD}")
 
   if [ -z "${SD}" -a -z "${ID}" -a -z "${PN}" ] ; then
     echo "${DICOMFILE}: error - neither StudyID, PatientID nor PatientName valid"
@@ -38,7 +48,7 @@ for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l); do
     SD=${PN}
   fi
 
-  ID=$(echo ${SD} | cut -d- -f1)
+  ID="${SD%%-*}"
 
   if [ "${OSD}" = "${SD}" ] ; then
     echo "${DICOMFILE}: [ ] keep ${ID}/${SD}"
