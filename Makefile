@@ -44,6 +44,12 @@ list-non-study-dicom:
 		bash bin/list-non-study-dicom.bash images/ultrasound/study/dicom
 
 .PHONEY:
+weasis:
+	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
+		shell --preserve=DISPLAY --manifest=guix/manifest-weasis.scm -- \
+		weasis
+
+.PHONEY:
 randomise:
 	${GUIXTME} -- Rscript --vanilla ethics/randomisation/blockrand.R
 
