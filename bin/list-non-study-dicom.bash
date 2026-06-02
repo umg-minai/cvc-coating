@@ -5,10 +5,23 @@ DICOMDIR=${1}
 DICOMSUBDIR=GEMS_IMG
 DCMDUMP="dcmdump --load-short --read-file-only"
 
+# mislabeled exports that have been re-exported under the correct ID
+BLACKLIST=(
+  "GEMS_IMG/2026_APR/23/_W162021" # was incorrectly labelled as WP07-02; is ML07-02
+)
+
 if [ ! -d "${DICOMDIR}/${DICOMSUBDIR}" ] ; then
   echo "Directory ${DICOMDIR}/${DICOMSUBDIR} doesn't exist"
   exit 1
 fi
+
+is_blacklisted() {
+  local file="${1}"
+  for entry in "${BLACKLIST[@]}"; do
+    [[ "${file}" == "${entry}"* ]] && return 0
+  done
+  return 1
+}
 
 extract_value() {
   # Extract content between [...] from dcmdump output line
@@ -27,7 +40,7 @@ for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l | sort); do
   PN=$(extract_value "${DUMP_PN}")
   SH=$(extract_value "${DUMP_SH}")
 
-  if [[ "${LO}" == 0000* ]] && [[ "${PN}" == *^* ]] ; then
+  if { [[ "${LO}" == 0000* ]] && [[ "${PN}" == *^* ]]; } || is_blacklisted "${DICOMFILE}"; then
     echo "  $(dirname "${DICOMFILE}")  SH=[${SH}]  LO=[${LO}]  PN=[${PN}]"
   fi
 done
