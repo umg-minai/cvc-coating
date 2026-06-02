@@ -16,7 +16,7 @@ TMPFILE2=/tmp/`basename $0`.$$.`basename "$2"`
 
 ${GUIXTM} dcmdump -q -dc "$1" >"$TMPFILE1" 2>&1
 ${GUIXTM} dcmdump -q -dc "$2" >"$TMPFILE2" 2>&1
-colordiff -au "$TMPFILE1" "$TMPFILE2"
+${GUIXTM} colordiff -au "$TMPFILE1" "$TMPFILE2"
 
 rm "$TMPFILE1" "$TMPFILE2"
 
