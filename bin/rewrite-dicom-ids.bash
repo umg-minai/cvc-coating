@@ -3,7 +3,6 @@ set -o errexit -o pipefail
 
 DICOMDIR=${1}
 DICOMSUBDIR=GEMS_IMG
-DCMDUMP="dcmdump --load-short --read-file-only"
 
 if [ ! -d "${DICOMDIR}/${DICOMSUBDIR}" ] ; then
   echo "Directory ${DICOMDIR}/${DICOMSUBDIR} doesn't exists"
@@ -18,13 +17,51 @@ normalize() {
   echo "${1}" | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#; s#(.*$##'
 }
 
+# map a GEMS_IMG month abbreviation (APR, FEB, ...) to a sortable number
+month_num() {
+  case "${1}" in
+    JAN) echo 01 ;; FEB) echo 02 ;; MAR) echo 03 ;; APR) echo 04 ;;
+    MAY) echo 05 ;; JUN) echo 06 ;; JUL) echo 07 ;; AUG) echo 08 ;;
+    SEP) echo 09 ;; OCT) echo 10 ;; NOV) echo 11 ;; DEC) echo 12 ;;
+    *)   echo 00 ;;
+  esac
+}
+
+# list files in chronological order based on the GEMS_IMG/<YYYY>_<MON>/<DD>/...
+# directory layout (alphabetical sort would order APR before FEB)
+sorted_files() {
+  local f comps
+  while IFS= read -r f; do
+    IFS='/' read -r -a comps <<< "${f}"
+    printf '%s%s%s\t%s\n' \
+      "${comps[1]%_*}" "$(month_num "${comps[1]#*_}")" "${comps[2]}" "${f}"
+  done < <(find "${DICOMSUBDIR}" -type f,l) | sort | cut -f2-
+}
+
 cd "${DICOMDIR}"
 
-for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l); do
-  DUMP=$(${DCMDUMP} --search PatientID --search PatientName --search StudyID "${DICOMFILE}")
-  DUMPID=$(grep -m1 -F '(0010,0020)' <<< "${DUMP}" || true)
-  DUMPPN=$(grep -m1 -F '(0010,0010)' <<< "${DUMP}" || true)
-  DUMPSD=$(grep -m1 -F '(0020,0010)' <<< "${DUMP}" || true)
+# Read PatientID/PatientName/StudyID for the whole tree in a single recursive
+# dcmdump pass instead of spawning one dcmdump per file. --print-file-search
+# emits a "# dcmdump (N): <path>" header before each matched file's tag lines;
+# only the first occurrence of a repeated tag is kept (as grep -m1 did before).
+declare -A ID_LINE PN_LINE SD_LINE
+file=
+while IFS= read -r line; do
+  case "${line}" in
+    '# dcmdump ('*'): '*) file="${line#*): }" ;;
+    '(0010,0020)'*) [[ -n ${file} && -z ${ID_LINE[$file]+x} ]] && ID_LINE[$file]=${line} ;;
+    '(0010,0010)'*) [[ -n ${file} && -z ${PN_LINE[$file]+x} ]] && PN_LINE[$file]=${line} ;;
+    '(0020,0010)'*) [[ -n ${file} && -z ${SD_LINE[$file]+x} ]] && SD_LINE[$file]=${line} ;;
+  esac
+done < <(dcmdump --load-short --read-file-only --quiet \
+    --scan-directories --recurse --print-file-search \
+    --search PatientID --search PatientName --search StudyID \
+    "${DICOMSUBDIR}" 2>/dev/null)
+
+while IFS= read -r DICOMFILE; do
+  DUMPID=${ID_LINE[$DICOMFILE]:-}
+  DUMPPN=${PN_LINE[$DICOMFILE]:-}
+  DUMPSD=${SD_LINE[$DICOMFILE]:-}
 
   OID=$(extract "${DUMPID}")
   OPN=$(extract "${DUMPPN}")
@@ -61,7 +98,7 @@ for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l); do
       --insert "(0020,0010)=${SD}" \
       --no-backup ${DICOMFILE}
   fi
-done
+done < <(sorted_files)
 
 echo "Rewrite ${DICOMDIR}/DICOMDIR"
 dcmmkdir -Pum --keep-filenames --recurse --no-backup ${DICOMSUBDIR}
