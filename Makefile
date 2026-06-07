@@ -44,6 +44,12 @@ list-non-study-dicom:
 		bash bin/list-non-study-dicom.bash images/ultrasound/study/dicom
 
 .PHONEY:
+delete-non-study-dicom:
+	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
+		shell --manifest=guix/manifest-dcm.scm -- \
+		bash bin/list-non-study-dicom.bash --delete images/ultrasound/study/dicom
+
+.PHONEY:
 weasis:
 	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --preserve=DISPLAY --manifest=guix/manifest-weasis.scm -- \

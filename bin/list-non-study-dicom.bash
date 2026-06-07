@@ -1,9 +1,25 @@
 #!/bin/bash
 set -o errexit -o pipefail
 
-DICOMDIR=${1}
 DICOMSUBDIR=GEMS_IMG
-DCMDUMP="dcmdump --load-short --read-file-only"
+
+usage() {
+  echo "usage: $(basename "${0}") [--delete] <dicomdir>"
+  echo "  lists non-study DICOM directories under <dicomdir>/${DICOMSUBDIR}"
+  echo "  --delete  remove the listed directories after printing them"
+}
+
+DELETE=0
+DICOMDIR=
+
+while [ $# -gt 0 ]; do
+  case "${1}" in
+    --delete) DELETE=1 ;;
+    -h|--help) usage; exit 0 ;;
+    *) DICOMDIR=${1} ;;
+  esac
+  shift
+done
 
 # mislabeled exports that have been re-exported under the correct ID
 BLACKLIST=(
@@ -24,23 +40,60 @@ is_blacklisted() {
 }
 
 extract_value() {
-  # Extract content between [...] from dcmdump output line
-  sed -n 's/^[^[]*\[\(.*\)\].*/\1/p' <<< "${1}"
+  # content between the first [ and the last ], via parameter expansion only
+  local v="${1#*[}"
+  printf '%s' "${v%]*}"
 }
 
 cd "${DICOMDIR}"
 
-for DICOMFILE in $(find ${DICOMSUBDIR} -type f,l | sort); do
-  DUMP=$(${DCMDUMP} --search PatientID --search PatientName --search StudyID "${DICOMFILE}" 2>/dev/null || true)
-  DUMP_LO=$(grep -m1 -F '(0010,0020)' <<< "${DUMP}" || true)
-  DUMP_PN=$(grep -m1 -F '(0010,0010)' <<< "${DUMP}" || true)
-  DUMP_SH=$(grep -m1 -F '(0020,0010)' <<< "${DUMP}" || true)
+# seen maps a matched directory to its formatted report line; it doubles as the
+# dedup set (one entry per directory rather than one per file).
+declare -A seen
+file= lo= pn= sh=
 
-  LO=$(extract_value "${DUMP_LO}")
-  PN=$(extract_value "${DUMP_PN}")
-  SH=$(extract_value "${DUMP_SH}")
-
-  if { [[ "${LO}" == 0000* ]] && [[ "${PN}" == *^* ]]; } || is_blacklisted "${DICOMFILE}"; then
-    echo "  $(dirname "${DICOMFILE}")  SH=[${SH}]  LO=[${LO}]  PN=[${PN}]"
+emit() {
+  [[ -z "${file}" ]] && return
+  local dir="${file%/*}"
+  if { { [[ "${lo}" == 0000* ]] && [[ "${pn}" == *^* ]]; } \
+       || is_blacklisted "${file}"; } && [[ -z "${seen["${dir}"]:-}" ]]; then
+    seen["${dir}"]=$(printf '  %s  SH=[%s]  LO=[%s]  PN=[%s]' \
+      "${dir}" "${sh}" "${lo}" "${pn}")
   fi
+}
+
+# A single recursive dcmdump processes the whole tree in one process instead of
+# spawning one dcmdump per file. --print-file-search prefixes every matched file
+# with a "# dcmdump (N): <path>" header, which the loop uses to group tag values.
+while IFS= read -r line; do
+  case "${line}" in
+    '# dcmdump ('*'): '*)
+      emit
+      file="${line#*): }"
+      lo= pn= sh= ;;
+    '(0010,0020)'*) [[ -z "${lo}" ]] && lo=$(extract_value "${line}") ;;
+    '(0010,0010)'*) [[ -z "${pn}" ]] && pn=$(extract_value "${line}") ;;
+    '(0020,0010)'*) [[ -z "${sh}" ]] && sh=$(extract_value "${line}") ;;
+  esac
+done < <(dcmdump --load-short --read-file-only --quiet \
+    --scan-directories --recurse --print-file-search \
+    --search PatientID --search PatientName --search StudyID \
+    "${DICOMSUBDIR}" 2>/dev/null)
+emit
+
+# sorted list of matched directories for stable output and deletion order
+dirs=()
+if [ "${#seen[@]}" -gt 0 ]; then
+  mapfile -t dirs < <(printf '%s\n' "${!seen[@]}" | sort)
+fi
+
+for dir in "${dirs[@]}"; do
+  printf '%s\n' "${seen["${dir}"]}"
 done
+
+if [ "${DELETE}" -eq 1 ]; then
+  for dir in "${dirs[@]}"; do
+    rm -rf -- "${dir}"
+    echo "deleted ${dir}"
+  done
+fi
