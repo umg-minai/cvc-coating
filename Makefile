@@ -6,6 +6,8 @@ GUIXTME:=${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 DATE=$(shell date +'%Y%m%d')
 GITHEAD=$(shell git rev-parse --short HEAD)
 GITHEADL=$(shell git rev-parse HEAD)
+DICOM_DIR?=images/ultrasound/study/dicom
+PILOT_DICOM_DIR?=images/ultrasound/pilot/dicom
 
 .DELETE_ON_ERROR:
 
@@ -30,24 +32,24 @@ shell:
 pilot-rewrite-dicom-ids:
 	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest-dcm.scm -- \
-		bash bin/rewrite-dicom-ids.bash images/ultrasound/pilot/dicom
+		bash bin/rewrite-dicom-ids.bash ${PILOT_DICOM_DIR}
 .PHONEY:
 rewrite-dicom-ids:
 	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest-dcm.scm -- \
-		bash bin/rewrite-dicom-ids.bash images/ultrasound/study/dicom
+		bash bin/rewrite-dicom-ids.bash ${DICOM_DIR}
 
 .PHONEY:
 list-non-study-dicom:
 	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest-dcm.scm -- \
-		bash bin/list-non-study-dicom.bash images/ultrasound/study/dicom
+		bash bin/list-non-study-dicom.bash ${DICOM_DIR}
 
 .PHONEY:
 delete-non-study-dicom:
 	${GUIX} time-machine --channels=guix/channels.pinned.scm -- \
 		shell --manifest=guix/manifest-dcm.scm -- \
-		bash bin/list-non-study-dicom.bash --delete images/ultrasound/study/dicom
+		bash bin/list-non-study-dicom.bash --delete ${DICOM_DIR}
 
 .PHONEY:
 weasis:
