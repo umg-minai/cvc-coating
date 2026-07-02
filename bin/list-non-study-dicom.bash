@@ -55,10 +55,16 @@ file= lo= pn= sh=
 emit() {
   [[ -z "${file}" ]] && return
   local dir="${file%/*}"
-  if { { [[ "${lo}" == 0000* ]] && [[ "${pn}" == *^* ]]; } \
-       || is_blacklisted "${file}"; } && [[ -z "${seen["${dir}"]:-}" ]]; then
-    seen["${dir}"]=$(printf '  %s  SH=[%s]  LO=[%s]  PN=[%s]' \
-      "${dir}" "${sh}" "${lo}" "${pn}")
+  local reason=
+  if [[ "${lo}" == 0000* ]] && [[ "${pn}" == *^* ]]; then
+    reason=id-mismatch
+  fi
+  if is_blacklisted "${file}"; then
+    reason=${reason:+${reason},}blacklisted
+  fi
+  if [[ -n "${reason}" ]] && [[ -z "${seen["${dir}"]:-}" ]]; then
+    seen["${dir}"]=$(printf '  %s  [%s]  SH=[%s]  LO=[%s]  PN=[%s]' \
+      "${dir}" "${reason}" "${sh}" "${lo}" "${pn}")
   fi
 }
 
