@@ -56,7 +56,7 @@ emit() {
   [[ -z "${file}" ]] && return
   local dir="${file%/*}"
   local reason=
-  if [[ "${lo}" == 0000* ]] && [[ "${pn}" == *^* ]]; then
+  if [[ "${lo}" == 000* ]] && [[ "${pn}" == *^* ]]; then
     reason=id-mismatch
   fi
   if is_blacklisted "${file}"; then
