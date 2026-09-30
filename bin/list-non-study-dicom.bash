@@ -96,6 +96,15 @@ done < <(dcmdump --load-short --read-file-only --quiet \
     "${DICOMSUBDIR}" 2>/dev/null)
 emit
 
+# 0-byte files can't be opened by dcmdump at all, so they never produce a
+# "# dcmdump (N):" header above and must be caught separately
+while IFS= read -r -d '' file; do
+  dir="${file%/*}"
+  if [[ -z "${seen["${dir}"]:-}" ]]; then
+    seen["${dir}"]=$(printf '  %s  [empty]  SH=[]  LO=[]  PN=[]' "${dir}")
+  fi
+done < <(find "${DICOMSUBDIR}" -type f -empty -print0)
+
 # sorted list of matched directories for stable output and deletion order
 dirs=()
 if [ "${#seen[@]}" -gt 0 ]; then
