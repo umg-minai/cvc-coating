@@ -45,6 +45,11 @@ extract_value() {
   printf '%s' "${v%]*}"
 }
 
+extract_id() {
+  echo "${1}" | sed \
+    '/^.*\([[:alpha:]]\{2,3\}[0-9][0-9][-_.]\{1,2\}d\?[0-9]\{1,2\}[^]]*\)(\?.*$/!d; s//\1/'
+}
+
 cd "${DICOMDIR}"
 
 # seen maps a matched directory to its formatted report line; it doubles as the
@@ -58,6 +63,10 @@ emit() {
   local reason=
   if [[ "${lo}" == 000* ]] && [[ "${pn}" == *^* ]]; then
     reason=id-mismatch
+  fi
+  if [[ -z "$(extract_id "${lo}")" ]] && [[ -z "$(extract_id "${pn}")" ]] && \
+     [[ -z "$(extract_id "${sh}")" ]]; then
+    reason=${reason:+${reason},}non-canonical-id
   fi
   if is_blacklisted "${file}"; then
     reason=${reason:+${reason},}blacklisted
