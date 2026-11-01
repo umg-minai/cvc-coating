@@ -17,6 +17,11 @@ normalize() {
   echo "${1}" | sed 's#[-_.]\+#-#; s#^\(.*\)$#\U\1#; s#-D#-#; s#-\([0-9]\)$#-0\1#; s#(.*$##'
 }
 
+# wrongly labelled exports: "<GEMS_IMG date directory> <wrong id> <correct id>"
+CORRECTIONS=(
+  "GEMS_IMG/2026_OCT/10/ ML13-03 ML13-04"
+)
+
 # map a GEMS_IMG month abbreviation (APR, FEB, ...) to a sortable number
 month_num() {
   case "${1}" in
@@ -84,6 +89,13 @@ while IFS= read -r DICOMFILE; do
     # PN valid
     SD=${PN}
   fi
+
+  for entry in "${CORRECTIONS[@]}"; do
+    read -r prefix wrong right <<< "${entry}"
+    if [[ "${DICOMFILE}" == "${prefix}"* ]] && [ "${SD}" = "${wrong}" ] ; then
+      SD=${right}
+    fi
+  done
 
   ID="${SD%%-*}"
 
