@@ -54,11 +54,12 @@ cd "${DICOMDIR}"
 
 # seen maps a matched directory to its formatted report line; it doubles as the
 # dedup set (one entry per directory rather than one per file).
-declare -A seen
+declare -A seen parsed
 file= lo= pn= sh=
 
 emit() {
   [[ -z "${file}" ]] && return
+  parsed["${file}"]=1
   local dir="${file%/*}"
   local reason=
   if [[ "${lo}" == 000* ]] && [[ "${pn}" == *^* ]]; then
@@ -103,7 +104,18 @@ while IFS= read -r -d '' file; do
   if [[ -z "${seen["${dir}"]:-}" ]]; then
     seen["${dir}"]=$(printf '  %s  [empty]  SH=[]  LO=[]  PN=[]' "${dir}")
   fi
-done < <(find "${DICOMSUBDIR}" -type f -empty -print0)
+done < <(find -L "${DICOMSUBDIR}" -type f -empty -print0)
+
+# truncated or corrupt files are skipped by dcmdump (no header is printed), so
+# any non-empty file it never reported is unreadable. Only that file is listed
+# (and deleted), not its directory, unless the directory matched anyway.
+unreadable=()
+while IFS= read -r -d '' file; do
+  dir="${file%/*}"
+  if [[ -z "${parsed["${file}"]:-}" ]] && [[ -z "${seen["${dir}"]:-}" ]]; then
+    unreadable+=("${file}")
+  fi
+done < <(find -L "${DICOMSUBDIR}" -type f -size +0 -print0 | sort -z)
 
 # sorted list of matched directories for stable output and deletion order
 dirs=()
@@ -115,9 +127,17 @@ for dir in "${dirs[@]}"; do
   printf '%s\n' "${seen["${dir}"]}"
 done
 
+for file in "${unreadable[@]}"; do
+  printf '  %s  [unreadable]\n' "${file}"
+done
+
 if [ "${DELETE}" -eq 1 ]; then
   for dir in "${dirs[@]}"; do
     rm -rf -- "${dir}"
     echo "deleted ${dir}"
+  done
+  for file in "${unreadable[@]}"; do
+    rm -f -- "${file}"
+    echo "deleted ${file}"
   done
 fi
